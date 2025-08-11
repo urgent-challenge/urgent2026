@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: 127.0.0.1/urgent2026/sitemap.xml
