@@ -91,12 +91,11 @@ Note that the evaluation procedure during the blind testing phase differs from t
 <br>
 
 ### Detailed data description
-The training and validation data are both simulated based on the following source data.
-Note that the validation set made by the [provided script]((https://github.com/urgent-challenge/urgent2025_challenge)) is different from the official validation set used in the leaderboard, although the data source and the type of distortions do not change.
 
-The challenge has two tracks: 
- - **First track**: We limit the duration of MLS and CommonVoice, resulting in ~2.5k hours of speech.
- - **Second track**: We do not limit the duration of MLS and CommonVoice datasets, resulting in ~60k hours of speech.
+The training and validation data are both simulated based on the following source data.
+Based on the [dataset of the second URGENT challengege](https://urgent-challenge.github.io/urgent2025/data/), we conducted a data selection using the data filtering method proposed a recent paper <d-cite key="liLessMoreData2025"/>.
+
+**It is noted that we encourage you to explore better ways of data selection and utilization in this challenge.** In addition to the data and filtering methods provided by our baseline, you can make use of larger-scale datasets, such as the [track2 data](https://urgent-challenge.github.io/urgent2025/data/) from the second challenge, or other allowed data (please check it in the [rules pages](/urgent2026/rules/)).
 
 <style>
 /* Basic */
@@ -183,17 +182,19 @@ border-bottom: 1px solid #cccccc;
     <th>Corpus</th>
     <th>Condition</th>
     <th>Sampling Frequency (kHz)</th>
-    <th>Duration of track 1 (track2)</th>
+    <th>Duration of in 2nd URGENT</th>
+    <th>Duration of in 3rd URGENT</th>
     <th>License</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td rowspan="7">Speech</td>
+    <td rowspan="10">Speech</td>
     <td>LibriVox data from <a href="https://github.com/microsoft/DNS-Challenge/blob/master/download-dns-challenge-5-headset-training.sh">DNS5 challenge</a></td>
     <td>Audiobook</td>
     <td>8~48</td>
     <td>~350 h</td>
+    <td>~150 h</td>
     <td>CC BY 4.0</td>
   </tr>
   <tr>
@@ -201,6 +202,7 @@ border-bottom: 1px solid #cccccc;
     <td>Audiobook</td>
     <td>8~24</td>
     <td>~200 h</td>
+    <td>~109 h</td>
     <td>CC BY 4.0</td>
   </tr>
   <tr>
@@ -208,20 +210,15 @@ border-bottom: 1px solid #cccccc;
     <td>Newspaper, etc.</td>
     <td>48</td>
     <td>~80 h</td>
+    <td>~44 h</td>
     <td>ODC-BY</td>
-  </tr>
-  <tr>
-    <td>WSJ reading speech</td>
-    <td>WSJ news</td>
-    <td>16</td>
-    <td>~85 h</td>
-    <td>LDC User Agreement</td>
   </tr>
   <tr>
     <td>EARS speech</td>
     <td>Studio recording</td>
     <td>48</td>
     <td>~100 h</td>
+    <td>~16 h</td>
     <td> CC-NC 4.0</td>
   </tr>
   <tr>
@@ -229,6 +226,7 @@ border-bottom: 1px solid #cccccc;
     <td>Audiobook</td>
     <td>8~48</td>
     <td>~450 (48600) h</td>
+    <td>~129 h</td>
     <td>CC0</td>
   </tr>
   <tr>
@@ -236,8 +234,77 @@ border-bottom: 1px solid #cccccc;
     <td>Crowd-sourced voices</td>
     <td>8~48</td>
     <td>~1300 (9500) h</td>
+    <td>~250 h</td>
     <td>CC0</td>
   </tr>
+
+  <tr>
+    <td>NNCES</td>
+    <td>Children speech</td>
+    <td>44.1</td>
+    <td>-</td>
+    <td>~20 h</td>
+    <td>CC0</td>
+  </tr>
+
+  <tr>
+    <td>SeniorTalk</td>
+    <td>Elderly speech</td>
+    <td>16</td>
+    <td>-</td>
+    <td>~50 h</td>
+    <td>CC BY-NC-SA 4.0</td>
+  </tr>
+
+  <tr>
+    <td>VocalSet</td>
+    <td>Singing voice</td>
+    <td>44.1</td>
+    <td>-</td>
+    <td>~10 h</td>
+    <td>CC BY 4.0</td>
+  </tr>
+
+  <tr>
+    <td>ESD</td>
+    <td>Emotional speech</td>
+    <td>16</td>
+    <td>-</td>
+    <td>~30 h</td>
+    <td>non-commercial, <a href="https://github.com/HLTSingapore/Emotional-Speech-Data">custom</a> <d-footnote>You need to sign a license to obtain this dataset.</d-footnote> </td>
+  </tr>
+  <!-- <tr>
+    <td>Other RIRs simulated by participants</td>
+    <td>-</td>
+    <td>8~48</td>
+    <td>-</td>
+    <td>-</td>
+  </tr> -->
+</tbody>
+</table>
+
+For the noise source and RIRs, we follow the same configuration as in the [second challenge](https://urgent-challenge.github.io/urgent2025/data/).
+
+<table>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+  <tr>
+    <th>Type</th>
+    <th>Corpus</th>
+    <th>Condition</th>
+    <th>Sampling Frequency (kHz)</th>
+    <th>Duration of in 2nd URGENT</th>
+    <th>License</th>
+  </tr>
+</thead>
+<tbody>
   <tr>
     <td rowspan="5">Noise</td>
     <td>Audioset+FreeSound noise in DNS5 challenge</td>
@@ -299,29 +366,26 @@ border-bottom: 1px solid #cccccc;
 </tbody>
 </table>
 
-> For participants who need access to the WSJ data, please reach out to the organizers ([urgent.challenge@gmail.com](mailto:urgent.challenge@gmail.com)) for a temporary license supported by LDC. Please include your name, organization/affiliation, and the username used in the leaderboard in the email for a smooth procedure. Note that we do not accept the request unless you have registered to the [leaderboard](/urgent2025/leaderboard).
->
+
 > We allow participants to simulate their own RIRs using existing tools<d-footnote>For example, <a href="https://github.com/ehabets/RIR-Generator">RIR-Generator</a>, <a href="https://github.com/LCAV/pyroomacoustics">pyroomacoustics</a>, <a href="https://github.com/DavidDiazGuerra/gpuRIR">gpuRIR</a>,  and so on.</d-footnote> for generating the training data.
-> The participants can also propose publicly available real recorded RIRs to be included in the above data list during the grace period (See [`Timeline`](/urgent2025/timeline)).
-> Note: If participants used additional RIRs to train their model, the related information should be provided in the README.yaml file in the submission. Check the [template](/urgent2025/template) for more information.
+> The participants can also propose publicly available real recorded RIRs to be included in the above data list during the grace period (See [`Timeline`](/urgent2026/timeline)).
+> Note: If participants used additional RIRs to train their model, the related information should be provided in the README.yaml file in the submission. Check the [template](/urgent2026/template) for more information.
 >
-> We allow participants to simulate wind noise using some tools such as <a href="https://github.com/audiolabs/SC-Wind-Noise-Generator/tree/main">SC-Wind-Noise-Generator</a>. In default, the simulation script in our repository simulates 200 and 100 wind noises for training and validation for each sampling frequency. The configuration can be easily changed in <a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/conf/wind_noise_simulation_train.yaml">wind_noise_simulation_train.yaml</a> and <a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/conf/wind_noise_simulation_validation.yaml">wind_noise_simulation_validation.yaml</a>
+> We allow participants to simulate wind noise using some tools such as <a href="https://github.com/audiolabs/SC-Wind-Noise-Generator/tree/main">SC-Wind-Noise-Generator</a>. In default, the simulation script in our repository simulates 200 and 100 wind noises for training and validation for each sampling frequency. The configuration can be easily changed in <a href="https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/conf/wind_noise_simulation_train.yaml">wind_noise_simulation_train.yaml</a> and <a href="https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/conf/wind_noise_simulation_validation.yaml">wind_noise_simulation_validation.yaml</a>
 
 
 <br>
 
 ### Pre-processing
 
-<img alt="pre-processing" src="/urgent2025/assets/img/preprocessing.png" style="max-width: 100%;"/>
-
-Before simulation, some speech and noise data are pre-processed to filter out low-quality samples and to detect the true sampling frequency (SF).
-Specifically, we applied data filtering (described below) to LibriVox and CommonVoice (track1)<d-footnote>In Track2, participants are allowed to use the entire data from CommonVoice 19.0 and we thus do not do any data filtering.</d-footnote>.
+<img alt="pre-processing" src="/urgent2026/assets/img/preprocessing.png" style="max-width: 100%;"/>
 
 The pre-processing procedure includes:
 
-1. We first estimate the effective bandwidth of each speech and noise sample based on the energy thresholding algorithm proposed in <d-cite key="Hi_Fi-Bakhturina2021"/><d-footnote><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/utils/estimate_audio_bandwidth.py">https://github.com/urgent-challenge/urgent2025_challenge/blob/main/utils/estimate_audio_bandwidth.py</a></d-footnote>. This is critical for our proposed method to successfully handle data with different SFs. Then, we resample each speech and noise sample accordingly to the best matching SF, which is defined as the lowest SF among {8, 16, 22.05, 24, 32, 44.1, 48} kHz that can fully cover the estimated effective bandwidth.
-2. A voice activity detection (VAD) algorithm<d-footnote><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/utils/filter_via_vad.py">https://github.com/urgent-challenge/urgent2025_challenge/blob/main/utils/filter_via_vad.py</a></d-footnote> is further used to detect “bad” speech samples that are actually non-speech or mostly silence, which will be removed from the data.
-3. Finally, the non-intrusive DNSMOS scores (OVRL, SIG, BAK)<d-cite key="DNSMOS-Reddy2022"/><d-footnote><a href="https://github.com/microsoft/DNS-Challenge/blob/master/DNSMOS/dnsmos_local.py">https://github.com/microsoft/DNS-Challenge/blob/master/DNSMOS/dnsmos_local.py</a></d-footnote> are calculated for each remaining speech sample. This allows us to filter out noisy and low-quality speech samples via thresholding each score<d-footnote><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/utils/filter_via_dnsmos.py">https://github.com/urgent-challenge/urgent2025_challenge/blob/main/utils/filter_via_dnsmos.py</a></d-footnote>.
+
+1. We apply the data selection to the Track 1 data of the 2nd URGENT using the data filtering method proposed the recent paper <d-cite key="liLessMoreData2025"/>. The seleteced data list are available at [here](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/meta/train_selected_700h). 
+
+2. Finally, the non-intrusive DNSMOS scores (OVRL, SIG, BAK)<d-cite key="DNSMOS-Reddy2022"/><d-footnote><a href="https://github.com/microsoft/DNS-Challenge/blob/master/DNSMOS/dnsmos_local.py">https://github.com/microsoft/DNS-Challenge/blob/master/DNSMOS/dnsmos_local.py</a></d-footnote> are calculated for each remaining speech sample. This allows us to filter out noisy and low-quality speech samples via thresholding each score<d-footnote><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/utils/filter_via_dnsmos.py">https://github.com/urgent-challenge/urgent2025_challenge/blob/main/utils/filter_via_dnsmos.py</a></d-footnote>.
 
 We finally curated a list of speech sample (~2500 hours) and noise samples (~500 hours) for Track1 based on the above procedure that will be used for simulating the training and validation data in the challenge.
 
