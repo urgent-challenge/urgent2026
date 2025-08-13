@@ -846,21 +846,21 @@ ${math}
     if (names.length > 1) {
       var str = name_strings.slice(0, names.length - 1).join(sep);
       str += (finalSep || sep) + name_strings[names.length - 1];
-      return str;
+      return renderAuthorUnicode(str);
     } else {
-      return name_strings[0];
+      return renderAuthorUnicode(name_strings[0]);
     }
   }
 
   function venue_string(ent) {
-    var cite = ent.journal || ent.booktitle || "";
+    var cite = renderPublication(ent.journal) || renderPublication(ent.booktitle) || "";
     if ("volume" in ent) {
       var issue = ent.issue || ent.number;
       issue = issue != undefined ? "(" + issue + ")" : "";
       cite += ", Vol " + ent.volume + issue;
     }
     if ("pages" in ent) {
-      cite += ", pp. " + ent.pages;
+      cite += ", pp. " + renderPageUnicode(ent.pages);
     }
     if (cite != "") cite += ". ";
     if ("publisher" in ent) {
@@ -899,13 +899,43 @@ ${math}
   }
 
   function title_string(ent) {
-    return '<span class="title">' + ent.title + "</span> ";
+    return '<span class="title">' + normalizeTitleField(ent.title, false) + "</span> ";
+  }
+
+  function entry_to_bibtex(ent) {
+    var out = '';
+    out += "@" + ent['type'];
+    out += '{';
+    if (ent['citationkey'])
+      out += ent['citationkey'] + ',\n';
+    else
+      out += 'citationKey,\n';
+    // if (ent.entry)
+    //   out += ent.entry;
+    var tags = '';
+    for (var jdx in ent) {
+      if (jdx == 'entrytype' || jdx == 'citationkey' || jdx == 'type' || jdx == 'entry')
+        continue;
+      if (tags.length != 0)
+        tags += ',\n';
+      tags += "  " + jdx + '={' + ent[jdx] + '}';
+    }
+    out += tags;
+    out += '\n}';
+    return out;
+  }
+
+  function bibtex_button_string(ent) {
+    const bibtexString = entry_to_bibtex(ent);
+    var citationKey = ent['citationkey'] ? ent['citationkey'] : 'citationKey';
+
+    return '<button class="copy-to-clipboard-button" id="btn-' + encodeURI(citationKey) + '" data-copy-text="' + encodeURI(bibtexString) + '">Copy BibTeX</button>';
   }
 
   function bibliography_cite(ent, fancy) {
     if (ent) {
       var cite = title_string(ent);
-      cite += link_string(ent) + "<br>";
+      cite += link_string(ent) + " " + bibtex_button_string(ent) + "<br>";
       if (ent.author) {
         cite += author_string(ent, "${L}, ${I}", ", ", " and ");
         if (ent.year || ent.date) {
@@ -939,8 +969,9 @@ ${math}
   function hover_cite(ent) {
     if (ent) {
       var cite = "";
-      cite += "<strong>" + ent.title + "</strong>";
+      cite += "<strong>" + normalizeTitleField(ent.title, false) + "</strong>";
       cite += link_string(ent);
+      cite += " " + bibtex_button_string(ent);
       cite += "<br>";
 
       var a_str = author_string(ent, "${I} ${L}", ", ") + ".";
@@ -1848,6 +1879,8 @@ d-appendix > distill-appendix {
         this.key_value_list = function () {
           var kv = this.key_equals_value();
           this.currentEntry["entryTags"] = {};
+          this.currentEntry["entryTags"]["citationkey"] = this.currentEntry["citationKey"];
+          this.currentEntry["entryTags"]["entrytype"] = this.currentEntry["entryType"];
           this.currentEntry["entryTags"][kv[0]] = kv[1];
           while (this.tryMatch(",")) {
             this.match(",");
@@ -1942,6 +1975,123 @@ d-appendix > distill-appendix {
   });
 
   // Copyright 2018 The Distill Template Authors
+
+  function normalizeTitleField(string, isBibtex = true) {
+    // Capture "title = { … }" including everything inside the first pair of braces
+    var titleRe;
+    if (isBibtex) {
+      titleRe = /(\btitle\s*=\s*)\{([\s\S]*?)\}\s*(?:,|$)/gi;
+    } else {
+      titleRe = string;
+    }
+  
+    return string.replace(titleRe, (match, assignment, content) => {
+      // match is `title = { … }`
+      // `assignment` is the "title = " part
+      // `content` is the raw text inside the outer {…}
+      let val = content;
+      // Peel away any inner {…} layers (that contain no further braces)
+      const layerRe = /\{([^{}]*)\}/g;
+      let prev;
+      do {
+        prev = val;
+        val = val.replace(layerRe, '$1');
+      } while (val !== prev);
+  
+      // Re‑wrap in a single outer pair of braces
+      if (isBibtex)
+        return assignment + '{' + val + '}';
+      else
+        return val;
+    });
+  }
+
+  /**
+   * Convert LaTeX‐style commands in a BibTeX author (or title, etc.) field into Unicode.
+   * 
+   * Reference: https://www.bibtex.org/SpecialSymbols/
+   *
+   * @param {string} bib — the raw string, e.g.
+   *     "{\\ae}mile Zola and {Garc{\\i}a, Mar{\\\'i}a}"
+   * @returns {string} the normalized Unicode, e.g.
+   *     "æmile Zola and García, María"
+   */
+  function renderAuthorUnicode(bib) {
+    // 1) Direct map for ligatures & special letters
+    const directMap = {
+      ae: 'æ', AE: 'Æ',
+      oe: 'œ', OE: 'Œ',
+      aa: 'å', AA: 'Å',
+      o:  'ø', O:  'Ø',
+      ss: 'ß',
+      l:  'ł', L:  'Ł',
+      dh: 'ð', DH: 'Ð',
+      th: 'þ', TH: 'Þ',
+      ij: 'ĳ', IJ: 'Ĳ'
+      // extend as needed...
+    };
+
+    // 2) Combining‐accent map
+    const accentMap = {
+      "'": "\u0301",   // acute
+      "`": "\u0300",   // grave
+      "^": "\u0302",   // circumflex
+      '"': "\u0308",   // umlaut/diaeresis
+      "~": "\u0303",   // tilde
+      "=": "\u0304",   // macron
+      ".": "\u0307",   // dot above
+      u: "\u0306",     // breve
+      v: "\u030C",     // caron (háček)
+      H: "\u030B",     // double acute
+      c: "\u0327",     // cedilla
+      d: "\u0323",     // dot below
+      b: "\u0331"      // macron below
+    };
+
+    let s = bib;
+
+    // A) Handle standalone commands like \ae, \ss, \o, etc.
+    s = s.replace(/\\(ae|AE|oe|OE|aa|AA|o|O|ss|l|L|dh|DH|th|TH|ij|IJ)/g,
+                (_, cmd) => directMap[cmd] || cmd);
+
+    // B) Handle accent commands applied to a single letter, e.g. \'e or \'{e}
+    s = s.replace(
+      /\\([\\'`^"~=\.\uvHcdb])\s*\{?([A-Za-z])\}?/g,
+      (_, cmd, letter) => letter + (accentMap[cmd] || "")
+    );
+
+    // C) Drop any remaining grouping braces
+    s = s.replace(/[{}]/g, "");
+
+    // D) Normalize so letter+combining → precomposed when possible
+    return s.normalize("NFC");
+  }
+
+  function renderPublication(bib) {
+    // Convert the booktitle/journal field to a human‐readable string
+    // by removing the braces and replacing any LaTeX commands
+    // with their Unicode equivalents.
+    // Note: this is a bit of a hack, but it works for now.
+
+    if (bib === undefined) return undefined;
+    let s = bib;
+    // Convert \& to &
+    s = s.replace(/\\&/g, '&');
+    return s.normalize("NFC");
+  }
+
+  function renderPageUnicode(bib) {
+    // Convert "-" or "--" or "---" in page range to EN DASH ("–")
+    let s = bib;
+    s = s.replace(/(\d+)(?:---|--|-)(\d+)/g, (_, start, end) => {
+      if (start === end) {
+        return start;
+      } else {
+        return start + "–" + end;
+      }
+    });
+    return s;
+  }
 
   function normalizeTag(string) {
     return string
@@ -2282,6 +2432,18 @@ ul li:last-of-type {
         .map((html) => `<li>${html}</li>`)
         .join("\n")}
     </ul>`;
+
+      // Add click event listener to the "Copy BibTeX" button in each entry
+      const buttons = this.hoverBox.querySelectorAll(".copy-to-clipboard-button");
+      buttons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+          button.innerHTML = "Copied!";
+          navigator.clipboard.writeText(decodeURI(button.getAttribute("data-copy-text")));
+          setTimeout(() => {
+            button.innerHTML = "Copy BibTeX";
+          }, 2000);
+        });
+      });
     }
   }
 
