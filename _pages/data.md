@@ -9,29 +9,73 @@ nav_order: 3
 bibliography: data.bib
 ---
 
+## Contents:
 
-## Brief data description
+- [Contents:](#contents)
+- [Brief data description: Track 1](#brief-data-description-track-1)
+    - [Training/validation data](#trainingvalidation-data)
+    - [Non-blind test set](#non-blind-test-set)
+    - [Blind test set](#blind-test-set)
+  - [Detailed data description](#detailed-data-description)
+  - [Pre-processing](#pre-processing)
+  - [Simulation](#simulation)
+    - [Distortions](#distortions)
+    - [Simulation metadata](#simulation-metadata)
+
+
+## Brief data description: Track 1
 
 #### Training/validation data
 The training and validation data are both simulated by using several public speech/noise/rir corpora (see the table below for more details).
-We provide the [data preparation script](https://github.com/urgent-challenge/urgent2025_challenge) which automatically downloads and pre-processes those data.
+We provide the data preparation pipeline with the [official baseline](https://github.com/urgent-challenge/urgent2026_challenge_track1) which automatically downloads and pre-processes those data.
 
-There are two types of validation data. One is automatically generated during data preparation and the other is provided by the orgnizeres 
+The [data preparetion script](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/utils/prepare_train_data.sh) will generate two types of training data:
+
+The first is the pre-simulated data, which has the following form of directory structure:
+```bash
+data/train_simulation/
+├── speech_length.scp # Speech duration in number of sample points.
+├── spk1.scp # Clean speech file list of id and audio path.
+├── utt2fs  # id to sampling rate mapping
+├── utt2spk # utterance to speaker mapping 
+└── wav.scp # Noisy speech file list of id and audio path.
+```
+The pre-simulated dataset can be loaded by the `PreSimulatedDataset` in the [baseline code](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/baseline_code/dataset.py) .
+
+
+The another is the dynamic mixing dataset, we also provided a `DynamicMixingDataset` class in the [baseline code](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/baseline_code/dataset.py) for loading data with the dynamic mixing manner.
+The dataset has the following form of directory structure:
+
+```bash
+data/train_sources
+├── noise_scoures.scp # Noise audio id and audio path.
+├── rirs.scp # Room impulse response id and audio path.
+├── source_length.scp # Speech duration in number of sample points.
+├── speech_sources.scp # Clean speech id and audio path.
+└── wind_noise_scoures.scp # # Wind noise audio id and audio path.
+```
+
+By default, we only generate the pre-simulated data for valiation.
+
+<!-- There are two types of validation data. One is automatically generated during data preparation and the other is provided by the orgnizeres 
 - Unofficial validation set: participants can generate their own validation set using the validation subset of the official challenge datasets to choose the best model.
-- Official validation set: we organizeres provide the validation set for the leaderboard submission. It contains 1000 samples and all of them are synthetic data. The maximum duration per utterance is 15 seconds. Unlike the unofficial one, **we manually picked up clean speeches for the noisy corpora (i.e., CommonVoice)** so it better reflectes the enhancement quality. [Noisy speech](https://drive.google.com/file/d/1Ip-C5tUNGCssT8KAjHUUoh99jkzRH6nm/view), [Clean speech](https://drive.google.com/file/d/11geBBf24WKN1xT_NasnI4JrmKpqNo8h9/view), and [metadata](https://drive.google.com/file/d/1CU5QKYOgG4fUuJ8oAC6BEhI9ZDhQYZpF/view) are available.
+- Official validation set: we organizeres provide the validation set for the leaderboard submission. It contains 1000 samples and all of them are synthetic data. The maximum duration per utterance is 15 seconds. Unlike the unofficial one, **we manually picked up clean speeches for the noisy corpora (i.e., CommonVoice)** so it better reflectes the enhancement quality. [Noisy speech](https://drive.google.com/file/d/1Ip-C5tUNGCssT8KAjHUUoh99jkzRH6nm/view), [Clean speech](https://drive.google.com/file/d/11geBBf24WKN1xT_NasnI4JrmKpqNo8h9/view), and [metadata](https://drive.google.com/file/d/1CU5QKYOgG4fUuJ8oAC6BEhI9ZDhQYZpF/view) are available. -->
 
 #### Non-blind test set
-The non-blind test set are prepared in a similar way as the official validation set but there are several differences:
+<!-- The non-blind test set are prepared in a similar way as the validation set but there are several differences:
 - The test split of the official challenge datasets were used.
 - Several unseen noise and rir were also used when simulating the non-blind test set.
-- Sampling rates are almost equally distributed (there are ~1000/7 data for each of 8k, 16k, 22.05k, 24k, 32k, 44.1k, and 48kHz). We downsampled some data to achieve this.
+- Sampling rates are almost equally distributed (there are ~1000/7 data for each of 8k, 16k, 22.05k, 24k, 32k, 44.1k, and 48kHz). We downsampled some data to achieve this. -->
+- Avaliable online after November 3rd, 2025.
 
-The [noisy](https://drive.google.com/file/d/1rxV6RgA4LAp2I1EnHsln7wI7-UCP6Qer/view) and [clean](https://drive.google.com/file/d/1RarjxOgWkaDV8EjH_eLX169y89PVa3sg/view?usp=sharing) speeches as well as the [metadata](https://drive.google.com/file/d/1CfhKjfkkUZ60UEOHnlntcQY2m_9pn1uA/view?usp=sharing) are available. 
-After the non-blind test phase ends, clean speech and metadata will be available.
+<!-- The [noisy](https://drive.google.com/file/d/1rxV6RgA4LAp2I1EnHsln7wI7-UCP6Qer/view) and [clean](https://drive.google.com/file/d/1RarjxOgWkaDV8EjH_eLX169y89PVa3sg/view?usp=sharing) speeches as well as the [metadata](https://drive.google.com/file/d/1CfhKjfkkUZ60UEOHnlntcQY2m_9pn1uA/view?usp=sharing) are available. 
+After the non-blind test phase ends, clean speech and metadata will be available. -->
 
 #### Blind test set
 
-The blind test set, which will **be used for the final ranking**, is available [here](https://drive.google.com/file/d/1dHvYEGHCf9rsB1q-Cd9rXOeQaa_vjG2u/view?usp=sharing).
+- Avaliable online after November 18th, 2025.
+
+<!-- The blind test set, which will **be used for the final ranking**, is available [here](https://drive.google.com/file/d/1dHvYEGHCf9rsB1q-Cd9rXOeQaa_vjG2u/view?usp=sharing).
 
 To evaluate the universality, robustness, and generalizability of the submitted systems as outlined in the theme of this challenge, the blind test set is primarily from domains other than the training set:
 - consist of **50% real-recorded data** (without audio ground truth) and 50% synthetic data,
@@ -42,11 +86,11 @@ To evaluate the universality, robustness, and generalizability of the submitted 
 
 Note that the evaluation procedure during the blind testing phase differs from that in the validation/non-blind test phase in the following ways:
 - Two additional metrics (POLQA and MOS) will be included. (As previously announced, only the English subset will be used for the MOS evaluation due to the short evaluation period.)
-- Only a subset of metrics (DNSMOS, NISQA, UTMOS, MOS, and CER if transcription is available) will be considered for the real-recorded data.
+- Only a subset of metrics (DNSMOS, NISQA, UTMOS, MOS, and CER if transcription is available) will be considered for the real-recorded data. -->
 
 <br>
 
-## Detailed data description
+### Detailed data description
 The training and validation data are both simulated based on the following source data.
 Note that the validation set made by the [provided script]((https://github.com/urgent-challenge/urgent2025_challenge)) is different from the official validation set used in the leaderboard, although the data source and the type of distortions do not change.
 
@@ -266,7 +310,7 @@ border-bottom: 1px solid #cccccc;
 
 <br>
 
-## Pre-processing
+### Pre-processing
 
 <img alt="pre-processing" src="/urgent2025/assets/img/preprocessing.png" style="max-width: 100%;"/>
 
@@ -286,7 +330,7 @@ Note that the data filtering is inperfect and the dataset still has non-ignorabl
 
 <br>
 
-## Simulation
+### Simulation
 
 With the proviced scripts in the next section, the simulation data can be generated offline in two steps.
 
