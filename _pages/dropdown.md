@@ -1,13 +1,12 @@
 ---
 layout: page
-title: submenus
+title: About Us
 nav: true
-nav_order: 8
+nav_order: 10
 dropdown: true
-children:
-  - title: bookshelf
-    permalink: /books/
-  - title: divider
-  - title: blog
-    permalink: /blog/
+children: 
+    - title: Organizers
+      permalink: /organizers/
+    - title: Contact
+      permalink: /contact/
 ---

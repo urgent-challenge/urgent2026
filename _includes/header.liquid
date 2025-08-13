@@ -2,7 +2,35 @@
   <!-- Nav Bar -->
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
     <div class="container">
-      {% if page.permalink != '/' %}
+
+        <li class="nav-item dropdown" style="list-style-type: none;">
+        <a class="navbar-brand title font-weight-lighter dropdown-toggle" href="#" id="yearDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {%- if site.title == "blank" -%}
+            {%- if site.first_name -%}
+              {{- site.first_name -}}&nbsp;
+            {%- endif -%}
+            {%- if site.middle_name -%}
+              {{- site.middle_name -}}&nbsp;
+            {%- endif -%}
+            {%- if site.last_name -%}
+            <span class="font-weight-bold">{{- site.last_name -}}</span>
+            {%- endif -%}
+          {%- else -%}
+            {{- site.title -}}
+          {%- endif -%}
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="yearDropdown">
+          {% for challenge_info in site.all_challenges %}
+            {% if challenge_info[0] == site.year %}
+              <a class="dropdown-item font-weight-bold" href="{{ challenge_info[1] }}">{{ challenge_info[0] }} (current)</a>
+            {% else %}
+              <a class="dropdown-item" href="{{ challenge_info[1] }}">{{ challenge_info[0] }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </li>
+
+      {% comment %} {% if page.permalink != '/' %}
         <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
           {% if site.title == 'blank' %}
             {% if site.first_name %}
@@ -23,7 +51,7 @@
       {% elsif site.enable_navbar_social %}
         <!-- Social Icons -->
         <div class="navbar-brand social">{% include social.liquid %}</div>
-      {% endif %}
+      {% endif %} {% endcomment %}
       <!-- Navbar Toggle -->
       <button
         class="navbar-toggler collapsed ml-auto"

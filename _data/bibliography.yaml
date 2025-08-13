@@ -1,0 +1,7 @@
+ieee_reference: |
+  <div class="csl-entry">
+    [{{key}}] {{ entry.author | split: " and " | first | split: ", " | last }} et al., 
+    "{{ entry.title }}", <i>{{ entry.journal }}</i>, 
+    vol. {{ entry.volume }}, no. {{ entry.number }}, 
+    pp. {{ entry.pages }}, {{ entry.year }}.
+  </div>
