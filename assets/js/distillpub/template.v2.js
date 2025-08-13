@@ -2436,7 +2436,7 @@ ul li:last-of-type {
       // Add click event listener to the "Copy BibTeX" button in each entry
       const buttons = this.hoverBox.querySelectorAll(".copy-to-clipboard-button");
       buttons.forEach((button, index) => {
-        button.show();
+        button.style.display = "block";
         button.addEventListener("click", () => {
           button.innerHTML = "Copied!";
           navigator.clipboard.writeText(decodeURI(button.getAttribute("data-copy-text")));
