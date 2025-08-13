@@ -22,6 +22,9 @@ bibliography: about.bib
 
 ## ICASSP 2026 URGENT Challenge
 
+> 🚧 This website is currently under construction. All content is subject to change and may not reflect the final details of the competition. Please refer to official announcements once the contest begins for the most accurate and up-to-date information.
+
+
 <div style="text-align: center;">
     <img alt="introduction" src="/urgent2026/assets/img/urgent2026.jpeg" style="max-width: 95%;" />
 </div>
@@ -74,10 +77,11 @@ The data preparation scripts are released in our GitHub repository<d-footnote><a
 
 We will evaluate enhanced audios with a variety of metrics to comprehensively understand the capacity of existing generative and discriminative methods. They include four different categories of metrics<d-footnote>. An additional category (subjective SE metrics) will be added for the final blind test phase for evaluating the MOS score.</d-footnote>:
 
-1. Non-intrusive SE metrics such as  DNSMOS<d-cite key="reddyDnsmosNonIntrusivePerceptual2021"/>, NISQA<d-cite key="mittagNISQADeepCNNSelfAttention2021"/>, UTMOS<d-cite key="saekiUTMOSUTokyoSaruLabSystem2022"/>, DNSMOS Pro<d-cite key="cumlinDNSMOSProReducedSize2024"/>, Distill-MOS<d-cite key="stahlDistillationPruningScalable2025"/>, SIGMOS<d-cite key="risteaICASSP2024Speech2025"/>, Torchaudio-Squim<d-cite key="kumarTorchaudioSquimReferenceLessSpeech2023"/>.
+<!-- 2. DNSMOS Pro<d-cite key="cumlinDNSMOSProReducedSize2024"/>, Distill-MOS<d-cite key="stahlDistillationPruningScalable2025"/>, SIGMOS<d-cite key="risteaICASSP2024Speech2025"/>, Torchaudio-Squim<d-cite key="kumarTorchaudioSquimReferenceLessSpeech2023"/>. -->
+1. Non-intrusive SE metrics such as  DNSMOS<d-cite key="reddyDnsmosNonIntrusivePerceptual2021"/>, NISQA<d-cite key="mittagNISQADeepCNNSelfAttention2021"/>, UTMOS<d-cite key="saekiUTMOSUTokyoSaruLabSystem2022"/>, SCOREQ <d-cite key="NEURIPS2024_bece7e02"/>.
 2. Intrusive SE metrics such as POLQA<d-cite key="POLQA-Beerends2013"/>, PESQ<d-cite key="rixPerceptualEvaluationSpeech2001"/>, ESTOI<d-cite key="jensenAlgorithmPredictingIntelligibility2016"/>, SDR<d-cite key="vincentPerformanceMeasurementBlind2006"/>, MCD<d-cite key="kubichekMelcepstralDistanceMeasure1993"/>, LSD<d-cite key="grayDistanceMeasuresSpeech1976"/>.
 3. Downstream-task-independent metrics (e.g., Levenshtein phone similarity) for language-independent, speaker-independent, and task-independent evaluation.
-4. Downstream-task-dependent metrics (e.g., speaker similarity, word accuracy or WAcc) for evaluation of compatibility with different downstream tasks.
+4. Downstream-task-dependent metrics (e.g., speaker similarity, emotional similarity, language identification accuracy, word accuracy or WAcc) for evaluation of compatibility with different downstream tasks.
 
 More details about the evaluation plan can be found in the [`Rules`](/urgent2026/rules) tab.
 
