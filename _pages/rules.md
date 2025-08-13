@@ -103,7 +103,7 @@ EMO2VEC
         <td class="tg-0a7q"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_nonintrusive_mos.py">ScoreQ</a> ↑<d-cite key="NEURIPS2024_bece7e02"/></td>
         <td class="tg-xwyw"><span style="font-weight:400;font-style:normal;text-decoration:none">❌</span></td>
         <td class="tg-xwyw">16 kHz</td>
-        <td class="tg-xwyw">[0, 1.0]</td>
+        <td class="tg-xwyw">[0.0, 1.0]</td>
     </tr>
     <!-- <tr>
         <td class="tg-0a7q"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_nonintrusive_mos.py">Distill-MOS</a> ↑<d-cite key="stahlDistillationPruningScalable2025"/></td>
@@ -176,7 +176,7 @@ EMO2VEC
         <td class="tg-r6l2"><span style="font-weight:400;font-style:normal;text-decoration:none">(-∞, 1]</span></td>
     </tr>
     <tr>
-        <td class="tg-ligs" rowspan="3">Downstream-task-dependent metrics</td>
+        <td class="tg-ligs" rowspan="4">Downstream-task-dependent metrics</td>
         <td class="tg-r2ra"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_speaker_similarity.py">Speaker Similarity</a> ↑</td>
         <td class="tg-ligs">✔</td>
         <td class="tg-ligs">16 kHz</td>
