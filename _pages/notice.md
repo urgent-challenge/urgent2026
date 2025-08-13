@@ -7,7 +7,11 @@ notification: true
 nav: true
 nav_order: 9
 ---
-* **[2024-1-21]** The blind testing phase is extended by one day, ending on Jan. 22 23:59:59 (AoE). 
+
+
+* **[2025-09-01]** The ICASSP 2026 URGENT challenge start from **2025-09-01**! Please check the [Leaderboard](/urgent2026/leaderboard/) page to learn how to participate in the challenge.
+
+<!-- * **[2024-1-21]** The blind testing phase is extended by one day, ending on Jan. 22 23:59:59 (AoE). 
 
 * **[2024-1-20]** The blind test set was released [here](https://drive.google.com/file/d/1dHvYEGHCf9rsB1q-Cd9rXOeQaa_vjG2u/view?usp=sharing).
 
@@ -25,9 +29,9 @@ nav_order: 9
 
 * **[2024-12-23]** To accommodate the short challenge period, we have decided to extend the challegnge period for one week. The blind-test phase, originally scheduled for Jan. 13–15, is now rescheduled to Jan. 20–22. Due to the shortened evaluation timeline, the subjective evaluation protocol will change. Please refer to [`Timeline`](/urgent2025/timeline) page for more details.
 
-* **[2024-11-26]** We have released the checkpoint of the baseline TF-GridNet model at [HuggingFace](https://huggingface.co/kohei0209/tfgridnet_urgent25/tree/main).
+* **[2024-11-26]** We have released the checkpoint of the baseline TF-GridNet model at [HuggingFace](https://huggingface.co/kohei0209/tfgridnet_urgent25/tree/main). -->
 
-* **[2024-11-26]** We have opened the leaderboard and released the `official valdation set` for leaderbord submission. Refer to [`Submission`](/urgent2025/submission) and [`Data`](/urgent2025/data) pages for more details.
+<!-- * **[2024-11-26]** We have opened the leaderboard and released the `official valdation set` for leaderbord submission. Refer to [`Submission`](/urgent2025/submission) and [`Data`](/urgent2025/data) pages for more details. -->
 
 <!--
 * **[2024-09-22]** The blind test phase has officially ended. We will start the subjective evaluation soon.
