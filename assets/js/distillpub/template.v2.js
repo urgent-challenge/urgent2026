@@ -929,7 +929,7 @@ ${math}
     const bibtexString = entry_to_bibtex(ent);
     var citationKey = ent['citationkey'] ? ent['citationkey'] : 'citationKey';
 
-    return '<button class="copy-to-clipboard-button" id="btn-' + encodeURI(citationKey) + '" data-copy-text="' + encodeURI(bibtexString) + '">Copy BibTeX</button>';
+    return '<button class="copy-to-clipboard-button" id="btn-' + encodeURI(citationKey) + '" data-copy-text="' + encodeURI(bibtexString) + '" style="display:none">Copy BibTeX</button>';
   }
 
   function bibliography_cite(ent, fancy) {
@@ -2436,6 +2436,7 @@ ul li:last-of-type {
       // Add click event listener to the "Copy BibTeX" button in each entry
       const buttons = this.hoverBox.querySelectorAll(".copy-to-clipboard-button");
       buttons.forEach((button, index) => {
+        button.show();
         button.addEventListener("click", () => {
           button.innerHTML = "Copied!";
           navigator.clipboard.writeText(decodeURI(button.getAttribute("data-copy-text")));
