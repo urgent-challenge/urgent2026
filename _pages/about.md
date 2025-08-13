@@ -50,7 +50,7 @@ The ICASSP 2026 URGENT challenge (**U**niversal, **R**obust and **G**eneralizabl
 
 ## Goal
 
-The ICASSP 2026 URGENT Challenge aims to further promoting the research on **U**niversal, **R**obust and **G**eneralizable speech **E**nhanceme**NT**. 
+The ICASSP 2026 URGENT Challenge aims to further promote the research on **U**niversal, **R**obust and **G**eneralizable speech **E**nhanceme**NT**. 
 This year's challenge focuses on the following aspects:
 
 1. **Data Curation in Large-scale Datasets**. Some recent studies reveal diminishing returns from scaling datasets for speech enhancement (SE)<d-cite key="zhangPerformancePlateausComprehensive2024,gonzalezEffectTrainingDataset2024a,koheiurgent2025"/>, and data curation is crucial for training SE models with large-scale data<d-cite key="liLessMoreData2025"/>. The challenge aims to draw people's attention to this phenomenon, so as to make better use of large-scale data for speech enhancement.
@@ -64,14 +64,14 @@ This year's challenge focuses on the following aspects:
 ## Task Introduction
 
 ### Track 1: Speech Enhancement
-The task of this challenge is to build **a single speech enhancement system** to adaptively handle input speech with different distortions (corresponding to different SE subtasks) and different input formats (e.g., sampling frequencies) in different acoustic environments (e.g., noise and reverberation).
+The task of this challenge is to build **a single speech enhancement system** to adaptively handle input speech with different distortions (corresponding to different SE subtasks), different domains (e.g., language, age, accents, emotion), different input formats (e.g., sampling frequencies) in different acoustic environments (e.g., noise and reverberation).
 
 The training data will consist of several public corpora of speech, noise, and RIRs. **Only the specified set of data can be used during the challenge**. 
 We encourage participants to apply data augmentation techniques such as dynamic mixing to achieve the best generalizability. 
-The data preparation scripts are released in our GitHub repository<d-footnote><a href="https://github.com/urgent-challenge/urgent2025_challenge/" target="_blank">https://github.com/urgent-challenge/urgent2025_challenge/</a></d-footnote>. Check the [`Data`](/urgent2025/data) tab for more information.
+The data preparation scripts are released in our GitHub repository<d-footnote><a href="https://github.com/urgent-challenge/urgent2025_challenge/" target="_blank">https://github.com/urgent-challenge/urgent2026_challenge_track1/</a></d-footnote>. Check the [`Data`](/urgent2026/data) tab for more information.
 
 
-We will evaluate enhanced audios with a variety of metrics to comprehensively understand the capacity of existing generative and discriminative methods. They include four different categories of metrics<d-footnote>An additional category (subjective SE metrics) will be added for the final blind test phase for evaluating the MOS score.</d-footnote>:
+We will evaluate enhanced audios with a variety of metrics to comprehensively understand the capacity of existing generative and discriminative methods. They include four different categories of metrics<d-footnote>. An additional category (subjective SE metrics) will be added for the final blind test phase for evaluating the MOS score.</d-footnote>:
 
 1. Non-intrusive SE metrics such as  DNSMOS<d-cite key="reddyDnsmosNonIntrusivePerceptual2021"/>, NISQA<d-cite key="mittagNISQADeepCNNSelfAttention2021"/>, UTMOS<d-cite key="saekiUTMOSUTokyoSaruLabSystem2022"/>, DNSMOS Pro<d-cite key="cumlinDNSMOSProReducedSize2024"/>, Distill-MOS<d-cite key="stahlDistillationPruningScalable2025"/>, SIGMOS<d-cite key="risteaICASSP2024Speech2025"/>, Torchaudio-Squim<d-cite key="kumarTorchaudioSquimReferenceLessSpeech2023"/>.
 2. Intrusive SE metrics such as POLQA<d-cite key="POLQA-Beerends2013"/>, PESQ<d-cite key="rixPerceptualEvaluationSpeech2001"/>, ESTOI<d-cite key="jensenAlgorithmPredictingIntelligibility2016"/>, SDR<d-cite key="vincentPerformanceMeasurementBlind2006"/>, MCD<d-cite key="kubichekMelcepstralDistanceMeasure1993"/>, LSD<d-cite key="grayDistanceMeasuresSpeech1976"/>.
@@ -111,24 +111,13 @@ We have a [Slack channel](https://join.slack.com/t/urgentchallenge/shared_invite
 
 ### Data
 
-- Data preparation script: [https://github.com/urgent-challenge/urgent2025_challenge](https://github.com/urgent-challenge/urgent2025_challenge)
+- Please check our official [GitHub](https://github.com/urgent-challenge/urgent2026_challenge_track1) for more details.
 
-- Official validation set: 
-    - Noisy: [https://drive.google.com/file/d/1Ip-C5tUNGCssT8KAjHUUoh99jkzRH6nm/view](https://drive.google.com/file/d/1Ip-C5tUNGCssT8KAjHUUoh99jkzRH6nm/view)
-    - Clean: [https://drive.google.com/file/d/11geBBf24WKN1xT_NasnI4JrmKpqNo8h9/view](https://drive.google.com/file/d/11geBBf24WKN1xT_NasnI4JrmKpqNo8h9/view)
-    - Metadata: [https://drive.google.com/file/d/1CU5QKYOgG4fUuJ8oAC6BEhI9ZDhQYZpF/view](https://drive.google.com/file/d/1CU5QKYOgG4fUuJ8oAC6BEhI9ZDhQYZpF/view) 
 
-- Non-blind test set
-    - Noisy: [https://drive.google.com/file/d/1rxV6RgA4LAp2I1EnHsln7wI7-UCP6Qer/view](https://drive.google.com/file/d/1rxV6RgA4LAp2I1EnHsln7wI7-UCP6Qer/view)
-    - Clean: [https://drive.google.com/file/d/1RarjxOgWkaDV8EjH_eLX169y89PVa3sg/view?usp=sharing](https://drive.google.com/file/d/1RarjxOgWkaDV8EjH_eLX169y89PVa3sg/view?usp=sharing)
-    - Metadata: [https://drive.google.com/file/d/1CfhKjfkkUZ60UEOHnlntcQY2m_9pn1uA/view?usp=sharing](https://drive.google.com/file/d/1CfhKjfkkUZ60UEOHnlntcQY2m_9pn1uA/view?usp=sharing)
 
-- Blind test set:
-    - Noisy: [https://drive.google.com/file/d/1dHvYEGHCf9rsB1q-Cd9rXOeQaa_vjG2u/view?usp=sharing](https://drive.google.com/file/d/1dHvYEGHCf9rsB1q-Cd9rXOeQaa_vjG2u/view?usp=sharing)
+### Baseline and Pre-training Models
 
-### Baseline and Pre-traindd Models
-
-- Please check our official [GitHub]{} for more details.
+- Please check our official [GitHub](https://github.com/urgent-challenge/urgent2026_challenge_track1) for more details.
 
 
 ### Leaderboard and registration
