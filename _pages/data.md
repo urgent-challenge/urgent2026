@@ -21,6 +21,7 @@ bibliography: data.bib
   - [Simulation](#simulation)
     - [Distortions](#distortions)
     - [Simulation metadata](#simulation-metadata)
+- [Track 2](#data-description-track-2)
 
 
 ## Brief data description: Track 1
@@ -66,14 +67,14 @@ By default, we only generate the pre-simulated data for valiation.
 - The test split of the official challenge datasets were used.
 - Several unseen noise and rir were also used when simulating the non-blind test set.
 - Sampling rates are almost equally distributed (there are ~1000/7 data for each of 8k, 16k, 22.05k, 24k, 32k, 44.1k, and 48kHz). We downsampled some data to achieve this. -->
-- Avaliable online after November 3rd, 2025.
+- Available online after November 3rd, 2025.
 
 <!-- The [noisy](https://drive.google.com/file/d/1rxV6RgA4LAp2I1EnHsln7wI7-UCP6Qer/view) and [clean](https://drive.google.com/file/d/1RarjxOgWkaDV8EjH_eLX169y89PVa3sg/view?usp=sharing) speeches as well as the [metadata](https://drive.google.com/file/d/1CfhKjfkkUZ60UEOHnlntcQY2m_9pn1uA/view?usp=sharing) are available. 
 After the non-blind test phase ends, clean speech and metadata will be available. -->
 
 #### Blind test set
 
-- Avaliable online after November 18th, 2025.
+- Available online after November 18th, 2025.
 
 <!-- The blind test set, which will **be used for the final ranking**, is available [here](https://drive.google.com/file/d/1dHvYEGHCf9rsB1q-Cd9rXOeQaa_vjG2u/view?usp=sharing).
 
@@ -448,3 +449,19 @@ The manifest mentioned above is a `tsv` file containing several columns (separat
 * However, the scale of the enhanced audio is not critical for objective evaluation the challenge, as the evaluation metrics are made largely insensitive to the scale. For subjective listening in the final phase, however, it is recommended that the participants properly scale the enhanced audios to facilitate a consistent evaluation.
 
 * For all different distortion types, the original sampling frequency of each clean speech sample is always preserved, i.e., the degraded speech sample also shares the same sampling frequency. For `bandwidth_limitation` augmentation, this means that the generated speech sample is resampled to the original sampling frequency `fs`.
+
+
+
+# Data description: Track 2
+
+## Training/Validation Data
+
+We allow the use of any public datasets for training. Please include the data usage in technical report. See https://github.com/urgent-challenge/urgent2026_challenge_track2 for training and validation data usage in official baseline.
+
+## Non-blind test set
+
+- The urgent 2024 MOS dataset will be used for non-blind test sets. Available online after November 3rd, 2025
+
+## Blind test set
+
+- Available online after November 18th, 2025
