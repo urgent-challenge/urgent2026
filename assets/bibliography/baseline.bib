@@ -1,3 +1,70 @@
+@inproceedings{yuEfficientMonauralSpeech2023,
+  title = {Efficient {{Monaural Speech Enhancement}} with {{Universal Sample Rate Band-Split RNN}}},
+  booktitle = {{{ICASSP}} 2023 - 2023 {{IEEE International Conference}} on {{Acoustics}}, {{Speech}} and {{Signal Processing}} ({{ICASSP}})},
+  author = {Yu, Jianwei and Luo, Yi},
+  year = {2023},
+  month = jun,
+  pages = {1--5},
+  doi = {10.1109/ICASSP49357.2023.10096020},
+  abstract = {While recent developments on the design of neural networks have greatly advanced the state-of-the-art of speech enhancement and separation systems, practical applications of such networks often put extra constraints on their model size and computational complexity. Moreover, as different telecommunication services may have different transmission bandwidths which result in different signal sample rates, one model is typically designed for a particular sample rate. In this paper, we extend the usage of a recently proposed frequency-domain source separation model, the band-split RNN (BSRNN), to the task of universal-sample-rate resource efficient speech enhancement. BSRNN explicitly splits the spectrogram into different frequency bands and perform interleaved band-level and sequence-level modeling, and the bandwidths can be manually designed to balance the model size, computational cost, and performance. By properly designing the band-splitting scheme and the hyperparameters, a single BSRNN model can handle signals at a wide range of sample rates, and the computational cost required to process a lower-sample-rate signal can be smaller than that of a higher-sample-rate signal. Experiment results show that compared to various benchmark systems in speech enhancement and separation, our universal-sample-rate BSRNN (USR-BSRNN) achieves comparable or better signalto-noise ratio (SNR) performance at a same level of model size or computational cost.},
+  keywords = {Bandwidth,Benchmark testing,Computational efficiency,Computational modeling,Dynamic complexity,Speech enhancement,Task analysis,Training,Universal sample rate},
+  file = {/Users/lichenda/Zotero/storage/8992XF6P/Yu and Luo - 2023 - Efficient Monaural Speech Enhancement with Univers.pdf;/Users/lichenda/Zotero/storage/A3MGMWBX/Yu and Luo - 2023 - Efficient Monaural Speech Enhancement with Univers.pdf;/Users/lichenda/Zotero/storage/V396NZD6/stamp.html}
+}
+
+@inproceedings{leeFlowSEFlowMatchingbased2025,
+  title = {{{FlowSE}}: {{Flow Matching-based Speech Enhancement}}},
+  shorttitle = {{{FlowSE}}},
+  booktitle = {{{ICASSP}} 2025 - 2025 {{IEEE International Conference}} on {{Acoustics}}, {{Speech}} and {{Signal Processing}} ({{ICASSP}})},
+  author = {Lee, Seonggyu and Cheong, Sein and Han, Sangwook and Shin, Jong Won},
+  year = {2025},
+  month = apr,
+  pages = {1--5},
+  issn = {2379-190X},
+  doi = {10.1109/ICASSP49660.2025.10888274},
+  urldate = {2025-06-01},
+  abstract = {Diffusion probabilistic models have shown impressive performance for speech enhancement, but they typically require 25 to 60 function evaluations in the inference phase, resulting in heavy computational complexity. Recently, a fine-tuning method was proposed to correct the reverse process, which significantly lowered the number of function evaluations (NFE). Flow matching is a method to train continuous normalizing flows which model probability paths from known distributions to unknown distributions including those described by diffusion processes. In this paper, we propose a speech enhancement based on conditional flow matching. The proposed method achieved the performance comparable to those for the diffusion-based speech enhancement with the NFE of 60 when the NFE was 5, and showed similar performance with the diffusion model correcting the reverse process at the same NFE from 1 to 5 without additional fine tuning procedure. We also have shown that the corresponding diffusion model derived from the conditional probability path with a modified optimal transport conditional vector field demonstrated similar performances with the NFE of 5 without any fine-tuning procedure.},
+  keywords = {Computational modeling,diffusion model,Diffusion models,Diffusion processes,flow matching,generative model,Kernel,Noise measurement,Perturbation methods,Signal processing,speech enhancement,Speech enhancement,Tuning,Vectors}
+}
+
+
+@misc{lipmanFlowMatchingGenerative2023,
+  title = {Flow {{Matching}} for {{Generative Modeling}}},
+  author = {Lipman, Yaron and Chen, Ricky T. Q. and {Ben-Hamu}, Heli and Nickel, Maximilian and Le, Matt},
+  year = {2023},
+  month = feb,
+  number = {arXiv:2210.02747},
+  eprint = {2210.02747},
+  primaryclass = {cs, stat},
+  publisher = {arXiv},
+  urldate = {2024-02-08},
+  abstract = {We introduce a new paradigm for generative modeling built on Continuous Normalizing Flows (CNFs), allowing us to train CNFs at unprecedented scale. Specifically, we present the notion of Flow Matching (FM), a simulation-free approach for training CNFs based on regressing vector fields of fixed conditional probability paths. Flow Matching is compatible with a general family of Gaussian probability paths for transforming between noise and data samples -- which subsumes existing diffusion paths as specific instances. Interestingly, we find that employing FM with diffusion paths results in a more robust and stable alternative for training diffusion models. Furthermore, Flow Matching opens the door to training CNFs with other, non-diffusion probability paths. An instance of particular interest is using Optimal Transport (OT) displacement interpolation to define the conditional probability paths. These paths are more efficient than diffusion paths, provide faster training and sampling, and result in better generalization. Training CNFs using Flow Matching on ImageNet leads to consistently better performance than alternative diffusion-based methods in terms of both likelihood and sample quality, and allows fast and reliable sample generation using off-the-shelf numerical ODE solvers.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Machine Learning,Statistics - Machine Learning},
+  file = {/Users/lichenda/Zotero/storage/M3RUG4CX/Lipman et al. - 2023 - Flow Matching for Generative Modeling.pdf;/Users/lichenda/Zotero/storage/7AZB7CNL/2210.html}
+}
+
+
+@misc{liLessMoreData2025,
+  title = {Less Is {{More}}: {{Data Curation Matters}} in {{Scaling Speech Enhancement}}},
+  shorttitle = {Less Is {{More}}},
+  author = {Li, Chenda and Zhang, Wangyou and Wang, Wei and Scheibler, Robin and Saijo, Kohei and Cornell, Samuele and Fu, Yihui and Sach, Marvin and Ni, Zhaoheng and Kumar, Anurag and Fingscheidt, Tim and Watanabe, Shinji and Qian, Yanmin},
+  year = {2025},
+  month = jun,
+  number = {arXiv:2506.23859},
+  eprint = {2506.23859},
+  primaryclass = {eess},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2506.23859},
+  urldate = {2025-07-01},
+  abstract = {The vast majority of modern speech enhancement systems rely on data-driven neural network models. Conventionally, larger datasets are presumed to yield superior model performance, an observation empirically validated across numerous tasks in other domains. However, recent studies reveal diminishing returns when scaling speech enhancement data. We focus on a critical factor: prevalent quality issues in ``clean'' training labels within large-scale datasets. This work re-examines this phenomenon and demonstrates that, within large-scale training sets, prioritizing high-quality training data is more important than merely expanding the data volume. Experimental findings suggest that models trained on a carefully curated subset of 700 hours can outperform models trained on the 2,500-hour full dataset. This outcome highlights the crucial role of data curation in scaling speech enhancement systems effectively.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Sound,Electrical Engineering and Systems Science - Audio and Speech Processing},
+  file = {/Users/lichenda/Zotero/storage/CSYCUI3Q/Li et al. - 2025 - Less is More Data Curation Matters in Scaling Speech Enhancement.pdf;/Users/lichenda/Zotero/storage/8H2YZQ7S/2506.html}
+}
+
+
+
+
 @inproceedings{URGENT-Zhang2024,
   title={URGENT Challenge: Universality, Robustness, and Generalizability For Speech Enhancement},
   author={Zhang, Wangyou and Scheibler, Robin and Saijo, Kohei and Cornell, Samuele and Li, Chenda and Ni, Zhaoheng and Pirklbauer, Jan and Sach, Marvin and Watanabe, Shinji and Fingscheidt, Tim and Qian, Yanmin},
