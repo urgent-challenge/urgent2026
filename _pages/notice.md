@@ -8,6 +8,8 @@ nav: true
 nav_order: 9
 ---
 
+> 🚧 This website is currently under construction. All content is subject to change and may not reflect the final details of the competition. Please refer to official announcements once the contest begins for the most accurate and up-to-date information.
+
 
 * **[2025-09-01]** The ICASSP 2026 URGENT challenge start from **2025-09-01**! Please check the [Leaderboard](/urgent2026/leaderboard/) page to learn how to participate in the challenge.
 

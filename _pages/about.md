@@ -22,6 +22,9 @@ bibliography: about.bib
 
 ## ICASSP 2026 URGENT Challenge
 
+> 🚧 This website is currently under construction. All content is subject to change and may not reflect the final details of the competition. Please refer to official announcements once the contest begins for the most accurate and up-to-date information.
+
+
 <div style="text-align: center;">
     <img alt="introduction" src="/urgent2026/assets/img/urgent2026.jpeg" style="max-width: 95%;" />
 </div>
