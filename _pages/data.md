@@ -92,9 +92,9 @@ Note that the evaluation procedure during the blind testing phase differs from t
 ### Detailed data description
 
 The training and validation data are both simulated based on the following source data.
-Based on the [dataset of the second URGENT challengege](https://urgent-challenge.github.io/urgent2025/data/), we conducted a data selection using the data filtering method proposed a recent paper <d-cite key="liLessMoreData2025"/>.
+Based on the [dataset of the 2nd URGENT challengege](https://urgent-challenge.github.io/urgent2025/data/), we conducted a data selection using the data filtering method proposed a recent paper <d-cite key="liLessMoreData2025"/>.
 
-**It is noted that we encourage you to explore better ways of data selection and utilization in this challenge.** In addition to the data and filtering methods provided by our baseline, you can make use of larger-scale datasets, such as the [track2 data](https://urgent-challenge.github.io/urgent2025/data/) from the second challenge, or other allowed data (please check it in the [rules pages](/urgent2026/rules/)).
+**It is noted that we encourage you to explore better ways of data selection and utilization in this challenge.** In addition to the data and filtering methods provided by our baseline, you can make use of larger-scale datasets, such as the [track2 data](https://urgent-challenge.github.io/urgent2025/data/) from the 2nd URGENT challenge, or other allowed data (please check it in the [rules pages](/urgent2026/rules/)).
 
 <style>
 /* Basic */
@@ -282,7 +282,7 @@ border-bottom: 1px solid #cccccc;
 </tbody>
 </table>
 
-For the noise source and RIRs, we follow the same configuration as in the [second challenge](https://urgent-challenge.github.io/urgent2025/data/).
+For the noise source and RIRs, we follow the same configuration as in the [2nd URGENT challenge](https://urgent-challenge.github.io/urgent2025/data/).
 
 <table>
 <colgroup>
