@@ -9,25 +9,21 @@ nav_order: 4
 bibliography: rules.bib
 ---
 
-> EMO2VEC
+<!-- > 
+TODO 
+EMO2VEC
 > LID for language
 > https://huggingface.co/espnet/owsm_ctc_v4_1B
-> SCOREQ
+> SCOREQ -->
 
 1. When generating the training and validation datasets, **ONLY the speech, nosie, and room impulse response (RIR) corpora listed in the [`Data`](/urgent2025/data) tab shall be used to ensure a fair comparison** and proper understanding of various SE approaches.
     
-    > [update]Should We Keep This Below?
 
     * The first month of the challenge  will be a grace period when participants can propose additional public datasets to be included in the list. We (organizers) will reply to the requests and may update the list. Updates will be recorded in the [`Notice`](/urgent2025/notice) tab. 
-    
     
     * **It is NOT allowed to use pre-trained speech enhancement models trained on other than official Challenge data**.
       * However, it IS allowed to use a pre-trained model trained on the official challenge data (e.g., [URGENT 2024](https://huggingface.co/wyz/tfgridnet_for_urgent24) / [URGENT 2025](https://huggingface.co/kohei0209/tfgridnet_urgent25) / [URGENT 2026](TODO link)  official baseline ) 
     
-
-    > [update] Data cleaning model.
-
-
     * Although the speech enhancement model should only be trained on the listed data, we allow the use of pre-trained foundation models such as [HuBERT](https://github.com/facebookresearch/fairseq/blob/main/examples/hubert/README.md), [WavLM](https://github.com/microsoft/unilm/blob/master/wavlm/README.md), [EnCodec](https://github.com/facebookresearch/encodec), [Llama](https://llama.meta.com/llama-downloads/) and so on. **We also allow the use of pretrained speech enhancement/restoration model to improve the quality of clean speech for simulation.** The use of all pre-trained models must meet the following requirements:
         * they are publicly available before the challenge begins
         * they are explicitly mentioned in the submitted system description.
@@ -84,7 +80,7 @@ bibliography: rules.bib
     </thead>
     <tbody>
     <tr>
-        <td class="tg-r6l2" rowspan="7">Non-intrusive SE metrics</td>
+        <td class="tg-r6l2" rowspan="4">Non-intrusive SE metrics</td>
         <td class="tg-rt8k"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_nonintrusive_dnsmos.py">DNSMOS</a> ↑<d-cite key="DNSMOS-Reddy2022"/></td>
         <td class="tg-51oy">❌</td>
         <td class="tg-51oy">16 kHz</td>
@@ -104,12 +100,12 @@ bibliography: rules.bib
     </tr>
     <!-- new -->
     <tr>
-        <td class="tg-0a7q"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_nonintrusive_mos.py">DNSMOS Pro</a> ↑<d-cite key="cumlinDNSMOSProReducedSize2024"/></td>
+        <td class="tg-0a7q"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_nonintrusive_mos.py">ScoreQ</a> ↑<d-cite key="NEURIPS2024_bece7e02"/></td>
         <td class="tg-xwyw"><span style="font-weight:400;font-style:normal;text-decoration:none">❌</span></td>
         <td class="tg-xwyw">16 kHz</td>
-        <td class="tg-xwyw">[1, 5]</td>
+        <td class="tg-xwyw">[0, 1.0]</td>
     </tr>
-    <tr>
+    <!-- <tr>
         <td class="tg-0a7q"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_nonintrusive_mos.py">Distill-MOS</a> ↑<d-cite key="stahlDistillationPruningScalable2025"/></td>
         <td class="tg-xwyw"><span style="font-weight:400;font-style:normal;text-decoration:none">❌</span></td>
         <td class="tg-xwyw">16 kHz</td>
@@ -126,7 +122,7 @@ bibliography: rules.bib
         <td class="tg-xwyw"><span style="font-weight:400;font-style:normal;text-decoration:none">❌</span></td>
         <td class="tg-xwyw">16 kHz</td>
         <td class="tg-xwyw"> (-∞, +∞) </td>
-    </tr>
+    </tr> -->
     <!-- new -->
 
     <tr>
@@ -180,11 +176,23 @@ bibliography: rules.bib
         <td class="tg-r6l2"><span style="font-weight:400;font-style:normal;text-decoration:none">(-∞, 1]</span></td>
     </tr>
     <tr>
-        <td class="tg-ligs" rowspan="2">Downstream-task-dependent metrics</td>
-        <td class="tg-r2ra"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_speaker_similarity.py">SpkSim</a> ↑</td>
+        <td class="tg-ligs" rowspan="3">Downstream-task-dependent metrics</td>
+        <td class="tg-r2ra"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_speaker_similarity.py">Speaker Similarity</a> ↑</td>
         <td class="tg-ligs">✔</td>
         <td class="tg-ligs">16 kHz</td>
         <td class="tg-ligs">[-1, 1]</td>
+    </tr>
+    <tr>
+        <td class="tg-d459"><a href="">EMOTION2VEC Similarity</a> ↑</td>
+        <td class="tg-kyy7">❌</td>
+        <td class="tg-kyy7">16 kHz</td>
+        <td class="tg-kyy7">[-1, 1]</td>
+    </tr>
+    <tr>
+        <td class="tg-d459"><a href="">Language identification accuracy</a> ↑</td>
+        <td class="tg-kyy7">❌</td>
+        <td class="tg-kyy7">16 kHz</td>
+        <td class="tg-kyy7">[0, 1]</td>
     </tr>
     <tr>
         <td class="tg-d459"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_wer.py">Character accuracy (1 - CER)</a><d-footnote></d-footnote> ↑</td>
