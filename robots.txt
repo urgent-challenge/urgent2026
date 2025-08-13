@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: 127.0.0.1/urgent2026/sitemap.xml
+Sitemap: https://urgent-challenge.github.io/urgent2026/sitemap.xml
