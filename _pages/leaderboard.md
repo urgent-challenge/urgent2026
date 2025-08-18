@@ -18,13 +18,13 @@ The blind test leaderboard has been closed since the challenge has completed. Th
 
 ### Leaderboard registration
 
-1. Sign up the [competition page](https://urgent-challenge.com). Please click the link in the verification email to activate your account.
+1. Submit the [Google Form](https://forms.gle/1GZHQprsB8CgdXc88).
 
-2. Register the leaderboard from the `Participate` tab at the [competition page](https://urgent-challenge.com/competitions/13).
+2. You will then receive a username/password to log in to the [leaderboard website](https://urgent-challenge.com).
 
-3. <u><b>Submit the Google Form</b></u> (in the email you receieve after step 2). 
+*Note: If you have participated in previous URGENT challenges, please use the same email in the Google Form. In that case, you will be approved to submit to the URGENT 2026 leaderboard without needing a new username/password.*
 
-4. Your application wii be approved AFTER we organizers receive the Google Form.
+
 
 <!-- 5. Then you can download the test set from the `Participate → Get Data` tab and start to make submissions in the `Participate → Submit / View Results` tab.
 > It usually takes ~1 hour to finish the evaluation for each submission. You can click the `Refresh status` to check the evaluation status in the `Participate → Submit / View Results` tab.-->
