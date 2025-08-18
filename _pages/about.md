@@ -27,7 +27,7 @@ bibliography: about.bib
 [CALL FOR PARTICIPANTS](/urgent2026/assets/pdf/call_for_participants.pdf)
 
 <div style="text-align: center;">
-    <img alt="introduction" src="/urgent2026/assets/img/urgent2026.jpeg" style="max-width: 95%;" />
+    <img alt="introduction" src="/urgent2026/assets/img/urgent2026.jpg" style="max-width: 95%;" />
 </div>
 
 The ICASSP 2026 URGENT challenge (**U**niversal, **R**obust and **G**eneralizable speech **E**nhanceme**NT**) is a speech enhancement challenge held at [**ICASSP 2026 SP Grand Challenge**](https://2026.ieeeicassp.org/call-for-sp-grand-challenge-proposals/). We aim to build universal speech enhancement models for unifying speech processing in a wide variety of conditions.
