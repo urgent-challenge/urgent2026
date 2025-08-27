@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /track2/
-title: Track2
+title: "Track2: Speech Quality Assessment"
 description:  
 nav: true
 nav_order: 4
@@ -17,13 +17,17 @@ bibliography: track2.bib
 
 ## Rules
 
-Participants are allowed to use any publicly available datasets for the development of their prediction systems. All datasets used must be explicitly listed in the system description.
+Participants are allowed to use any **publicly available datasets** for the development of their prediction systems. All datasets used must be **explicitly listed in the system description**.
 
-The use of proprietary datasets, including collecting your own subjective ratings such as MOS scores, is not allowed, unless such resources have been publicly released and are freely accessible to the broader community.
+The use of **proprietary datasets**, including collecting your own subjective ratings such as MOS scores, **is not allowed**, unless such resources have been **publicly released** and are freely accessible to the broader community.
 
-Additionally, participants may leverage publicly available pretrained models for initialization or as components within their systems. All such pretrained resources must also be clearly cited and described in the system description.
+Additionally, participants may **leverage publicly available pretrained models** for initialization or as components within their systems. All such pretrained resources must also be **clearly cited and described** in the system description.
 
 ## Data
+
+### Training / Development Data
+
+For training data, we combine the datasets in the following tables, note that most of these datasets contain synthesized speech by TTS / VC models and simulated corrupted speech, which may hurt the performance if used for training. For development data, we use the CHiME-4-UDASE-Evaluation dataset.
 
 <style>
 /* Basic */
@@ -231,12 +235,6 @@ border-bottom: 1px solid #cccccc;
 </table>
 
 
-### Training / Development Data
-
-For training data, we combine the datasets in the following tables, note that most of these datasets contain synthesized speech by TTS / VC models and simulated corrupted speech, which may hurt the performance if used for training. For development data, we use the CHiME-4-UDASE-Evaluation dataset.
-
-
-
 ### Validation Data
 
 The validation data will be available after the validation phase opens.
@@ -252,4 +250,12 @@ The blind test data will be availabel after the non-blind test phase opens.
 
 ## Evaluation
 
-Systems will be evaluated using correlation and error metrics — MSE (Mean Square Error), LCC (linear correlation coefficient), SRCC (Spearman’s rank correlation coefficient), and KTAU (Kendall’s tau) — between the predicted MOS and the provided MOS labels.
+Systems will be evaluated based on both correlation and error metrics between the predicted Mean Opinion Scores (MOS) and the ground-truth MOS labels. The following metrics will be used:
+
+- **Mean Squared Error (MSE)** – Measures the average squared difference between predicted and true MOS.
+
+- **Linear Correlation Coefficient (LCC)** – Assesses the strength of the linear relationship between predicted and true scores.
+
+- **Spearman’s Rank Correlation Coefficient (SRCC)** – Evaluates the monotonic relationship between rankings of predicted and true scores.
+
+- **Kendall’s Tau (KTAU)** – Measures the ordinal association between the predicted and true rankings.
