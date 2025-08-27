@@ -25,19 +25,18 @@ bibliography: about.bib
 > 🚧 This website is currently under construction. All content is subject to change and may not reflect the final details of the competition. Please refer to official announcements once the contest begins for the most accurate and up-to-date information.
 
 
-
-
-## Motivation
-
-[CALL FOR PARTICIPANTS](/urgent2026/assets/pdf/call_for_participants.pdf)
-
-## TL:DR - How to Participate
+## How to Participate
 
 1. Fill in the [google form](https://forms.gle/1GZHQprsB8CgdXc88). 
     * If you are new to URGENT challenges, You will receive credentials for [leaderboard](https://urgent-challenge.com).
     * Otherwise, you will get notifications when approved for leaderboard submission.
 2. Check [Track 1 (Universal Speech Enhancement)](/urgent2026/track1) and [Track 2 (Speech Quality Assessment)](/urgent2026/track2) for rules, data and baseline.
 3. Log in to [leaderboard](https://urgent-challenge.com) and submit results. See [Leaderboard Tab](/urgent2026/leaderboard) for details
+
+
+## Motivation
+
+[CALL FOR PARTICIPANTS](/urgent2026/assets/pdf/call_for_participants.pdf)
 
 
 The ICASSP 2026 URGENT challenge (**U**niversal, **R**obust and **G**eneralizable speech **E**nhanceme**NT**) is a speech enhancement challenge held at [**ICASSP 2026 SP Grand Challenge**](https://2026.ieeeicassp.org/call-for-sp-grand-challenge-proposals/). We aim to build universal speech enhancement models for unifying speech processing in a wide variety of conditions.
@@ -75,15 +74,6 @@ Please check the [Track1](/urgent2026/track1) page for more details.
 ### Track 2: Speech Quality Assessment
 
 The task of this track is to build a robust, generalizable speech quality assessment (SQA) model that predicts mean opinion scores (MOS) for enhanced speech. Systems will be evaluated using correlation and error metrics — MSE (Mean Squared Error), LCC (linear correlation coefficient), SRCC (Spearman’s rank correlation coefficient), and KTAU (Kendall’s tau) — between the predicted MOS and the provided MOS labels. Data preparation scripts and baseline codes are available at https://github.com/urgent-challenge/urgent2026_challenge_track2. We allow the use of any public data and publicly available models. See the [`Rules`](/urgent2026/rules/) page for full details.
-
-<br>
-
-## Leaderboard and Registration
-
-Registration for the leaderboard and Google Form submission are required.
-Refer to the [`Leaderboard`](/urgent2026/leaderboard) tab for more details.
-
-
 
 <br>
 

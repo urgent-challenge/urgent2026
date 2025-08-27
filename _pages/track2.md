@@ -4,6 +4,7 @@ permalink: /track2/
 title: "Track2: Speech Quality Assessment"
 description:  
 nav: true
+nav_title: Track2
 nav_order: 4
 # toc: true
 bibliography: track2.bib
