@@ -33,6 +33,8 @@ bibliography: about.bib
 2. Check [Track 1 (Universal Speech Enhancement)](/urgent2026/track1) and [Track 2 (Speech Quality Assessment)](/urgent2026/track2) for rules, data and baseline.
 3. Log in to [leaderboard](https://urgent-challenge.com) and submit results. See [Leaderboard Tab](/urgent2026/leaderboard) for details
 
+<br>
+
 
 ## Motivation
 
@@ -52,6 +54,8 @@ This year's challenge focuses on the following aspects:
 
 <br>
 
+
+
 ## Task Introduction
 
 ### Track 1: Speech Enhancement
@@ -68,7 +72,7 @@ We provide a 700-hour curated training set as a baseline.
 And we encourage participants to explore advanced data curation techniques to utilize a large-scale noisy training dataset.
 Please check the [Track1](/urgent2026/track1) page for more details.
 
-
+<br>
 
 
 ### Track 2: Speech Quality Assessment

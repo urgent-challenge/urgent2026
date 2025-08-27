@@ -13,9 +13,8 @@ nav_order: 2
 | September 1, 2025             | **Start of the challenge** |
 | September 20, 2025            | Leaderboard opens for offical valiation dataset. |
 | November 3, 2025            | Release of non-blind test data. Leaderboard switched to non-blind test data. |
-| November 17, 2025 | Release of blind test data. Leaderboard is swithed to blind-test data for final ranking. |
-| November 20, 2025 | **Track1 ends**   |
-| November 23, 2025 | **Track2 ends**   |
+| November 12, 2025 | Release of blind test data. Leaderboard is swithed to blind-test data for final ranking. |
+| November 19, 2025 | **End of the challenge**   |
 | December 1, 2025             | Notification of final results |
 | December 7, 2025             | 2-page papers submission deadline (by invitation only) |
 {: .table}
