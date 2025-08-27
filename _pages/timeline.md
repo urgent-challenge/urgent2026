@@ -11,7 +11,7 @@ nav_order: 2
 |   **Date ( Anywhere on Earth )**  |         **Event**          |
 |:---------------------------------:|:---------------------------|
 | September 1, 2025             | **Start of the challenge** |
-| October 15, 2025            | Leaderboard opens for offical valiation dataset. |
+| September 20, 2025            | Leaderboard opens for offical valiation dataset. |
 | November 3, 2025            | Release of non-blind test data. Leaderboard switched to non-blind test data. |
 | November 17, 2025 | Release of blind test data. Leaderboard is swithed to blind-test data for final ranking. |
 | November 20, 2025 | **Track1 ends**   |
