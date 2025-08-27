@@ -16,26 +16,19 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/urgent2026/timeline/";
           },
-        },{id: "nav-data",
-          title: "Data",
+        },{id: "nav-track1",
+          title: "Track1",
           description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/urgent2026/data/";
+            window.location.href = "/urgent2026/track1/";
           },
-        },{id: "nav-rules",
-          title: "Rules",
+        },{id: "nav-track2",
+          title: "Track2",
           description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/urgent2026/rules/";
-          },
-        },{id: "nav-baseline",
-          title: "Baseline",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/urgent2026/baseline/";
+            window.location.href = "/urgent2026/track2/";
           },
         },{id: "nav-submission",
           title: "Submission",
