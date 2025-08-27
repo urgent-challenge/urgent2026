@@ -24,34 +24,12 @@ bibliography: about.bib
 
 > 🚧 This website is currently under construction. All content is subject to change and may not reflect the final details of the competition. Please refer to official announcements once the contest begins for the most accurate and up-to-date information.
 
-[CALL FOR PARTICIPANTS](/urgent2026/assets/pdf/call_for_participants.pdf)
+
 
 
 ## Goal
 
 The ICASSP 2026 URGENT challenge (**U**niversal, **R**obust and **G**eneralizable speech **E**nhanceme**NT**) is a speech enhancement challenge held at [**ICASSP 2026 SP Grand Challenge**](https://2026.ieeeicassp.org/call-for-sp-grand-challenge-proposals/). We aim to build universal speech enhancement models for unifying speech processing in a wide variety of conditions.
-
-
-<!-- ## Contents
-
-- [ICASSP 2026 URGENT Challenge](#icassp-2026-urgent-challenge)
-- [Contents](#contents)
-- [Goal](#goal)
-- [Task Introduction](#task-introduction)
-  - [Track 1: Speech Enhancement](#track-1-speech-enhancement)
-  - [Track 2: Speech Quality Assessment](#track-2-speech-quality-assessment)
-- [Registration](#registration)
-- [Paper submission](#paper-submission)
-- [Slack channel](#slack-channel)
-- [Links](#links)
-  - [Data](#data)
-  - [Baseline and Pre-training Models](#baseline-and-pre-training-models)
-  - [Leaderboard and registration](#leaderboard-and-registration)
-  - [Contact](#contact)
-- [Motivation](#motivation) -->
-
-
-
 
 The ICASSP 2026 URGENT Challenge aims to further promote the research on **U**niversal, **R**obust and **G**eneralizable speech **E**nhanceme**NT**. 
 This year's challenge focuses on the following aspects:
@@ -101,6 +79,9 @@ Refer to the [`Leaderboard`](/urgent2026/leaderboard) tab for more details.
 <br>
 
 ## Links
+
+### Call for participants
+[CALL FOR PARTICIPANTS](/urgent2026/assets/pdf/call_for_participants.pdf)
 
 ### Slack channel
 We have a [Slack channel](https://join.slack.com/t/urgentchallenge/shared_invite/zt-2jy2stg7q-79AGeAY0CpKHRl7r4X0e6g) for real-time communication.
