@@ -37,8 +37,8 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/urgent2026/track1#rules-and-ranking";
               },
-            },{id: "nav-track2",
-          title: "Track2",
+            },{id: "nav-track2-speech-quality-assessment",
+          title: "Track2: Speech Quality Assessment",
           description: "",
           section: "Navigation",
           handler: () => {
