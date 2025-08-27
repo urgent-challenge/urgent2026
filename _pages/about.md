@@ -31,6 +31,14 @@ bibliography: about.bib
 
 [CALL FOR PARTICIPANTS](/urgent2026/assets/pdf/call_for_participants.pdf)
 
+## TL:DR - How to Participate
+
+1. Fill in the [google form](https://forms.gle/1GZHQprsB8CgdXc88). 
+    * If you are new to URGENT challenges, You will receive credentials for [leaderboard](https://urgent-challenge.com).
+    * Otherwise, you will get notifications when approved for leaderboard submission.
+2. Check [Track 1 (Universal Speech Enhancement)](/urgent2026/track1) and [Track 2 (Speech Quality Assessment)](/urgent2026/track2) for rules, data and baseline.
+3. Log in to [leaderboard](https://urgent-challenge.com) and submit results. See [Leaderboard Tab](/urgent2026/leaderboard) for details
+
 
 The ICASSP 2026 URGENT challenge (**U**niversal, **R**obust and **G**eneralizable speech **E**nhanceme**NT**) is a speech enhancement challenge held at [**ICASSP 2026 SP Grand Challenge**](https://2026.ieeeicassp.org/call-for-sp-grand-challenge-proposals/). We aim to build universal speech enhancement models for unifying speech processing in a wide variety of conditions.
 
