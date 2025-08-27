@@ -56,8 +56,9 @@
       <d-citation-list></d-citation-list>
     </d-appendix>
 
-    <d-bibliography src="{{ page.bibliography | prepend: '/assets/bibliography/' | relative_url }}"></d-bibliography>
-
+    {%- if page.bibliography -%}
+      <d-bibliography src="{{ page.bibliography | prepend: '/assets/bibliography/' | relative_url }}"></d-bibliography>
+    {%- endif -%}
     <!-- Footer -->
     {% include footer.liquid %}
 

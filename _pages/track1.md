@@ -377,10 +377,10 @@ We provide an example simulation script as [`simulation/simulate_data_from_param
 
 ## Rules and Ranking
 
-1. When generating the training and validation datasets, **ONLY the speech, nosie, and room impulse response (RIR) corpora listed in the [`Data`](/urgent2025/data) tab shall be used to ensure a fair comparison** and proper understanding of various SE approaches.
+1. When generating the training and validation datasets, **ONLY the speech, noise, and room impulse response (RIR) corpora listed in the [`Data`](/urgent2025/data) tab shall be used to ensure a fair comparison** and proper understanding of various SE approaches.
     
 
-    * The first month of the challenge  will be a grace period when participants can propose additional public datasets to be included in the list. We (organizers) will reply to the requests and may update the list. Updates will be recorded in the [`Notice`](/urgent2026/notice) tab. 
+    * The first month of the challenge will be a grace period when participants can propose additional public datasets to be included in the list. We (organizers) will reply to the requests and may update the list. Updates will be recorded in the [`Notice`](/urgent2026/notice) tab. 
     
     * **It is NOT allowed to use pre-trained speech enhancement models trained on other than official Challenge data**.
       * However, it IS allowed to use a pre-trained model trained on the official challenge data (e.g., [URGENT 2024](https://huggingface.co/wyz/tfgridnet_for_urgent24) / [URGENT 2025](https://huggingface.co/kohei0209/tfgridnet_urgent25) / [URGENT 2026](TODO link)  official baseline ) 

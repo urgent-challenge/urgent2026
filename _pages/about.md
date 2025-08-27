@@ -24,6 +24,11 @@ bibliography: about.bib
 
 > 🚧 This website is currently under construction. All content is subject to change and may not reflect the final details of the competition. Please refer to official announcements once the contest begins for the most accurate and up-to-date information.
 
+
+
+
+## Motivation
+
 [CALL FOR PARTICIPANTS](/urgent2026/assets/pdf/call_for_participants.pdf)
 
 ## TL:DR - How to Participate
@@ -35,31 +40,7 @@ bibliography: about.bib
 3. Log in to [leaderboard](https://urgent-challenge.com) and submit results. See [Leaderboard Tab](/urgent2026/leaderboard) for details
 
 
-## Goal
-
 The ICASSP 2026 URGENT challenge (**U**niversal, **R**obust and **G**eneralizable speech **E**nhanceme**NT**) is a speech enhancement challenge held at [**ICASSP 2026 SP Grand Challenge**](https://2026.ieeeicassp.org/call-for-sp-grand-challenge-proposals/). We aim to build universal speech enhancement models for unifying speech processing in a wide variety of conditions.
-
-
-<!-- ## Contents
-
-- [ICASSP 2026 URGENT Challenge](#icassp-2026-urgent-challenge)
-- [Contents](#contents)
-- [Goal](#goal)
-- [Task Introduction](#task-introduction)
-  - [Track 1: Speech Enhancement](#track-1-speech-enhancement)
-  - [Track 2: Speech Quality Assessment](#track-2-speech-quality-assessment)
-- [Registration](#registration)
-- [Paper submission](#paper-submission)
-- [Slack channel](#slack-channel)
-- [Links](#links)
-  - [Data](#data)
-  - [Baseline and Pre-training Models](#baseline-and-pre-training-models)
-  - [Leaderboard and registration](#leaderboard-and-registration)
-  - [Contact](#contact)
-- [Motivation](#motivation) -->
-
-
-
 
 The ICASSP 2026 URGENT Challenge aims to further promote the research on **U**niversal, **R**obust and **G**eneralizable speech **E**nhanceme**NT**. 
 This year's challenge focuses on the following aspects:
@@ -85,7 +66,7 @@ The task of this challenge is to build **a single speech enhancement system** to
 
 The large-scale training data will consist of several public corpora of speech, noise, and RIRs. 
 We provide a 700-hour curated training set as a baseline. 
-And we encourage participants to explore advance data curation techniques to utilize large-scale noisy training dataset.
+And we encourage participants to explore advanced data curation techniques to utilize a large-scale noisy training dataset.
 Please check the [Track1](/urgent2026/track1) page for more details.
 
 
@@ -93,36 +74,26 @@ Please check the [Track1](/urgent2026/track1) page for more details.
 
 ### Track 2: Speech Quality Assessment
 
-The task of this track is to build a robust, generalizable speech quality assessment (SQA) model that predicts mean opinion scores (MOS) for enhanced speech. Systems will be evaluated using correlation and error metrics — MSE (Mean Square Error), LCC (linear correlation coefficient), SRCC (Spearman’s rank correlation coefficient), and KTAU (Kendall’s tau) — between the predicted MOS and the provided MOS labels. Data preparation scripts and baseline codes are available at https://github.com/urgent-challenge/urgent2026_challenge_track2. We allow the use of any public data and publicly available models. See the [`Rules`](/urgent2026/rules/) page for full details.
+The task of this track is to build a robust, generalizable speech quality assessment (SQA) model that predicts mean opinion scores (MOS) for enhanced speech. Systems will be evaluated using correlation and error metrics — MSE (Mean Squared Error), LCC (linear correlation coefficient), SRCC (Spearman’s rank correlation coefficient), and KTAU (Kendall’s tau) — between the predicted MOS and the provided MOS labels. Data preparation scripts and baseline codes are available at https://github.com/urgent-challenge/urgent2026_challenge_track2. We allow the use of any public data and publicly available models. See the [`Rules`](/urgent2026/rules/) page for full details.
 
 <br>
 
-## Registration
+## Leaderboard and Registration
+
 Registration for the leaderboard and Google Form submission are required.
 Refer to the [`Leaderboard`](/urgent2026/leaderboard) tab for more details.
 
-<br>
-
-
 
 
 <br>
 
-## Links
 
-### Slack channel
-We have a [Slack channel](https://join.slack.com/t/urgentchallenge/shared_invite/zt-2jy2stg7q-79AGeAY0CpKHRl7r4X0e6g) for real-time communication.
-
-### Leaderboard and registration
-
-- Leaderboard: [https://urgent-challenge.com](https://urgent-challenge.com) [TODO]
 
 ### Contact
 
-- Slack channel: [https://join.slack.com/t/urgentchallenge/shared_invite/zt-2jy2stg7q-79AGeAY0CpKHRl7r4X0e6g](https://join.slack.com/t/urgentchallenge/shared_invite/zt-2jy2stg7q-79AGeAY0CpKHRl7r4X0e6g)
+- We have a [Slack channel](https://join.slack.com/t/urgentchallenge/shared_invite/zt-2jy2stg7q-79AGeAY0CpKHRl7r4X0e6g) for real-time communication.
 
-<br>
-
+- For any further questions, drop an email at urgent.challenge@gmail.com.
 
 <!-- 
 ## Motivation
