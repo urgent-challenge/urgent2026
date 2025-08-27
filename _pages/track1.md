@@ -56,7 +56,7 @@ Non-blind/bind test set will be released later, check the [timeline](/urgent2026
 The training and validation data are both simulated based on the following source data.
 Based on the [dataset of the 2nd URGENT challenge](https://urgent-challenge.github.io/urgent2025/data/), we conducted a data selection using the data filtering method proposed in a recent paper <d-cite key="liLessMoreData2025"/>.
 
-**It is noted that we encourage you to explore better ways of data selection and utilization in this challenge.** In addition to the data and filtering methods provided by our baseline, you can make use of larger-scale datasets, such as the [track2 data](https://urgent-challenge.github.io/urgent2025/data/) from the 2nd URGENT challenge, or other allowed data (please check it in the [rules pages](/urgent2026/rules/)).
+**It is noted that we encourage you to explore better ways of data selection and utilization in this challenge.** In addition to the data and filtering methods provided by our baseline, you can make use of larger-scale datasets, such as the [track2 data](https://urgent-challenge.github.io/urgent2025/data/) from the 2nd URGENT challenge, or other allowed data (please check it in the [rules](/urgent2026/rules/) section).
 
 <style>
 /* Basic */
@@ -322,11 +322,8 @@ For the noise source and RIRs, we follow the same configuration as in the [2nd U
 </table>
 
 
-> We allow participants to simulate their own RIRs using existing tools<d-footnote>For example, <a href="https://github.com/ehabets/RIR-Generator">RIR-Generator</a>, <a href="https://github.com/LCAV/pyroomacoustics">pyroomacoustics</a>, <a href="https://github.com/DavidDiazGuerra/gpuRIR">gpuRIR</a>,  and so on.</d-footnote> for generating the training data.
-> The participants can also propose publicly available real recorded RIRs to be included in the above data list during the grace period (See [`Timeline`](/urgent2026/timeline)).
-> Note: If participants used additional RIRs to train their model, the related information should be provided in the README.yaml file in the submission. Check the [template](/urgent2026/template) for more information.
->
-> We allow participants to simulate wind noise using some tools such as <a href="https://github.com/audiolabs/SC-Wind-Noise-Generator/tree/main">SC-Wind-Noise-Generator</a>. In default, the simulation script in our repository simulates 200 and 100 wind noises for training and validation for each sampling frequency. The configuration can be easily changed in <a href="https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/conf/wind_noise_simulation_train.yaml">wind_noise_simulation_train.yaml</a> and <a href="https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/conf/wind_noise_simulation_validation.yaml">wind_noise_simulation_validation.yaml</a>
+Note that external data, not included in the above listed datasets cannot be used for the purpose of this challenge. 
+However we allow participants to simulate their own RIRs using existing tools 3 for generating the training data. The participants can also propose publicly available real recorded RIRs to be included in the above data list during the grace period. See [rules](#rules-and-ranking) section for more details.
 
 
 **Data selection and Simulation.** We apply the data selection to the track1 data of the [2nd URGENT](https://urgent-challenge.github.io/urgent2025/) using the data filtering method proposed in the recent paper <d-cite key="liLessMoreData2025"/>. The selected data list is available at [here](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/meta/train_selected_700h). The speech source from NNCES, SeniorTalk, VocalSet, and ESD is not filtered.
@@ -394,18 +391,22 @@ We provide an example simulation script as [`simulation/simulate_data_from_param
 
     * **If you are unsure whether the pre-trained model you would like to use is allowed, please reach out to the organizers.**
 
+2. We allow participants to simulate their own RIRs using existing tools<d-footnote>For example, <a href="https://github.com/ehabets/RIR-Generator">RIR-Generator</a>, <a href="https://github.com/LCAV/pyroomacoustics">pyroomacoustics</a>, <a href="https://github.com/DavidDiazGuerra/gpuRIR">gpuRIR</a>,  and so on.</d-footnote> for generating the training data. The participants can also propose publicly available real recorded RIRs to be included in the above data list during the grace period (See [`Timeline`](/urgent2026/timeline)).
+> Note: If participants used additional RIRs to train their model, the related information should be provided in the README.yaml file in the submission. Check the [template](/urgent2026/template) for more information.
 
-2. The test data should only be used for evaluation purposes. **Techniques such as test-time adaptation, unsupervised domain adaptation, and self-training on the test data are NOT allowed**.
+3. We allow participants to simulate wind noise using some tools such as <a href="https://github.com/audiolabs/SC-Wind-Noise-Generator/tree/main">SC-Wind-Noise-Generator</a>. In default, the simulation script in our repository simulates 200 and 100 wind noises for training and validation for each sampling frequency. The configuration can be easily changed in <a href="https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/conf/wind_noise_simulation_train.yaml">wind_noise_simulation_train.yaml</a> and <a href="https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/conf/wind_noise_simulation_validation.yaml">wind_noise_simulation_validation.yaml</a>
+
+4. The test data should only be used for evaluation purposes. **Techniques such as test-time adaptation, unsupervised domain adaptation, and self-training on the test data are NOT allowed**.
 
 
-3. There is no constraint on the latency or causality of the developed system in this challenge. Any type of model can be used as long as it conforms to the other rules as listed on this page.
+5. There is no constraint on the latency or causality of the developed system in this challenge. Any type of model can be used as long as it conforms to the other rules as listed on this page.
 
 
-4. Registration is required to submit results to the challenge (Check the [`Leaderboard`](/urgent2025/leaderboard) tab for more information). Note that the team information (including affiliation, team name, and team members) should be provided when submitting the results. For detailed submission requirements, please check the [`Submission`](/urgent2025/submission) tab.
+6. Registration is required to submit results to the challenge (Check the [`Leaderboard`](/urgent2025/leaderboard) tab for more information). Note that the team information (including affiliation, team name, and team members) should be provided when submitting the results. For detailed submission requirements, please check the [`Submission`](/urgent2025/submission) tab.
     * Only the team name will be shown in the leaderboard, while the affiliation and team members will be kept confidential.<br/><br/>
 
 
-5. The following evaluation metrics will be calculated for evaluation.
+7. The following evaluation metrics will be calculated for evaluation.
     
     <style type="text/css">
     .tg  {border:none;border-collapse:collapse;border-color:#ccc;border-spacing:0;}
