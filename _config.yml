@@ -10,7 +10,7 @@ year: 2026
 all_challenges:
   2024: "https://urgent-challenge.github.io/urgent2024/"
   2025: "https://urgent-challenge.github.io/urgent2025/"
-  2026: "https://urgent-challenge.github.io/urgent2026/"
+  2026: "/urgent2026/"
 email: urgent.challenge@gmail.com
 description: Universality, Robustness, and Generalizability for EnhancemeNT # the ">" symbol means to ignore newlines until "footer_text:"
   
