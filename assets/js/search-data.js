@@ -16,14 +16,28 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/urgent2026/timeline/";
           },
-        },{id: "nav-track1",
-          title: "Track1",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/urgent2026/track1/";
-          },
-        },{id: "nav-track2",
+        },{id: "dropdown-baseline",
+              title: "Baseline",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/urgent2026/track1#baseline";
+              },
+            },{id: "dropdown-data",
+              title: "Data",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/urgent2026/track1#datasets";
+              },
+            },{id: "dropdown-rules-and-ranking",
+              title: "Rules and Ranking",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/urgent2026/track1#rules-and-ranking";
+              },
+            },{id: "nav-track2",
           title: "Track2",
           description: "",
           section: "Navigation",
@@ -509,30 +523,4 @@ ninja.data = [{
         handler: () => {
           window.open("https://www.alberteinstein.com/", "_blank");
         },
-      },{
-      id: 'light-theme',
-      title: 'Change theme to light',
-      description: 'Change the theme of the site to Light',
-      section: 'Theme',
-      handler: () => {
-        setThemeSetting("light");
-      },
-    },
-    {
-      id: 'dark-theme',
-      title: 'Change theme to dark',
-      description: 'Change the theme of the site to Dark',
-      section: 'Theme',
-      handler: () => {
-        setThemeSetting("dark");
-      },
-    },
-    {
-      id: 'system-theme',
-      title: 'Use system default theme',
-      description: 'Change the theme of the site to System Default',
-      section: 'Theme',
-      handler: () => {
-        setThemeSetting("system");
-      },
-    },];
+      },];
