@@ -27,7 +27,7 @@ bibliography: about.bib
 
 
 
-## Goal
+## Motivation
 
 [CALL FOR PARTICIPANTS](/urgent2026/assets/pdf/call_for_participants.pdf)
 
@@ -58,7 +58,7 @@ The task of this challenge is to build **a single speech enhancement system** to
 
 The large-scale training data will consist of several public corpora of speech, noise, and RIRs. 
 We provide a 700-hour curated training set as a baseline. 
-And we encourage participants to explore advance data curation techniques to utilize large-scale noisy training dataset.
+And we encourage participants to explore advanced data curation techniques to utilize a large-scale noisy training dataset.
 Please check the [Track1](/urgent2026/track1) page for more details.
 
 
@@ -66,7 +66,7 @@ Please check the [Track1](/urgent2026/track1) page for more details.
 
 ### Track 2: Speech Quality Assessment
 
-The task of this track is to build a robust, generalizable speech quality assessment (SQA) model that predicts mean opinion scores (MOS) for enhanced speech. Systems will be evaluated using correlation and error metrics — MSE (Mean Square Error), LCC (linear correlation coefficient), SRCC (Spearman’s rank correlation coefficient), and KTAU (Kendall’s tau) — between the predicted MOS and the provided MOS labels. Data preparation scripts and baseline codes are available at https://github.com/urgent-challenge/urgent2026_challenge_track2. We allow the use of any public data and publicly available models. See the [`Rules`](/urgent2026/rules/) page for full details.
+The task of this track is to build a robust, generalizable speech quality assessment (SQA) model that predicts mean opinion scores (MOS) for enhanced speech. Systems will be evaluated using correlation and error metrics — MSE (Mean Squared Error), LCC (linear correlation coefficient), SRCC (Spearman’s rank correlation coefficient), and KTAU (Kendall’s tau) — between the predicted MOS and the provided MOS labels. Data preparation scripts and baseline codes are available at https://github.com/urgent-challenge/urgent2026_challenge_track2. We allow the use of any public data and publicly available models. See the [`Rules`](/urgent2026/rules/) page for full details.
 
 <br>
 
@@ -85,7 +85,7 @@ Refer to the [`Leaderboard`](/urgent2026/leaderboard) tab for more details.
 
 - We have a [Slack channel](https://join.slack.com/t/urgentchallenge/shared_invite/zt-2jy2stg7q-79AGeAY0CpKHRl7r4X0e6g) for real-time communication.
 
-- For any further question drop an email at urgent.challenge@gmail.com.
+- For any further questions, drop an email at urgent.challenge@gmail.com.
 
 <!-- 
 ## Motivation
