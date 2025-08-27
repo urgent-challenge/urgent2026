@@ -19,7 +19,7 @@ Please refer to [leaderboard](/urgent2026/leaderboard) tab for details.
 
 <br>
 
-### Submission format and requirements
+### Submission format and requirements (Track1)
 
 * Each submission should be **a zip file** containing two parts:
     1. enhanced audios corresponding to the subset to be tested;
@@ -60,6 +60,11 @@ Please refer to [leaderboard](/urgent2026/leaderboard) tab for details.
 > Should you encounter any problem during the submission, please feel free to [contact the organizers](mailto:urgent.challenge@gmail.com).
 
 <br>
+
+
+### Submission format and requirements (Track2)
+
+TODO
 
 ### Agreement
 

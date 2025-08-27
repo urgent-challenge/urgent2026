@@ -1,26 +1,21 @@
 ---
 layout: page
-permalink: /data/
-title: Data
+permalink: /track2/
+title: Track2
 description:  
 nav: true
-nav_order: 3
+nav_order: 4
 # toc: true
 bibliography: data.bib
 ---
 
 ## Contents:
 
-- [Contents:](#contents)
-- [Brief data description: Track 1](#brief-data-description-track-1)
-    - [Training/validation data](#trainingvalidation-data)
-    - [Non-blind test set](#non-blind-test-set)
-    - [Blind test set](#blind-test-set)
-  - [Detailed data description](#detailed-data-description)
-  - [Data selection and Simulation](#data-selection-and-simulation)
-    - [Distortions](#distortions)
-    - [Simulation metadata](#simulation-metadata)
-- [Track 2](#data-description-track-2)
+- [Data description: Track 2](#data-description-track-2)
+  - [Training/Validation Data](#trainingvalidation-data-1)
+  - [Non-blind test set](#non-blind-test-set-1)
+  - [Blind test set](#blind-test-set-1)
+
 
 
 ## Brief data description: Track 1

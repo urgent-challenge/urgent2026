@@ -3,7 +3,7 @@ layout: page
 permalink: /baseline/
 title: Baseline
 description:  
-nav: true
+nav: false
 nav_order: 5
 
 bibliography: baseline.bib
