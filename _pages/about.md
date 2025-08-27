@@ -98,11 +98,11 @@ Refer to the [`Leaderboard`](/urgent2026/leaderboard) tab for more details.
 
 <br>
 
-## Paper submission
+## Paper submission (By invitation only)
 
-Participants can submit a paper describing the submitted SE system to the [Interspeech 2025](https://www.interspeech2025.org/home). **The submitted papers will go through the same review process** as the regular papers and will be indexed and included in the ISCA archive.
+Upto five top-ranked teams can submit a paper describing the submitted SE system to the [ICASSP 2026](https://2026.ieeeicassp.org/). Accepted papers will be published in the ICASSP proceedings. The review process is coordinated by the challenge organizers and the SPGC chairs.
+Paper submission link: [https://cmsworkshops.com/ICASSP2026/Papers/Submission.asp?Type=Challenge&ID=13](https://cmsworkshops.com/ICASSP2026/Papers/Submission.asp?Type=Challenge&ID=13)
 
-Please note that participants need to choose "**14.09 ICASSP 2026 URGENT Challenge Challenge [Challenge]**" as the subject area when submitting the paper. The registration platform is already available.
 
 
 <br>
@@ -135,6 +135,8 @@ We have a [Slack channel](https://join.slack.com/t/urgentchallenge/shared_invite
 
 <br>
 
+
+<!-- 
 ## Motivation
 
 
@@ -152,6 +154,7 @@ The third URGENT Challenge will significantly broaden speech source diversity by
 
 By incorporating these advancements, the ICASSP 2026 URGENT Challenge continues to **bridge the gap between academic research and practical applications**, ensuring that SE models not only perform well in controlled settings but also deliver robust and generalizable performance in the complex and dynamic conditions encountered in everyday use.
 
+-->
 
 <!-- Similar issues can also be observed in other speech tasks such as automatic speech recognition (ASR), speech translation (ST), speaker verification (SV), and spoken language understanding (SLU).
 Among them, speech enhancement is particularly vulnerable to mismatches since it is heavily reliant on paired clean/noisy speech data to achieve strong performance. Unsupervised speech enhancement that does not require groundtruth clean speech has been proposed to address this issue, but often merely brings benefit in a final finetuning stage<d-cite key="Employing-Xu2024"/>. Therefore, we focus on speech enhancement in this challenge to address the aforementioned problems. -->
