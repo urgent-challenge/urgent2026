@@ -26,9 +26,8 @@ bibliography: about.bib
 
 [CALL FOR PARTICIPANTS](/urgent2026/assets/pdf/call_for_participants.pdf)
 
-<div style="text-align: center;">
-    <img alt="introduction" src="/urgent2026/assets/img/urgent2026.jpg" style="max-width: 95%;" />
-</div>
+
+## Goal
 
 The ICASSP 2026 URGENT challenge (**U**niversal, **R**obust and **G**eneralizable speech **E**nhanceme**NT**) is a speech enhancement challenge held at [**ICASSP 2026 SP Grand Challenge**](https://2026.ieeeicassp.org/call-for-sp-grand-challenge-proposals/). We aim to build universal speech enhancement models for unifying speech processing in a wide variety of conditions.
 
@@ -53,7 +52,6 @@ The ICASSP 2026 URGENT challenge (**U**niversal, **R**obust and **G**eneralizabl
 
 
 
-## Goal
 
 The ICASSP 2026 URGENT Challenge aims to further promote the research on **U**niversal, **R**obust and **G**eneralizable speech **E**nhanceme**NT**. 
 This year's challenge focuses on the following aspects:
@@ -69,22 +67,21 @@ This year's challenge focuses on the following aspects:
 ## Task Introduction
 
 ### Track 1: Speech Enhancement
+
+
+<div style="text-align: center;">
+    <img alt="introduction" src="/urgent2026/assets/img/track1.png" style="max-width: 95%;" />
+</div>
+
 The task of this challenge is to build **a single speech enhancement system** to adaptively handle input speech with different distortions (corresponding to different SE subtasks), different domains (e.g., language, age, accents, emotion), different input formats (e.g., sampling frequencies) in different acoustic environments (e.g., noise and reverberation).
 
-The training data will consist of several public corpora of speech, noise, and RIRs. **Only the specified set of data can be used during the challenge**. 
-We encourage participants to apply data augmentation techniques such as dynamic mixing to achieve the best generalizability. 
-The data preparation scripts are released in our GitHub repository<d-footnote><a href="https://github.com/urgent-challenge/urgent2025_challenge/" target="_blank">https://github.com/urgent-challenge/urgent2026_challenge_track1/</a></d-footnote>. Check the [`Data`](/urgent2026/data) tab for more information.
+The large-scale training data will consist of several public corpora of speech, noise, and RIRs. 
+We provide a 700-hour curated training set as a baseline. 
+And we encourage participants to explore advance data curation techniques to utilize large-scale noisy training dataset.
+Please check the [Track1](/urgent2026/track1) page for more details.
 
 
-We will evaluate enhanced audios with a variety of metrics to comprehensively understand the capacity of existing generative and discriminative methods. They include four different categories of metrics<d-footnote>. An additional category (subjective SE metrics) will be added for the final blind test phase for evaluating the MOS score.</d-footnote>:
 
-<!-- 2. DNSMOS Pro<d-cite key="cumlinDNSMOSProReducedSize2024"/>, Distill-MOS<d-cite key="stahlDistillationPruningScalable2025"/>, SIGMOS<d-cite key="risteaICASSP2024Speech2025"/>, Torchaudio-Squim<d-cite key="kumarTorchaudioSquimReferenceLessSpeech2023"/>. -->
-1. Non-intrusive SE metrics such as  DNSMOS<d-cite key="reddyDnsmosNonIntrusivePerceptual2021"/>, NISQA<d-cite key="mittagNISQADeepCNNSelfAttention2021"/>, UTMOS<d-cite key="saekiUTMOSUTokyoSaruLabSystem2022"/>, SCOREQ <d-cite key="NEURIPS2024_bece7e02"/>.
-2. Intrusive SE metrics such as POLQA<d-cite key="POLQA-Beerends2013"/>, PESQ<d-cite key="rixPerceptualEvaluationSpeech2001"/>, ESTOI<d-cite key="jensenAlgorithmPredictingIntelligibility2016"/>, SDR<d-cite key="vincentPerformanceMeasurementBlind2006"/>, MCD<d-cite key="kubichekMelcepstralDistanceMeasure1993"/>, LSD<d-cite key="grayDistanceMeasuresSpeech1976"/>.
-3. Downstream-task-independent metrics (e.g., Levenshtein phone similarity) for language-independent, speaker-independent, and task-independent evaluation.
-4. Downstream-task-dependent metrics (e.g., speaker similarity, emotional similarity, language identification accuracy, word accuracy or WAcc) for evaluation of compatibility with different downstream tasks.
-
-More details about the evaluation plan can be found in the [`Rules`](/urgent2026/rules) tab.
 
 ### Track 2: Speech Quality Assessment
 
@@ -98,32 +95,15 @@ Refer to the [`Leaderboard`](/urgent2026/leaderboard) tab for more details.
 
 <br>
 
-## Paper submission (By invitation only)
-
-Upto five top-ranked teams can submit a paper describing the submitted SE system to the [ICASSP 2026](https://2026.ieeeicassp.org/). Accepted papers will be published in the ICASSP proceedings. The review process is coordinated by the challenge organizers and the SPGC chairs.
-Paper submission link: [https://cmsworkshops.com/ICASSP2026/Papers/Submission.asp?Type=Challenge&ID=13](https://cmsworkshops.com/ICASSP2026/Papers/Submission.asp?Type=Challenge&ID=13)
 
 
-
-<br>
-
-## Slack channel
-We have a [Slack channel](https://join.slack.com/t/urgentchallenge/shared_invite/zt-2jy2stg7q-79AGeAY0CpKHRl7r4X0e6g) for real-time communication.
 
 <br>
 
 ## Links
 
-### Data
-
-- Please check our official [GitHub](https://github.com/urgent-challenge/urgent2026_challenge_track1) for more details.
-
-
-
-### Baseline and Pre-training Models
-
-- Please check our official [GitHub](https://github.com/urgent-challenge/urgent2026_challenge_track1) for more details.
-
+### Slack channel
+We have a [Slack channel](https://join.slack.com/t/urgentchallenge/shared_invite/zt-2jy2stg7q-79AGeAY0CpKHRl7r4X0e6g) for real-time communication.
 
 ### Leaderboard and registration
 

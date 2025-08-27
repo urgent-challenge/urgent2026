@@ -66,6 +66,14 @@ Please refer to [leaderboard](/urgent2026/leaderboard) tab for details.
 
 TODO
 
+
+
+### Paper submission (By invitation only)
+
+Upto five top-ranked teams can submit a paper describing the submitted SE system to the [ICASSP 2026](https://2026.ieeeicassp.org/). Accepted papers will be published in the ICASSP proceedings. The review process is coordinated by the challenge organizers and the SPGC chairs.
+Paper submission link: [https://cmsworkshops.com/ICASSP2026/Papers/Submission.asp?Type=Challenge&ID=13](https://cmsworkshops.com/ICASSP2026/Papers/Submission.asp?Type=Challenge&ID=13)
+
+
 ### Agreement
 
 By submitting the results, the participants agree to the following conditions:

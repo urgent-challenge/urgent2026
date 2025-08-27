@@ -8,17 +8,16 @@ nav_order: 2
 ---
 
 
-> 🚧 This website is currently under construction. All content is subject to change and may not reflect the final details of the competition. Please refer to official announcements once the contest begins for the most accurate and up-to-date information.
-
-
 |   **Date ( Anywhere on Earth )**  |         **Event**          |
 |:---------------------------------:|:---------------------------|
-| September 1st, 2025             | **Start of the challenge** |
-| November 3rd, 2025            | Release of non-blind test data. Leaderboard opens. |
-| November 18th, 2025 | Release of blind test data. Leaderboard is swithed to blind-test data for final ranking. |
-| November 21st, 2025 | **End of the challenge**   |
-| December 1st, 2025             | Notification of final results |
-| December 7th, 2025             | 2-page papers submission deadline (by invitation only) |
+| September 1, 2025             | **Start of the challenge** |
+| October 15, 2025            | Leaderboard opens for offical valiation dataset. |
+| November 3, 2025            | Release of non-blind test data. Leaderboard switched to non-blind test data. |
+| November 17, 2025 | Release of blind test data. Leaderboard is swithed to blind-test data for final ranking. |
+| November 20, 2025 | **Track1 ends**   |
+| November 23, 2025 | **Track2 ends**   |
+| December 1, 2025             | Notification of final results |
+| December 7, 2025             | 2-page papers submission deadline (by invitation only) |
 {: .table}
 {: .table-striped}
 

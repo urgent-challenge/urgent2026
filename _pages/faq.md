@@ -7,7 +7,7 @@ nav: true
 nav_order: 8
 ---
 
-Below we summarize some frequently asked questions (FAQ) about the URGENT Challenge. If you have any other questions, please feel free to [contact us](/urgent2025/contact).
+Below we summarize some frequently asked questions (FAQ) about the URGENT Challenge. If you have any other questions, please feel free to [contact us](/urgent2026/contact).
 
 <details>
 
@@ -17,7 +17,7 @@ Below we summarize some frequently asked questions (FAQ) about the URGENT Challe
 
   You could go to <code>Participate</code> → <code>Submit / View Results</code> and unfold the corresponding failed submission. Then click the text <code>View scoring error log</code> to download the error message file. It should display the detailed information about the failure.
 
-  <div><img alt="error_message" src="/urgent2025/assets/img/error_log.png" style="max-width: 100%;"/></div>
+  <div><img alt="error_message" src="/urgent2026/assets/img/error_log.png" style="max-width: 100%;"/></div>
 
 </details>
 

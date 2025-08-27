@@ -29,7 +29,7 @@ The blind test leaderboard has been closed since the challenge has completed. Th
 <!-- 5. Then you can download the test set from the `Participate → Get Data` tab and start to make submissions in the `Participate → Submit / View Results` tab.
 > It usually takes ~1 hour to finish the evaluation for each submission. You can click the `Refresh status` to check the evaluation status in the `Participate → Submit / View Results` tab.-->
 
-<br>
+<!-- <br>
 
 ### How to read the leaderboard?
 
@@ -39,10 +39,10 @@ The blind test leaderboard has been closed since the challenge has completed. Th
       * For the final blind test phase, an additional category (`Subjective SE metrics`) will be added to evaluate the MOS score. See [`Data`](/urgent2025/data) for more information.
   * The last column (overall ranking score) represents the final score used for ranking all submissions. It is calculated following the rules defined in the [`Rules`](/urgent2025/rules) tab.
 
-<br>
+<br> -->
 
-### Note
+<!-- ### Note
 
 There are two official entries in the leaderboard:
   * The entry submitted by the user `urgent` represents the official baseline.
-  * The entry submitted by the user `noisy` represents the result of the original noisy input speech (without enhancement).
+  * The entry submitted by the user `noisy` represents the result of the original noisy input speech (without enhancement). -->
