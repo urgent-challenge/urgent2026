@@ -346,8 +346,8 @@ The simulation data can be generated as follows:
 
 3. By default, we applied a [high-pass filter](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/simulation/simulate_data_from_param.py) to the speech signals since we have noticed that there is high-energy noise in the infrasound frequency band in some speech sources. You can turn it off by setting `highpass=False` in your simulation.
 
-A pre-simulated training and validation dataset<d-footnote>The simulated speech derived from the ESD dataset is not included due to the license issue, you may apply for the license and run the simulation script by yourself to obtain it.<d-footnote> is available online at [HugginFace](https://huggingface.co/datasets/lichenda/urgent26_track2_universal_se). Participants can download and use it directly without running the simulation. 
-For the training set, **we recommend dynamically generating degraded speech samples during training** to increase the data diversity.
+A pre-simulated training and validation dataset <d-footnote>The simulated speech derived from the ESD dataset is not included due to the license issue. You may apply for the license and run the simulation script by yourself to generate the complete dataset.</d-footnote> is available online at [HugginFace](https://huggingface.co/datasets/lichenda/urgent26_track2_universal_se). Participants can download and use it directly without running the simulation scripts to get started quickly.
+For your final submitted system, **we recommend dynamically generating degraded speech samples during training** to increase the data diversity.
 
 
 <img alt="framework" src="/urgent2026/assets/img/framework.jpg" style="max-width: 100%;"/>
@@ -412,8 +412,8 @@ We provide an example simulation script as [`simulation/simulate_data_from_param
 
 ## Ranking
 
-The ranking will be carried out in **two stages**. In `stage 1`, we will evaluate participants' submissions with **multiple objective metrics**. The top-6 systems in the objective `overall ranking` will advance to the `stage 2`, be evaluated by **multiple subjective tests**, and then the `final ranking` will be determined by the subjective `overall ranking`.
-
+The blind test ranking will be carried out in **two stages**. In `stage 1`, we will evaluate participants' submissions with **multiple objective metrics**. The top-6 systems in the objective `overall ranking` will advance to the `stage 2`, be evaluated by **multiple subjective tests**, and then the `final ranking` will be determined by the subjective `overall ranking`.
+For the validation set and non-blind test set, the leardboard will only rank with the **multiple objective metrics**.
 
 1. The following objective evaluation metrics will be calculated for evaluation in `stage 1`. For real recorded test samples that do not have a strictly matched reference signal, part of the following metrics will be used. The `overall ranking` will be determined by the algorithm introduced in the [subsequent section](#overall-ranking-method).
     
@@ -470,7 +470,7 @@ The ranking will be carried out in **two stages**. In `stage 1`, we will evaluat
     </tr>
     <!-- new -->
     <tr>
-        <td class="tg-0a7q"><a href="https://github.com/alessandroragano/scoreq">ScoreQ</a> ↑<d-cite key="NEURIPS2024_bece7e02"/></td>
+        <td class="tg-0a7q"><a href="https://github.com/alessandroragano/scoreq">SCOREQ</a> ↑<d-cite key="NEURIPS2024_bece7e02"/></td>
         <td class="tg-xwyw"><span style="font-weight:400;font-style:normal;text-decoration:none">❌</span></td>
         <!-- <td class="tg-xwyw">16 kHz</td>
         <td class="tg-xwyw">[0.0, 1.0]</td> -->
