@@ -378,7 +378,7 @@ We provide an example simulation script as [`simulation/simulate_data_from_param
 
 ## Rules 
 
-1. When generating the training and validation datasets, **ONLY the speech, noise, and room impulse response (RIR) corpora listed in the [`Data`](/urgent2025/data) tab shall be used to ensure a fair comparison** and proper understanding of various SE approaches.
+1. When generating the training and validation datasets, **ONLY the speech, noise, and room impulse response (RIR) corpora listed in the [Datasets](#datasets) section shall be used to ensure a fair comparison** and proper understanding of various SE approaches.
     
 
     * The first month of the challenge will be a grace period when participants can propose additional public datasets to be included in the list. We (organizers) will reply to the requests and may update the list. Updates will be recorded in the [`Notice`](/urgent2026/notice) tab. 
