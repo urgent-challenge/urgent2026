@@ -14,8 +14,10 @@ children:
       permalink: /track1#baseline
     - title: Data
       permalink: /track1#datasets
-    - title: Rules and Ranking
-      permalink: /track1#rules-and-ranking
+    - title: Rules
+      permalink: /track1#rules    
+    - title: Ranking
+      permalink: /track1#ranking
 ---
 
 ## Contents:
@@ -25,7 +27,9 @@ children:
 - [Datasets](#datasets)
   - [Brief data description:](#brief-data-description)
   - [Detailed data description:](#detailed-data-description)
-- [Rules and Ranking](#rules-and-ranking)
+- [Rules](#rules)
+- [Ranking](#ranking)
+  - [Overall ranking method](#overall-ranking-method)
 
 
 
@@ -39,7 +43,7 @@ Please refer to the official [GitHub repository](https://github.com/urgent-chall
 
 
 
-**Discriminative Baseline.** We provide an adaptive STFT-based SFI<d-cite key="Sampling-Paulus2022,Toward-Zhang2023,Improving-Zhang2024"/>  BSRNN <d-cite key="Music-Luo2023,Efficient-Yu2023,High-Yu2023"/> as the discriminative baseline. The model is available at [here](https://github.com/urgent-challenge/urgent2026_challenge_track1). The details of the baseline training can be found in our [recent ASRU paper](https://arxiv.org/abs/2506.23859) <d-cite key="liLessMoreData2025"/>.
+**Discriminative Baseline.** We provide an adaptive STFT-based SFI<d-cite key="Sampling-Paulus2022,Toward-Zhang2023,Improving-Zhang2024"/>  BSRNN <d-cite key="Music-Luo2023,yuEfficientMonauralSpeech2023,High-Yu2023"/> as the discriminative baseline. The model is available at [here](https://github.com/urgent-challenge/urgent2026_challenge_track1). The details of the baseline training can be found in our [recent ASRU paper](https://arxiv.org/abs/2506.23859) <d-cite key="liLessMoreData2025"/>.
 
 **Generative Baseline.** We follow a recent work named FlowSE<d-cite key="leeFlowSEFlowMatchingbased2025"/> to build generative SE models. It extends the flow matching method<d-cite key="lipmanFlowMatchingGenerative2023"/> to a conditional flow matching model that generates clean speech conditioned by the noisy speech. We reimplement an [improved BSRNN](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/baseline_code/models/bsrnn_flowse.py) to estimate the conditional vector field. The model is available at [here](https://github.com/urgent-challenge/urgent2026_challenge_track1), and the training details of the generative baseline model can be found in the [paper](https://arxiv.org/abs/2506.23859) <d-cite key="liLessMoreData2025"/>.
 
@@ -56,11 +60,12 @@ Non-blind/bind test set will be released later, check the [timeline](/urgent2026
 
 ### Detailed data description:
 
-The training and validation data are both simulated based on the following source data.
+
 Based on the [dataset of the 2nd URGENT challenge](https://urgent-challenge.github.io/urgent2025/data/), we conducted a data selection using the data filtering method proposed in a recent paper <d-cite key="liLessMoreData2025"/>.
 
 **It is noted that we encourage you to explore better ways of data selection and utilization in this challenge.** In addition to the data and filtering methods provided by our baseline, you can make use of larger-scale datasets, such as the [track2 data](https://urgent-challenge.github.io/urgent2025/data/) from the 2nd URGENT challenge, or other allowed data (please check it in the [rules](/urgent2026/rules/) section).
 
+The training and validation data are both simulated based on the following source data.
 <style>
 /* Basic */
 
@@ -324,15 +329,14 @@ For the noise source and RIRs, we follow the same configuration as in the [2nd U
 </tbody>
 </table>
 
-
-Note that external data, not included in the above listed datasets cannot be used for the purpose of this challenge. 
-However we allow participants to simulate their own RIRs using existing tools 3 for generating the training data. The participants can also propose publicly available real recorded RIRs to be included in the above data list during the grace period. See [rules](#rules-and-ranking) section for more details.
+Note that, except for the data listed above and those we allow in the [rules](#rules), they cannot be used for the purpose of this challenge. 
+However, we allow participants to simulate their own RIRs using existing tools for generating the training data. The participants can also propose publicly available, real recorded RIRs to be included in the above data list during the grace period. See [rules](#rules) section for more details.
 
 
 **Data selection and Simulation.** We apply the data selection to the track1 data of the [2nd URGENT](https://urgent-challenge.github.io/urgent2025/) using the data filtering method proposed in the recent paper <d-cite key="liLessMoreData2025"/>. The selected data list is available at [here](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/meta/train_selected_700h). The speech source from NNCES, SeniorTalk, VocalSet, and ESD is not filtered.
 
 Note that the data filtering of paper <d-cite key="liLessMoreData2025"/> is obviously not the best method to utilize the large-scale dataset for SE.
-**The goal of this challenge is to encourage participants to develop how to better leverage large-scale data** to improve the final SE performance.
+**The goal of this challenge is to encourage participants to develop how to better leverage large-scale data** to improve the SE performance.
 
 The simulation data can be generated as follows:
 
@@ -342,11 +346,8 @@ The simulation data can be generated as follows:
 
 3. By default, we applied a [high-pass filter](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/simulation/simulate_data_from_param.py) to the speech signals since we have noticed that there is high-energy noise in the infrasound frequency band in some speech sources. You can turn it off by setting `highpass=False` in your simulation.
 
-For the training set, **we recommend dynamically generating degraded speech samples during training** to increase the data diversity.
-
-
-
-
+A pre-simulated training and validation dataset <d-footnote>The simulated speech derived from the ESD dataset is not included due to the license issue. You may apply for the license and run the simulation script by yourself to generate the complete dataset.</d-footnote> is available online at [HugginFace](https://huggingface.co/datasets/lichenda/urgent26_track2_universal_se). Participants can download and use it directly without running the simulation scripts to get started quickly.
+For your final submitted system, **we recommend dynamically generating degraded speech samples during training** to increase the data diversity.
 
 
 <img alt="framework" src="/urgent2026/assets/img/framework.jpg" style="max-width: 100%;"/>
@@ -356,7 +357,7 @@ For the training set, **we recommend dynamically generating degraded speech samp
 During training and inference, the processing of different SFs is supported for both <u>conventional SE models</u> (lower-right) that usually only operate at one SF and <u>adaptive STFT-based sampling-frequency-independent (SFI) SE models</u> (upper-right) that can directly handle different SFs.
 
 * For conventional SE models (e.g., Conv-TasNet<d-cite key="Conv_TasNet-Luo2019"/>), we always **upsample** its input (degraded speech) to the highest SF (48 kHz) so that the model only needs to operate at 48 kHz. The model output (48 kHz) is then **downsampled** to the same SF as the degraded speech.
-* For adaptive STFT-based SFI<d-cite key="Sampling-Paulus2022,Toward-Zhang2023,Improving-Zhang2024"/> SE models (e.g., BSRNN<d-cite key="Music-Luo2023,Efficient-Yu2023,High-Yu2023"/>, TF-GridNet<d-cite key="TF_GridNet-Wang2023,TF_GridNet2-Wang2023"/>), we directly feed the degraded speech of different SFs into the model, which can adaptively adjust their STFT/iSTFT configuration according to the SF and generate the enhanced signal with the same SF.
+* For adaptive STFT-based SFI<d-cite key="Sampling-Paulus2022,Toward-Zhang2023,Improving-Zhang2024"/> SE models (e.g., BSRNN<d-cite key="Music-Luo2023,yuEfficientMonauralSpeech2023,High-Yu2023"/>, TF-GridNet<d-cite key="TF_GridNet-Wang2023,TF_GridNet2-Wang2023"/>), we directly feed the degraded speech of different SFs into the model, which can adaptively adjust their STFT/iSTFT configuration according to the SF and generate the enhanced signal with the same SF.
 <br>
 
 In the challenge, the SE system has to address the following seven distortions:
@@ -375,9 +376,9 @@ We provide an example simulation script as [`simulation/simulate_data_from_param
 
 <br>
 
-## Rules and Ranking
+## Rules 
 
-1. When generating the training and validation datasets, **ONLY the speech, noise, and room impulse response (RIR) corpora listed in the [`Data`](/urgent2025/data) tab shall be used to ensure a fair comparison** and proper understanding of various SE approaches.
+1. When generating the training and validation datasets, **ONLY the speech, noise, and room impulse response (RIR) corpora listed in the [Datasets](#datasets) section shall be used to ensure a fair comparison** and proper understanding of various SE approaches.
     
 
     * The first month of the challenge will be a grace period when participants can propose additional public datasets to be included in the list. We (organizers) will reply to the requests and may update the list. Updates will be recorded in the [`Notice`](/urgent2026/notice) tab. 
@@ -394,7 +395,7 @@ We provide an example simulation script as [`simulation/simulate_data_from_param
 
     * **If you are unsure whether the pre-trained model you would like to use is allowed, please reach out to the organizers.**
 
-2. We allow participants to simulate their own RIRs using existing tools<d-footnote>For example, <a href="https://github.com/ehabets/RIR-Generator">RIR-Generator</a>, <a href="https://github.com/LCAV/pyroomacoustics">pyroomacoustics</a>, <a href="https://github.com/DavidDiazGuerra/gpuRIR">gpuRIR</a>,  and so on.</d-footnote> for generating the training data. The participants can also propose publicly available real recorded RIRs to be included in the above data list during the grace period (See [`Timeline`](/urgent2026/timeline)).
+2. We allow participants to simulate their own RIRs using existing tools<d-footnote>For example, <a href="https://github.com/ehabets/RIR-Generator">RIR-Generator</a>, <a href="https://github.com/LCAV/pyroomacoustics">pyroomacoustics</a>, <a href="https://github.com/DavidDiazGuerra/gpuRIR">gpuRIR</a>,  and so on.</d-footnote> for generating the training data. The participants can also propose publicly available, real recorded RIRs to be included in the above data list during the grace period (See [`Timeline`](/urgent2026/timeline)).
 > Note: If participants used additional RIRs to train their model, the related information should be provided in the README.yaml file in the submission. Check the [template](/urgent2026/template) for more information.
 
 3. We allow participants to simulate wind noise using some tools such as <a href="https://github.com/audiolabs/SC-Wind-Noise-Generator/tree/main">SC-Wind-Noise-Generator</a>. In default, the simulation script in our repository simulates 200 and 100 wind noises for training and validation for each sampling frequency. The configuration can be easily changed in <a href="https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/conf/wind_noise_simulation_train.yaml">wind_noise_simulation_train.yaml</a> and <a href="https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/conf/wind_noise_simulation_validation.yaml">wind_noise_simulation_validation.yaml</a>
@@ -409,7 +410,12 @@ We provide an example simulation script as [`simulation/simulate_data_from_param
     * Only the team name will be shown in the leaderboard, while the affiliation and team members will be kept confidential.<br/><br/>
 
 
-7. The following evaluation metrics will be calculated for evaluation.
+## Ranking
+
+The blind test ranking will be carried out in **two stages**. In `stage 1`, we will evaluate participants' submissions with **multiple objective metrics**. The top-6 systems in the objective `overall ranking` will advance to the `stage 2`, be evaluated by **multiple subjective tests**, and then the `final ranking` will be determined by the subjective `overall ranking`.
+For the validation set and non-blind test set, the leardboard will only rank with the **multiple objective metrics**.
+
+1. The following objective evaluation metrics will be calculated for evaluation in `stage 1`. For real recorded test samples that do not have a strictly matched reference signal, part of the following metrics will be used. The `overall ranking` will be determined by the algorithm introduced in the [subsequent section](#overall-ranking-method).
     
     <style type="text/css">
     .tg  {border:none;border-collapse:collapse;border-color:#ccc;border-spacing:0;}
@@ -438,8 +444,8 @@ We provide an example simulation script as [`simulation/simulate_data_from_param
         <th class="tg-uzvj">Category</th>
         <th class="tg-g7sd">Metric</th>
         <th class="tg-uzvj">Need Reference Signals?</th>
-        <th class="tg-uzvj">Supported Sampling Frequencies</th>
-        <th class="tg-uzvj">Value Range</th>
+        <!-- <th class="tg-uzvj">Supported Sampling Frequencies</th>
+        <th class="tg-uzvj">Value Range</th> -->
     </tr>
     </thead>
     <tbody>
@@ -447,165 +453,144 @@ We provide an example simulation script as [`simulation/simulate_data_from_param
         <td class="tg-r6l2" rowspan="4">Non-intrusive SE metrics</td>
         <td class="tg-rt8k"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_nonintrusive_dnsmos.py">DNSMOS</a> ↑<d-cite key="DNSMOS-Reddy2022"/></td>
         <td class="tg-51oy">❌</td>
-        <td class="tg-51oy">16 kHz</td>
-        <td class="tg-51oy">[1, 5]</td>
+        <!-- <td class="tg-51oy">16 kHz</td>
+        <td class="tg-51oy">[1, 5]</td> -->
     </tr>
     <tr>
         <td class="tg-0a7q"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_nonintrusive_nisqa.py">NISQA</a> ↑<d-cite key="NISQA-Mittag2021"/></td>
         <td class="tg-xwyw"><span style="font-weight:400;font-style:normal;text-decoration:none">❌</span></td>
-        <td class="tg-xwyw">48 kHz</td>
-        <td class="tg-xwyw">[1, 5]</td>
+        <!-- <td class="tg-xwyw">48 kHz</td>
+        <td class="tg-xwyw">[1, 5]</td> -->
     </tr>
     <tr>
         <td class="tg-0a7q"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_nonintrusive_mos.py">UTMOS</a> ↑<d-cite key="UTMOS-SAEKI2022"/></td>
         <td class="tg-xwyw"><span style="font-weight:400;font-style:normal;text-decoration:none">❌</span></td>
-        <td class="tg-xwyw">16 kHz</td>
-        <td class="tg-xwyw">[1, 5]</td>
+        <!-- <td class="tg-xwyw">16 kHz</td>
+        <td class="tg-xwyw">[1, 5]</td> -->
     </tr>
     <!-- new -->
     <tr>
-        <td class="tg-0a7q"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_nonintrusive_mos.py">ScoreQ</a> ↑<d-cite key="NEURIPS2024_bece7e02"/></td>
+        <td class="tg-0a7q"><a href="https://github.com/alessandroragano/scoreq">SCOREQ</a> ↑<d-cite key="NEURIPS2024_bece7e02"/></td>
         <td class="tg-xwyw"><span style="font-weight:400;font-style:normal;text-decoration:none">❌</span></td>
-        <td class="tg-xwyw">16 kHz</td>
-        <td class="tg-xwyw">[0.0, 1.0]</td>
-    </tr>
-    <!-- <tr>
-        <td class="tg-0a7q"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_nonintrusive_mos.py">Distill-MOS</a> ↑<d-cite key="stahlDistillationPruningScalable2025"/></td>
-        <td class="tg-xwyw"><span style="font-weight:400;font-style:normal;text-decoration:none">❌</span></td>
-        <td class="tg-xwyw">16 kHz</td>
-        <td class="tg-xwyw">[1, 5]</td>
+        <!-- <td class="tg-xwyw">16 kHz</td>
+        <td class="tg-xwyw">[0.0, 1.0]</td> -->
     </tr>
     <tr>
-        <td class="tg-0a7q"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_nonintrusive_mos.py">SIGMOS</a> ↑<d-cite key="risteaICASSP2024Speech2025"/></td>
-        <td class="tg-xwyw"><span style="font-weight:400;font-style:normal;text-decoration:none">❌</span></td>
-        <td class="tg-xwyw">16 kHz</td>
-        <td class="tg-xwyw">[1, 5]</td>
-    </tr>
-    <tr>
-        <td class="tg-0a7q"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_nonintrusive_mos.py">Torchaudio-Squim SDR</a> ↑<d-cite key="kumarTorchaudioSquimReferenceLessSpeech2023"/></td>
-        <td class="tg-xwyw"><span style="font-weight:400;font-style:normal;text-decoration:none">❌</span></td>
-        <td class="tg-xwyw">16 kHz</td>
-        <td class="tg-xwyw"> (-∞, +∞) </td>
-    </tr> -->
-    <!-- new -->
-
-    <tr>
-        <td class="tg-kyy7" rowspan="6">Intrusive SE metrics</td>
+        <td class="tg-kyy7" rowspan="3">Intrusive SE metrics</td>
         <td class="tg-d459"><a href="http://www.polqa.info" style="color:#e97c36;">POLQA</a><d-footnote>This metric will only be used for evaluation of the final blind test set.</d-footnote> ↑</td>
         <td class="tg-kyy7">✔</td>
-        <td class="tg-kyy7"><span style="font-weight:400;font-style:normal;text-decoration:none">8~48 kHz</span></td>
-        <td class="tg-kyy7"><span style="font-weight:400;font-style:normal;text-decoration:none">[1, 5]</span></td>
+        <!-- <td class="tg-kyy7"><span style="font-weight:400;font-style:normal;text-decoration:none">8~48 kHz</span></td>
+        <td class="tg-kyy7"><span style="font-weight:400;font-style:normal;text-decoration:none">[1, 5]</span></td> -->
     </tr>
     <tr>
         <td class="tg-d459"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_intrusive_se_metrics.py">PESQ</a> ↑<d-cite key="PESQ-Rix2001"/></td>
         <td class="tg-kyy7">✔</td>
-        <td class="tg-kyy7"><span style="font-weight:400;font-style:normal;text-decoration:none">{8, 16} kHz</span></td>
-        <td class="tg-kyy7"><span style="font-weight:400;font-style:normal;text-decoration:none">[-0.5, 4.5]</span></td>
+        <!-- <td class="tg-kyy7"><span style="font-weight:400;font-style:normal;text-decoration:none">{8, 16} kHz</span></td>
+        <td class="tg-kyy7"><span style="font-weight:400;font-style:normal;text-decoration:none">[-0.5, 4.5]</span></td> -->
     </tr>
     <tr>
         <td class="tg-r2ra"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_intrusive_se_metrics.py">ESTOI</a> ↑<d-cite key="ESTOI-Jensen2016"/></td>
         <td class="tg-ligs">✔</td>
-        <td class="tg-ligs"><span style="font-weight:400;font-style:normal;text-decoration:none">10 kHz</span></td>
-        <td class="tg-ligs">[0, 1]</td>
-    </tr>
-    <tr>
-        <td class="tg-d459"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_intrusive_se_metrics.py">SDR</a> ↑<d-cite key="SDR-Vincent2006"/></td>
-        <td class="tg-kyy7">✔</td>
-        <td class="tg-kyy7">Any</td>
-        <td class="tg-kyy7">(-∞, +∞)</td>
-    </tr>
-    <tr>
-        <td class="tg-r2ra"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_intrusive_se_metrics.py">MCD</a> ↓<d-cite key="MCD-Kubichek1993"/></td>
-        <td class="tg-ligs">✔</td>
-        <td class="tg-ligs">Any</td>
-        <td class="tg-ligs">[0, +∞)</td>
-    </tr>
-    <tr>
-        <td class="tg-d459"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_intrusive_se_metrics.py">LSD</a> ↓<d-cite key="LSD-Gray1976"/></td>
-        <td class="tg-kyy7">✔</td>
-        <td class="tg-kyy7">Any</td>
-        <td class="tg-kyy7">[0, +∞)</td>
+        <!-- <td class="tg-ligs"><span style="font-weight:400;font-style:normal;text-decoration:none">10 kHz</span></td>
+        <td class="tg-ligs">[0, 1]</td> -->
     </tr>
     <tr>
         <td class="tg-rq3n" rowspan="2">Downstream-task-independent metrics</td>
-        <td nowrap class="tg-mfxt"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_speechbert_score.py">SpeechBERTScore</a><d-footnote>To evaluate multilingual speech, we adopt the MHuBERT-147 backend for calculating the SpeechBERTScore, which differs from its defalut backend (WavLM-Large).</d-footnote> ↑<d-cite key="SpeechBERTScore-Saeki2024"/></td>
+        <td nowrap class="tg-mfxt"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_speechbert_score.py">SpeechBERTScore</a><d-footnote>To evaluate multilingual speech, we adopt the MHuBERT-147 backend for calculating the SpeechBERTScore, which differs from its default backend (WavLM-Large).</d-footnote> ↑<d-cite key="SpeechBERTScore-Saeki2024"/></td>
         <td class="tg-rq3n">✔</td>
-        <td class="tg-rq3n">16 kHz</td>
-        <td class="tg-rq3n">[-1, 1]</td>
+        <!-- <td class="tg-rq3n">16 kHz</td>
+        <td class="tg-rq3n">[-1, 1]</td> -->
     </tr>
     <tr>
         <td class="tg-qmuc"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_phoneme_similarity.py">LPS</a> ↑<d-cite key="Evaluation-Pirklbauer2023"/></td>
         <td class="tg-r6l2">✔</td>
-        <td class="tg-r6l2">16 kHz</td>
-        <td class="tg-r6l2"><span style="font-weight:400;font-style:normal;text-decoration:none">(-∞, 1]</span></td>
+        <!-- <td class="tg-r6l2">16 kHz</td>
+        <td class="tg-r6l2"><span style="font-weight:400;font-style:normal;text-decoration:none">(-∞, 1]</span></td> -->
     </tr>
     <tr>
         <td class="tg-ligs" rowspan="4">Downstream-task-dependent metrics</td>
         <td class="tg-r2ra"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_speaker_similarity.py">Speaker Similarity</a> ↑</td>
         <td class="tg-ligs">✔</td>
-        <td class="tg-ligs">16 kHz</td>
-        <td class="tg-ligs">[-1, 1]</td>
+        <!-- <td class="tg-ligs">16 kHz</td>
+        <td class="tg-ligs">[-1, 1]</td> -->
     </tr>
     <tr>
-        <td class="tg-d459"><a href="">EMOTION2VEC Similarity</a> ↑</td>
+        <td class="tg-d459"><a href="https://github.com/wavlab-speech/versa/blob/main/versa/utterance_metrics/emotion.py">Emotion Similarity</a> ↑</td>
+        <td class="tg-kyy7">✔</td>
+        <!-- <td class="tg-kyy7">16 kHz</td>
+        <td class="tg-kyy7">[-1, 1]</td> -->
+    </tr>
+    <tr>
+        <td class="tg-d459"><a href="https://github.com/wavlab-speech/versa/blob/d8ffb153e52ddfd7edbff90c697d52c359e62c5a/versa/utterance_metrics/owsm_lid.py">Language identification accuracy</a> ↑</td>
         <td class="tg-kyy7">❌</td>
-        <td class="tg-kyy7">16 kHz</td>
-        <td class="tg-kyy7">[-1, 1]</td>
+        <!-- <td class="tg-kyy7">16 kHz</td>
+        <td class="tg-kyy7">[0, 1]</td> -->
     </tr>
     <tr>
-        <td class="tg-d459"><a href="">Language identification accuracy</a> ↑</td>
+        <td class="tg-d459"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_wer.py">Character accuracy (1 - CER)</a> ↑</td>
         <td class="tg-kyy7">❌</td>
-        <td class="tg-kyy7">16 kHz</td>
-        <td class="tg-kyy7">[0, 1]</td>
+        <!-- <td class="tg-kyy7">16 kHz</td>
+        <td class="tg-kyy7">(-∞, 1]</td> -->
+    </tr>
+
+    </tbody>
+    </table><br/>
+
+2. In `stage 2`, we will make <a href="https://www.itu.int/rec/T-REC-P.808-202106-I">ITU-T P.808</a> Absolute Category Rating (ACR) and Comparison Category Rating (CCR) for the top-6 submissions, and the Mean Opinion Score (MOS) and Comparison Mean Opinion Score (CMOS) will be used for subjective metric ranking. Then the `overall ranking` in the subjective evaluation will become the `final ranking` of the challenge. It is noted that, if the `overall rankings` of the subjective tests of two teams are the same, we will refer to the `overall rankings` of the objective tests to determine the `final rankings`.
+
+    <table class="tg">
+    <thead>
+    <tr>
+        <th class="tg-uzvj">Category</th>
+        <th class="tg-g7sd">Metric</th>
+        <th class="tg-uzvj">Evaluation method</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="tg-r6l2" rowspan="2">Subjective metrics</td>
+        <td class="tg-rt8k">MOS ↑</td>
+        <td class="tg-51oy"><a href="https://www.itu.int/rec/T-REC-P.808-202106-I">ITU-T P.808</a> ACR</td>
     </tr>
     <tr>
-        <td class="tg-d459"><a href="https://github.com/urgent-challenge/urgent2025_challenge/blob/main/evaluation_metrics/calculate_wer.py">Character accuracy (1 - CER)</a><d-footnote></d-footnote> ↑</td>
-        <td class="tg-kyy7">❌</td>
-        <td class="tg-kyy7">16 kHz</td>
-        <td class="tg-kyy7">(-∞, 1]</td>
-    </tr>
-    <tr>
-        <td class="tg-r6l2" rowspan="1">Subjective SE metrics</td>
-        <td class="tg-rt8k"><a href="https://github.com/microsoft/P.808" style="color:#e97c36;">MOS</a><d-footnote>This metric will only be used for evaluation of the final blind test set.</d-footnote> ↑</td>
-        <td class="tg-51oy">❌</td>
-        <td class="tg-51oy">Any</td>
-        <td class="tg-51oy">[1, 5]</td>
+        <td class="tg-0a7q">CMOS ↑</td>
+        <td class="tg-51oy"><a href="https://www.itu.int/rec/T-REC-P.808-202106-I">ITU-T P.808</a> CCR</td>
     </tr>
     </tbody>
     </table><br/>
 
-    > **Note:** For real recorded test samples that do not have a strictly matched reference signal, part of the above metrics will be used.
 
 
-6. The overall ranking will be determined via the following procedure:
+### Overall ranking method
 
-    1. Calculate the average score of each metric for each submission.
-    2. Calculate the per-metric ranking based on the average score.
-       * We adopt the dense ranking ("1223" ranking)<d-footnote><a href="https://en.wikipedia.org/wiki/Ranking#Dense_ranking_(%221223%22_ranking)">https://en.wikipedia.org/wiki/Ranking#Dense_ranking_(&quot;1223&quot;_ranking)</a></d-footnote> strategy for handling ties.
-    3. Calculate the `per-category ranking` by averaging the rankings within each category.
-    4. Calculate the overall ranking by averaging the `per-category rankings`.<br/><br/>
+The overall ranking will be determined via the following procedure:
 
-    ```python
-    # Step 1: Calculate the average score of each metric
-    scores = {}
-    for submission in all_submissions:
-      scores[submission] = {}
-      for category in metric_categories:
-        for metric in category:
-          scores[submission][metric] = mean([metric(each_sample) for each_sample in submission])
+1. Calculate the `average score` of each metric for each submission.
+2. Calculate the `per-metric ranking` based on the average score.
+ * We adopt the dense ranking ("1223" ranking)<d-footnote><a href="https://en.wikipedia.org/wiki/Ranking#Dense_ranking_(%221223%22_ranking)">https://en.wikipedia.org/wiki/Ranking#Dense_ranking_(&quot;1223&quot;_ranking)</a></d-footnote> strategy for handling ties.
+3. Calculate the `per-category ranking` by averaging the rankings within each category.
+4. Calculate the `overall ranking` by averaging the `per-category rankings`.<br/><br/>
 
-    # Step 2: Calculate the per-metric ranking based on the average score
-    rank_per_metric = {}
-    rank_per_category = {}
-    for category in metric_categories:
-      for metric in category:
-        rank_per_metric[metric] = get_ranking([scores[submission][metric] for submission in all_submissions])
+```python
+# Step 1: Calculate the average score of each metric
+scores = {}
+for submission in all_submissions:
+  scores[submission] = {}
+  for category in metric_categories:
+    for metric in category:
+      scores[submission][metric] = mean([metric(each_sample) for each_sample in submission])
 
-      # Step 3: Calculate the `per-category ranking` by averaging the rankings within each category
-      rank_per_category[category] = get_ranking([rank_per_metric[metric] for metric in category])
+# Step 2: Calculate the per-metric ranking based on the average score
+rank_per_metric = {}
+rank_per_category = {}
+for category in metric_categories:
+  for metric in category:
+    rank_per_metric[metric] = get_ranking([scores[submission][metric] for submission in all_submissions])
 
-    # Step 4: Calculate the overall ranking by averaging the `per-category rankings`
-    rank_overall = get_ranking([rank_per_category[category] for category in metric_categories])
-    ```
+  # Step 3: Calculate the `per-category ranking` by averaging the rankings within each category
+  rank_per_category[category] = get_ranking([rank_per_metric[metric] for metric in category])
 
-    > Note: Only <u>the original test data</u>, <u>the best baseline system</u>, and <u>participant submissions</u> are taken into account in the ranking procedure.
+# Step 4: Calculate the overall ranking by averaging the `per-category rankings`
+rank_overall = get_ranking([rank_per_category[category] for category in metric_categories])
+```
+
