@@ -77,7 +77,7 @@ Please check the [Track1](/urgent2026/track1) page for more details.
 
 ### Track 2: Speech Quality Assessment
 
-The task of this track is to build a robust, generalizable speech quality assessment (SQA) model that predicts mean opinion scores (MOS) for enhanced speech. Systems will be evaluated using correlation and error metrics — MSE (Mean Squared Error), LCC (linear correlation coefficient), SRCC (Spearman’s rank correlation coefficient), and KTAU (Kendall’s tau) — between the predicted MOS and the provided MOS labels. Data preparation scripts and baseline codes are available at https://github.com/urgent-challenge/urgent2026_challenge_track2. We allow the use of any public data and publicly available models. See the [`Rules`](/urgent2026/rules/) page for full details.
+The task of this track is to build a robust, generalizable speech quality assessment (SQA) model that predicts mean opinion scores (MOS) for enhanced speech. Systems will be evaluated using correlation and error metrics — MSE (Mean Squared Error), LCC (linear correlation coefficient), SRCC (Spearman’s rank correlation coefficient), and KTAU (Kendall’s tau) — between the predicted MOS and the provided MOS labels. Data preparation scripts and baseline codes are available at https://github.com/urgent-challenge/urgent2026_challenge_track2. We allow the use of any public data and publicly available models. See the [`Track2`](/urgent2026/track2/) page for full details.
 
 <br>
 
