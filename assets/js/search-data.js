@@ -30,12 +30,19 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/urgent2026/track1#datasets";
               },
-            },{id: "dropdown-rules-and-ranking",
-              title: "Rules and Ranking",
+            },{id: "dropdown-rules",
+              title: "Rules",
               description: "",
               section: "Dropdown",
               handler: () => {
-                window.location.href = "/urgent2026/track1#rules-and-ranking";
+                window.location.href = "/urgent2026/track1#rules";
+              },
+            },{id: "dropdown-ranking",
+              title: "Ranking",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/urgent2026/track1#ranking";
               },
             },{id: "nav-track2-speech-quality-assessment",
           title: "Track2: Speech Quality Assessment",
