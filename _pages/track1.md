@@ -63,7 +63,7 @@ Non-blind/bind test set will be released later, check the [timeline](/urgent2026
 
 Based on the [dataset of the 2nd URGENT challenge](https://urgent-challenge.github.io/urgent2025/data/), we conducted a data selection using the data filtering method proposed in a recent paper <d-cite key="liLessMoreData2025"/>.
 
-**It is noted that we encourage you to explore better ways of data selection and utilization in this challenge.** In addition to the data and filtering methods provided by our baseline, you can make use of larger-scale datasets, such as the [track2 data](https://urgent-challenge.github.io/urgent2025/data/) from the 2nd URGENT challenge, or other allowed data (please check it in the [rules](/urgent2026/rules/) section).
+**It is noted that we encourage you to explore better ways of data selection and utilization in this challenge.** In addition to the data and filtering methods provided by our baseline, you can make use of larger-scale datasets, such as the [track1/track2 data](https://urgent-challenge.github.io/urgent2025/data/) from the [2nd URGENT challenge](https://urgent-challenge.github.io/urgent2025/data/), or other allowed data (please check it in the [rules](/urgent2026/rules/) section).
 
 The training and validation data are both simulated based on the following source data.
 <style>
@@ -380,7 +380,6 @@ We provide an example simulation script as [`simulation/simulate_data_from_param
 
 1. When generating the training and validation datasets, **ONLY the speech, noise, and room impulse response (RIR) corpora listed in the [Datasets](#datasets) section shall be used to ensure a fair comparison** and proper understanding of various SE approaches.
     
-
     * The first month of the challenge will be a grace period when participants can propose additional public datasets to be included in the list. We (organizers) will reply to the requests and may update the list. Updates will be recorded in the [`Notice`](/urgent2026/notice) tab. 
     
     * **It is NOT allowed to use pre-trained speech enhancement models trained on other than official Challenge data**.
