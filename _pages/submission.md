@@ -10,12 +10,6 @@ nav_order: 6
 <br>
 
 
-
-
-### Registration to leaderboard
-
-Please refer to [leaderboard](/urgent2026/leaderboard) tab for details.
-
 <br>
 
 ### Submission format and requirements (Track1)
