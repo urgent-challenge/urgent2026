@@ -63,7 +63,7 @@ Non-blind/bind test set will be released later, check the [timeline](/urgent2026
 
 Based on the [dataset of the 2nd URGENT challenge](https://urgent-challenge.github.io/urgent2025/data/), we conducted a data selection using the data filtering method proposed in a recent paper <d-cite key="liLessMoreData2025"/>.
 
-**It is noted that we encourage you to explore better ways of data selection and utilization in this challenge.** In addition to the data and filtering methods provided by our baseline, you can make use of larger-scale datasets, such as the [track1/track2 data](https://urgent-challenge.github.io/urgent2025/data/) from the [2nd URGENT challenge](https://urgent-challenge.github.io/urgent2025/data/), or other allowed data (please check it in the [rules](/urgent2026/track1/#rules) section).
+**It is noted that we encourage you to explore better ways of data selection and utilization in this challenge.** In addition to the data and filtering methods provided by our baseline, you can make use of larger-scale datasets, such as the [track1/track2 data](https://urgent-challenge.github.io/urgent2025/data/) from the [2nd URGENT challenge](https://urgent-challenge.github.io/urgent2025/data/), or other allowed data (please check it in the [rules](#rules) section).
 
 The training and validation data are both simulated based on the following source data.
 <style>
@@ -329,8 +329,7 @@ For the noise source and RIRs, we follow the same configuration as in the [2nd U
 </tbody>
 </table>
 
-Note that, except for the data listed above and those we allow in the [rules](#rules), they cannot be used for the purpose of this challenge. 
-However, we allow participants to simulate their own RIRs using existing tools for generating the training data. The participants can also propose publicly available, real recorded RIRs to be included in the above data list during the grace period. See [rules](#rules) section for more details.
+Participants can also simulate their own RIRs using existing tools for generating the training data. Participants can also propose publicly available, real recorded RIRs to be included in the above data list during the grace period. See [rules](#rules) section for more details.
 
 
 **Data selection and Simulation.** We apply the data selection to the track1 data of the [2nd URGENT](https://urgent-challenge.github.io/urgent2025/) using the data filtering method proposed in the recent paper <d-cite key="liLessMoreData2025"/>. The selected data list is available at [here](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/meta/train_selected_700h). The speech source from NNCES, SeniorTalk, VocalSet, and ESD is not filtered.
