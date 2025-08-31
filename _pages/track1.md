@@ -10,6 +10,8 @@ nav_order: 3
 bibliography: track1.bib
 dropdown: true
 children:
+    - title: Overview
+      permalink: /track1
     - title: Data
       permalink: /track1#datasets 
     - title: Baseline
@@ -24,7 +26,6 @@ children:
 
 ## Contents:
 
-- [Contents:](#contents)
 - [Datasets](#datasets)
   - [Brief data description:](#brief-data-description)
   - [Detailed data description:](#detailed-data-description)
@@ -361,8 +362,7 @@ In the challenge, the SE system has to address the following seven distortions:
 We provide an example simulation script as [`simulation/simulate_data_from_param.py`](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/simulation/simulate_data_from_param.py).
 
 
-
-<br>
+---
 
 ## Baseline
 

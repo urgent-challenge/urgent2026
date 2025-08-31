@@ -10,37 +10,35 @@ nav_order: 4
 bibliography: track2.bib
 dropdown: true
 children: 
+    - title: Overview
+      permalink: /track2
     - title: Data
       permalink: /track2#data
     - title: Rules
       permalink: /track2#rules    
-    - title: Ranking
-      permalink: /track2#ranking
     - title: Baseline
       permalink: /track2#baseline
+    - title: Submission
+      permalink: /track2#submission
+    - title: Ranking
+      permalink: /track2#ranking
 ---
 
 This track focuses on predicting the Mean Opinion Score (MOS) of speech processed by **speech enhancement systems**<d-footnote>This contrasts with existing challenges, which primarily targeted MOS prediction for text-to-speech (TTS) and voice conversion (VC) systems.</d-footnote>.
 
 ## Contents:
 
-- [Rules](#rules)
 - [Data](#data)
   - [Training and Development Data](#training--development-data)
   - [Validation Data](#validation-data)
   - [Non-Blind Test Data](#blind-test-data)
   - [Blind Test Data](#non-blind-test-data)
-- [Ranking](#ranking)
+- [Rules](#rules)
 - [Baseline](#baseline)
 - [Submission](#submission)
+- [Ranking](#ranking)
+  - [Overall ranking method](#overall-ranking-method)
 
-## Rules
-
-- Participants are required submit a system description after the challenge ends.
-
-- Any public dataset may be used to develop your prediction system, and the datasets used must be reported in the system description. Use of proprietary datasets, including collecting your own MOS ratings, is not permitted unless the resources are publicly available<d-footnote>We followed rules from <a href="https://sites.google.com/view/voicemos-challenge/audiomos-challenge-2025">AudioMos Challenge 2025</a></d-footnote>.
-
-- Participants may leverage publicly available pretrained models within their systems. All such pretrained resources must also be clearly cited and described in the system description.
 
 ## Data
 
@@ -122,7 +120,7 @@ tr {
 </thead>
 <tbody>
   <tr>
-    <td rowspan="10">Training</td>
+    <td rowspan="11">Training</td>
     <td>BC19<d-cite key="BC19"/></td>
     <td>136</td>
     <td>21</td>
@@ -210,39 +208,27 @@ tr {
     <td>MIT</td>
   </tr>
   <tr>
-    <td>CHiME-7 UDASE Eval<d-cite key="CHiME-7-UDASE-Eval"/></td>
+    <td>URGENT24-SQA<d-cite key="UniVERSAExt"/><d-cite key="P808-Sach2025"/><d-cite key="URGENT-Zhang2024"/></td>
     <td>640</td>
     <td>5</td>
     <td>0.84</td>
     <td>
-      <a href="https://zenodo.org/records/10418311/files/CHiME-7-UDASE-evaluation-data.zip">[Original]</a>
       <a href="https://huggingface.co/datasets/urgent-challenge/urgent26_track2_sqa/resolve/main/CHiME-7-UDASE-evaluation-data.zip">[Huggingface]</a>
     </td>
     <td>CC BY-SA 4.0</td>
   </tr>
   <tr>
-    <td>URGENT24-SQA<d-cite key="UniVERSAExt"/><d-cite key="URGENT-Zhang2024"/><d-cite key="P808-Sach2025"/></td>
+    <td>URGENT25-SQA<d-cite key="UniVERSAExt"/><d-cite key="P808-Sach2025"/><d-cite key="Interspeech2025-Saijo2025"/></td>
     <td>640</td>
     <td>5</td>
     <td>0.84</td>
     <td>
-      <a href="https://zenodo.org/records/10418311/files/CHiME-7-UDASE-evaluation-data.zip">[Original]</a>
       <a href="https://huggingface.co/datasets/urgent-challenge/urgent26_track2_sqa/resolve/main/CHiME-7-UDASE-evaluation-data.zip">[Huggingface]</a>
     </td>
     <td>CC BY-SA 4.0</td>
   </tr>
   <tr>
-    <td>URGENT25-SQA<d-cite key="UniVERSAExt"/><d-cite key="Interspeech2025-Saijo2025"/><d-cite key="P808-Sach2025"/></td>
-    <td>640</td>
-    <td>5</td>
-    <td>0.84</td>
-    <td>
-      <a href="https://zenodo.org/records/10418311/files/CHiME-7-UDASE-evaluation-data.zip">[Original]</a>
-      <a href="https://huggingface.co/datasets/urgent-challenge/urgent26_track2_sqa/resolve/main/CHiME-7-UDASE-evaluation-data.zip">[Huggingface]</a>
-    </td>
-    <td>CC BY-SA 4.0</td>
-  </tr>
-  <tr>
+    <td rowspan="2">Development</td>
     <td>CHiME-7 UDASE Eval<d-cite key="CHiME-7-UDASE-Eval"/></td>
     <td>640</td>
     <td>5</td>
@@ -259,40 +245,173 @@ tr {
 
 #### Validation Data
 
-The validation data is the MOS dataset from the 1st URGENT challenge served on huggingface. The official data preparation scripts includes the preparation of the validation data.
+The validation data is available on Hugging Face, and the data preparation script can be found in the official [GitHub repository](https://github.com/urgent-challenge/urgent2026_challenge_track1).
+
+<!-- Although MOS labels for the validation set are provided for offline evaluation, we **strongly recommend** submitting your results to the leaderboard. This allows you to verify your system’s relative performance under our ranking protocol and ensures there are no misunderstandings regarding the evaluation procedure. -->
 
 #### Non-Blind Test Data
 
-The non-blind test data will be availabel after the non-blind test phase opens, stay tuned.
+The non-blind test data will be availabel after the non-blind test phase opens, please stay tuned.
 
 #### Blind Test Data
 
-The blind test data will be availabel after the non-blind test phase opens, stay tuned.
+The blind test data will be availabel after the non-blind test phase opens, please stay tuned.
 
 
-## Ranking
+---
 
-Systems will be evaluated based on both correlation and error metrics between the predicted Mean Opinion Scores (MOS) and the ground-truth MOS labels. The following metrics will be used:
+## Rules
 
-- **Mean Squared Error (MSE)** – Measures the average squared difference between predicted and true MOS.
+* During the first month of the challenge, participants may propose additional public datasets for inclusion in the official dataset list. The organizers will review all requests and may update the list accordingly. Any updates will be announced in the [`Notice`](/urgent2026/notice) tab.
 
-- **Linear Correlation Coefficient (LCC)** – Assesses the strength of the linear relationship between predicted and true scores.
+* After the challenge concludes, participants are required to submit a complete system description.
 
-- **Spearman’s Rank Correlation Coefficient (SRCC)** – Evaluates the monotonic relationship between rankings of predicted and true scores.
+* Participants may use any publicly available dataset to develop their prediction systems. All datasets used must be clearly reported in the system description. The use of proprietary datasets—including collecting your own MOS ratings—is not permitted unless those resources are publicly released.<d-footnote>These rules follow the precedent set by the <a href="https://sites.google.com/view/voicemos-challenge/audiomos-challenge-2025">AudioMOS Challenge 2025</a>.</d-footnote>
 
-- **Kendall’s Tau (KTAU)** – Measures the ordinal association between the predicted and true rankings.
+* Participants may incorporate publicly available models into their systems for tasks such as generating additional data, producing pseudo-MOS labels, initializing model parameters, or serving as system components. All such pre-trained resources must be explicitly cited and described in the system description.
+
+---
 
 ## Baseline
 
-- Official Baseline
-  - [Github repo](https://github.com/urgent-challenge/urgent2026_challenge_track2)
-  - Paper: [Uni-VERSA](https://arxiv.org/abs/2505.20741); [Uni-VERSA-Ext](https://arxiv.org/abs/2506.12260)
-  - [Colab](https://colab.research.google.com/drive/1Y2OkPE0hGSG4XRj_b7RsmWMVSg4KkhM7#scrollTo=fefCV1-iJ670)
+Please refer to the official [GitHub repository](https://github.com/urgent-challenge/urgent2026_challenge_track1) for more details, which is a implmentation of [Uni-VERSA-Ext](https://arxiv.org/abs/2506.12260)<d-cite key="UniVERSAExt"/>.
+
+You can also try the pretrained models on [Colab](https://colab.research.google.com/drive/1Y2OkPE0hGSG4XRj_b7RsmWMVSg4KkhM7)
+
 - Other Suggested MOS Predictors
   - [UTMOS2 (domain dependent)](https://github.com/sarulab-speech/UTMOSv2)
   - [SSL-MOS](https://github.com/nii-yamagishilab/mos-finetune-ssl)
   - [NISQA](https://github.com/gabrielmittag/NISQA)
   - [LDNet (listener dependent)](https://github.com/unilight/LDNet)
+  - [Uni-VERSA](https://huggingface.co/collections/espnet/universa-6834e7c0a28225bffb6e2526)
 
+---
 
 ## Submission
+
+* Each submission should be **a zip file** containing two parts:
+    1. a mos.scp file containing the mapping from audio name (without extension) to predicted mos score
+    ```
+    fileid_0001 4.031136
+    fileid_0002 3.545564 
+    ```
+    2. a YAML (README.yaml) file containing the basic information about the submission (as listed below). The template can be found [here](/urgent2026/template_track2).
+        * team information (team name, affiliation, team mambers)
+        * description of the training & validation data used for the submission
+        * description of pre-trained models used for the submission (if applicable)
+
+> Submissions that fail to conform to the above requirements may be rejected.
+>
+> Should you encounter any problem during the submission, please feel free to [contact the organizers](mailto:urgent.challenge@gmail.com).
+
+## Ranking
+
+Systems will be evaluated based on both correlation and error metrics between the predicted Mean Opinion Scores (MOS) and the ground-truth MOS labels. The following metrics will be used:
+
+- **Mean Squared Error (MSE)** – Measures the average squared difference between predicted and true scores.
+
+- **Linear Correlation Coefficient (LCC)** – Assesses the strength of the linear relationship between predicted and true scores.
+
+- **Spearman’s Rank Correlation Coefficient (SRCC) and Kendall’s Tau (KTAU)** – Evaluate the rank correlation between predicted and true scores
+
+    <style type="text/css">
+    .tg  {border:none;border-collapse:collapse;border-color:#ccc;border-spacing:0;}
+    .tg td{background-color:#fff;border-color:#ccc;border-style:solid;border-width:0px;color:#333;
+    font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:0px;color:#333;
+    font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg .tg-r2ra{background-color:#f9f9f9;border-color:inherit;text-align:left;vertical-align:middle}
+    .tg .tg-51oy{background-color:#ffffff;border-color:#000000;text-align:center;vertical-align:middle}
+    .tg .tg-rt8k{background-color:#ffffff;border-color:#000000;text-align:left;vertical-align:middle}
+    .tg .tg-uzvj{border-color:inherit;font-weight:bold;text-align:center;vertical-align:middle}
+    .tg .tg-g7sd{border-color:inherit;font-weight:bold;text-align:left;vertical-align:middle}
+    .tg .tg-r6l2{background-color:#ffffff;border-color:inherit;text-align:center;vertical-align:middle}
+    .tg .tg-0a7q{border-color:#000000;text-align:left;vertical-align:middle}
+    .tg .tg-xwyw{border-color:#000000;text-align:center;vertical-align:middle}
+    .tg .tg-kyy7{background-color:#f9f9f9;border-color:inherit;text-align:center;vertical-align:middle}
+    .tg .tg-d459{background-color:#f9f9f9;border-color:inherit;text-align:left;vertical-align:middle}
+    .tg .tg-ligs{background-color:#f9f9f9;border-color:inherit;text-align:center;vertical-align:middle}
+    .tg .tg-rq3n{background-color:#ffffff;border-color:inherit;text-align:center;vertical-align:middle}
+    .tg .tg-mfxt{background-color:#ffffff;border-color:inherit;text-align:left;vertical-align:middle}
+    .tg .tg-qmuc{background-color:#ffffff;border-color:inherit;text-align:left;vertical-align:middle}
+    </style>
+    <table class="tg">
+    <thead>
+    <tr>
+        <th class="tg-uzvj">Category</th>
+        <th class="tg-g7sd">Metric</th>
+        <th class="tg-uzvj">Value Range</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="tg-r6l2" rowspan="2">Error</td>
+        <td class="tg-rt8k">System level MSE ↓</td>
+        <td class="tg-51oy">[0, ∞)</td>
+    </tr>
+    <tr>
+        <td class="tg-rt8k">Utterance level MSE ↓</td>
+        <td class="tg-51oy">[0, ∞)</td>
+    </tr>
+    <tr>
+        <td class="tg-r6l2" rowspan="2">Linear Correlation</td>
+        <td class="tg-rt8k"> System level LCC ↑</td>
+        <td class="tg-51oy">[-1, 1]</td>
+    </tr>
+    <tr>
+        <td class="tg-0a7q">Utterance level LCC ↑</td>
+        <td class="tg-51oy">[-1, 1]</td>
+    </tr>
+    <tr>
+        <td class="tg-r6l2" rowspan="4">Rank Correlation</td>
+        <td class="tg-rt8k"> System level SRCC ↑</td>
+        <td class="tg-51oy">[-1, 1]</td>
+    </tr>
+    <tr>
+        <td class="tg-0a7q">Utterance level SRCC ↑</td>
+        <td class="tg-51oy">[-1, 1]</td>
+    </tr>
+    <tr>
+        <td class="tg-rt8k"> System level KTAU ↑</td>
+        <td class="tg-51oy">[-1, 1]</td>
+    </tr>
+    <tr>
+        <td class="tg-0a7q">Utterance level KTAU ↑</td>
+        <td class="tg-51oy">[-1, 1]</td>
+    </tr>
+
+    </tbody>
+    </table><br/>
+
+### Overall ranking method
+
+The overall ranking will be determined via the following procedure:
+
+1. Calculate the `average score` of each metric for each submission.
+2. Calculate the `per-metric ranking` based on the average score.
+ * We adopt the dense ranking ("1223" ranking)<d-footnote><a href="https://en.wikipedia.org/wiki/Ranking#Dense_ranking_(%221223%22_ranking)">https://en.wikipedia.org/wiki/Ranking#Dense_ranking_(&quot;1223&quot;_ranking)</a></d-footnote> strategy for handling ties.
+3. Calculate the `per-category ranking` by averaging the rankings within each category.
+4. Calculate the `overall ranking` by averaging the `per-category rankings`.<br/><br/>
+
+```python
+# Step 1: Calculate the average score of each metric
+scores = {}
+for submission in all_submissions:
+  scores[submission] = {}
+  for category in metric_categories:
+    for metric in category:
+      scores[submission][metric] = mean([metric(each_sample) for each_sample in submission])
+
+# Step 2: Calculate the per-metric ranking based on the average score
+rank_per_metric = {}
+rank_per_category = {}
+for category in metric_categories:
+  for metric in category:
+    rank_per_metric[metric] = get_ranking([scores[submission][metric] for submission in all_submissions])
+
+  # Step 3: Calculate the `per-category ranking` by averaging the rankings within each category
+  rank_per_category[category] = get_ranking([rank_per_metric[metric] for metric in category])
+
+# Step 4: Calculate the overall ranking by averaging the `per-category rankings`
+rank_overall = get_ranking([rank_per_category[category] for category in metric_categories])
+```
