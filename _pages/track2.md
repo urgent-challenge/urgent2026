@@ -8,6 +8,16 @@ nav_title: Track2
 nav_order: 4
 # toc: true
 bibliography: track2.bib
+dropdown: true
+children: 
+    - title: Data
+      permalink: /track2#data
+    - title: Rules
+      permalink: /track2#rules    
+    - title: Ranking
+      permalink: /track2#ranking
+    - title: Baseline
+      permalink: /track2#baseline
 ---
 
 This track focuses on predicting the Mean Opinion Score (MOS) of speech processed by **speech enhancement systems**<d-footnote>This contrasts with existing challenges, which primarily targeted MOS prediction for text-to-speech (TTS) and voice conversion (VC) systems.</d-footnote>.
@@ -20,7 +30,7 @@ This track focuses on predicting the Mean Opinion Score (MOS) of speech processe
   - [Validation Data](#validation-data)
   - [Non-Blind Test Data](#blind-test-data)
   - [Blind Test Data](#non-blind-test-data)
-- [Evaluation](#evaluation)
+- [Ranking](#ranking)
 - [Baseline](#baseline)
 - [Submission](#submission)
 
@@ -112,7 +122,7 @@ tr {
 </thead>
 <tbody>
   <tr>
-    <td rowspan="9">Training</td>
+    <td rowspan="10">Training</td>
     <td>BC19<d-cite key="BC19"/></td>
     <td>136</td>
     <td>21</td>
@@ -138,7 +148,7 @@ tr {
   </tr>
   <tr>
     <td>PSTN<d-cite key="PSTN"/></td>
-    <td>52839</td>
+    <td>58709</td>
     <td>N/A</td>
     <td>163.08</td>
     <td><a href="https://challenge.blob.core.windows.net/pstn/train.zip">[Original]</a></td>
@@ -168,9 +178,9 @@ tr {
   </tr>
   <tr>
     <td>Tencent<d-cite key="Tencent"/></td>
-    <td>10408</td>
+    <td>11563</td>
     <td>N/A</td>
-    <td>21.15</td>
+    <td>23.51</td>
     <td>
       <a href="https://share.weiyun.com/B4IS0l3z">[Original]</a>
       <a href="https://huggingface.co/datasets/urgent-challenge/urgent26_track2_sqa/resolve/main/TencentCorpus.zip">[Huggingface]</a>
@@ -179,9 +189,9 @@ tr {
   </tr>
   <tr>
     <td>TMHINT-QI<d-cite key="TMHINT-QI"/></td>
-    <td>11644</td>
+    <td>12937</td>
     <td>98</td>
-    <td>10.22</td>
+    <td>11.35</td>
     <td>
       <a href="https://drive.google.com/file/d/1TMDiz6dnS76hxyeAcCQxeSqqEOH4UDN0/view?usp=sharing">[Original]</a>
       <a href="https://huggingface.co/datasets/urgent-challenge/urgent26_track2_sqa/resolve/main/TMHINTQI.zip">[Huggingface]</a>
@@ -200,7 +210,39 @@ tr {
     <td>MIT</td>
   </tr>
   <tr>
-    <td>Development</td>
+    <td>CHiME-7 UDASE Eval<d-cite key="CHiME-7-UDASE-Eval"/></td>
+    <td>640</td>
+    <td>5</td>
+    <td>0.84</td>
+    <td>
+      <a href="https://zenodo.org/records/10418311/files/CHiME-7-UDASE-evaluation-data.zip">[Original]</a>
+      <a href="https://huggingface.co/datasets/urgent-challenge/urgent26_track2_sqa/resolve/main/CHiME-7-UDASE-evaluation-data.zip">[Huggingface]</a>
+    </td>
+    <td>CC BY-SA 4.0</td>
+  </tr>
+  <tr>
+    <td>URGENT24-SQA<d-cite key="UniVERSAExt"/><d-cite key="URGENT-Zhang2024"/><d-cite key="P808-Sach2025"/></td>
+    <td>640</td>
+    <td>5</td>
+    <td>0.84</td>
+    <td>
+      <a href="https://zenodo.org/records/10418311/files/CHiME-7-UDASE-evaluation-data.zip">[Original]</a>
+      <a href="https://huggingface.co/datasets/urgent-challenge/urgent26_track2_sqa/resolve/main/CHiME-7-UDASE-evaluation-data.zip">[Huggingface]</a>
+    </td>
+    <td>CC BY-SA 4.0</td>
+  </tr>
+  <tr>
+    <td>URGENT25-SQA<d-cite key="UniVERSAExt"/><d-cite key="Interspeech2025-Saijo2025"/><d-cite key="P808-Sach2025"/></td>
+    <td>640</td>
+    <td>5</td>
+    <td>0.84</td>
+    <td>
+      <a href="https://zenodo.org/records/10418311/files/CHiME-7-UDASE-evaluation-data.zip">[Original]</a>
+      <a href="https://huggingface.co/datasets/urgent-challenge/urgent26_track2_sqa/resolve/main/CHiME-7-UDASE-evaluation-data.zip">[Huggingface]</a>
+    </td>
+    <td>CC BY-SA 4.0</td>
+  </tr>
+  <tr>
     <td>CHiME-7 UDASE Eval<d-cite key="CHiME-7-UDASE-Eval"/></td>
     <td>640</td>
     <td>5</td>
@@ -217,7 +259,7 @@ tr {
 
 #### Validation Data
 
-The validation data will be available after the validation phase opens, stay tuned.
+The validation data is the MOS dataset from the 1st URGENT challenge served on huggingface. The official data preparation scripts includes the preparation of the validation data.
 
 #### Non-Blind Test Data
 
@@ -228,7 +270,7 @@ The non-blind test data will be availabel after the non-blind test phase opens, 
 The blind test data will be availabel after the non-blind test phase opens, stay tuned.
 
 
-## Evaluation
+## Ranking
 
 Systems will be evaluated based on both correlation and error metrics between the predicted Mean Opinion Scores (MOS) and the ground-truth MOS labels. The following metrics will be used:
 
