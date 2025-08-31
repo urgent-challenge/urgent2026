@@ -29,7 +29,7 @@ bibliography: about.bib
     * If you are new to URGENT challenges, You will receive credentials for [leaderboard](https://urgent-challenge.com).
     * Otherwise, you will get notifications when approved for leaderboard submission.
 2. Check [Track 1 (Universal Speech Enhancement)](/urgent2026/track1) and [Track 2 (Speech Quality Assessment)](/urgent2026/track2) for rules, data and baseline.
-3. Log in to [leaderboard](https://urgent-challenge.com) and submit results. See [Leaderboard Tab](/urgent2026/leaderboard) for details
+3. Log in and submit results to [Track 1](https://urgent-challenge.com/competitions/15) and [Track 2](https://urgent-challenge.com/competitions/17)
 
 <br>
 

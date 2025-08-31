@@ -209,9 +209,9 @@ tr {
   </tr>
   <tr>
     <td>URGENT24-SQA<d-cite key="UniVERSAExt"/><d-cite key="P808-Sach2025"/><d-cite key="URGENT-Zhang2024"/></td>
-    <td>640</td>
-    <td>5</td>
-    <td>0.84</td>
+    <td>238</td>
+    <td>238000</td>
+    <td>429.34</td>
     <td>
       <a href="https://huggingface.co/datasets/urgent-challenge/urgent26_track2_sqa/resolve/main/CHiME-7-UDASE-evaluation-data.zip">[Huggingface]</a>
     </td>
@@ -219,9 +219,9 @@ tr {
   </tr>
   <tr>
     <td>URGENT25-SQA<d-cite key="UniVERSAExt"/><d-cite key="P808-Sach2025"/><d-cite key="Interspeech2025-Saijo2025"/></td>
-    <td>640</td>
-    <td>5</td>
-    <td>0.84</td>
+    <td>100000</td>
+    <td>100</td>
+    <td>261.31</td>
     <td>
       <a href="https://huggingface.co/datasets/urgent-challenge/urgent26_track2_sqa/resolve/main/CHiME-7-UDASE-evaluation-data.zip">[Huggingface]</a>
     </td>
@@ -257,19 +257,6 @@ The non-blind test data will be availabel after the non-blind test phase opens, 
 
 The blind test data will be availabel after the non-blind test phase opens, please stay tuned.
 
-
----
-
-## Rules
-
-* During the first month of the challenge, participants may propose additional public datasets for inclusion in the official dataset list. The organizers will review all requests and may update the list accordingly. Any updates will be announced in the [`Notice`](/urgent2026/notice) tab.
-
-* After the challenge concludes, participants are required to submit a complete system description.
-
-* Participants may use any publicly available dataset to develop their prediction systems. All datasets used must be clearly reported in the system description. The use of proprietary datasets—including collecting your own MOS ratings—is not permitted unless those resources are publicly released.<d-footnote>These rules follow the precedent set by the <a href="https://sites.google.com/view/voicemos-challenge/audiomos-challenge-2025">AudioMOS Challenge 2025</a>.</d-footnote>
-
-* Participants may incorporate publicly available models into their systems for tasks such as generating additional data, producing pseudo-MOS labels, initializing model parameters, or serving as system components. All such pre-trained resources must be explicitly cited and described in the system description.
-
 ---
 
 ## Baseline
@@ -285,7 +272,24 @@ You can also try the pretrained models on [Colab](https://colab.research.google.
   - [LDNet (listener dependent)](https://github.com/unilight/LDNet)
   - [Uni-VERSA](https://huggingface.co/collections/espnet/universa-6834e7c0a28225bffb6e2526)
 
+
 ---
+
+## Rules
+
+1. During the first month of the challenge, participants may propose additional public datasets for inclusion in the official dataset list. The organizers will review all requests and may update the list accordingly. Any updates will be announced in the [`Notice`](/urgent2026/notice) tab.
+
+2. Participants may use any publicly available dataset to develop their prediction systems. All datasets used must be clearly reported in the system description. The use of proprietary datasets—including collecting your own MOS ratings—is not permitted unless those resources are publicly released.<d-footnote>These rules follow the precedent set by the <a href="https://sites.google.com/view/voicemos-challenge/audiomos-challenge-2025">AudioMOS Challenge 2025</a>.</d-footnote>
+
+3. Participants may incorporate publicly available models into their systems for tasks such as generating additional data, producing pseudo-MOS labels, initializing model parameters, or serving as system components. All such pre-trained resources must be explicitly cited and described in the system description.
+
+4. The test data should only be used for evaluation purposes. **Techniques such as test-time adaptation, unsupervised domain adaptation, and self-training on the test data are NOT allowed**.
+
+5. Registration is required to submit results to the challenge (Check the Check [`How to Participate`](/urgent2026/#how-to-participate) for more information tab for more information). Note that the team information (including affiliation, team name, and team members) should be provided when submitting the results. For detailed submission requirements, please check the [`Submission`](#submission) part.
+    * Only the team name will be shown in the leaderboard, while the affiliation and team members will be kept confidential.<br/><br/>
+
+---
+
 
 ## Submission
 

@@ -362,15 +362,11 @@ In the challenge, the SE system has to address the following seven distortions:
 We provide an example simulation script as [`simulation/simulate_data_from_param.py`](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/simulation/simulate_data_from_param.py).
 
 
----
 
 ## Baseline
 
 
 Please refer to the official [GitHub repository](https://github.com/urgent-challenge/urgent2026_challenge_track1) for more details.
-
-
-
 
 
 
@@ -409,9 +405,8 @@ Please refer to the official [GitHub repository](https://github.com/urgent-chall
 5. There is no constraint on the latency or causality of the developed system in this challenge. Any type of model can be used as long as it conforms to the other rules as listed on this page.
 
 
-6. Registration is required to submit results to the challenge (Check the [`Leaderboard`](/urgent2026/leaderboard) tab for more information). Note that the team information (including affiliation, team name, and team members) should be provided when submitting the results. For detailed submission requirements, please check the [`Submission`](/urgent2026/submission) tab.
+6. Registration is required to submit results to the challenge (Check [`How to Participate`](/urgent2026/#how-to-participate) for more information). Note that the team information (including affiliation, team name, and team members) should be provided when submitting the results. For detailed submission requirements, please check the [`Submission`](#submission) part.
     * Only the team name will be shown in the leaderboard, while the affiliation and team members will be kept confidential.<br/><br/>
-
 
 
 
