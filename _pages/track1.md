@@ -9,13 +9,15 @@ nav_order: 3
 # toc: true
 bibliography: track1.bib
 dropdown: true
-children: 
+children:
+    - title: Data
+      permalink: /track1#datasets 
     - title: Baseline
       permalink: /track1#baseline
-    - title: Data
-      permalink: /track1#datasets
     - title: Rules
-      permalink: /track1#rules    
+      permalink: /track1#rules   
+    - title: Submission
+      permalink: /track1#submission
     - title: Ranking
       permalink: /track1#ranking
 ---
@@ -23,31 +25,18 @@ children:
 ## Contents:
 
 - [Contents:](#contents)
-- [Baseline](#baseline)
 - [Datasets](#datasets)
   - [Brief data description:](#brief-data-description)
   - [Detailed data description:](#detailed-data-description)
+- [Baseline](#baseline)
 - [Rules](#rules)
+- [Submission](#submission)
 - [Ranking](#ranking)
   - [Overall ranking method](#overall-ranking-method)
 
 
 
-## Baseline
 
-
-Please refer to the official [GitHub repository](https://github.com/urgent-challenge/urgent2026_challenge_track1) for more details.
-
-
-
-
-
-
-**Discriminative Baseline.** We provide an adaptive STFT-based SFI<d-cite key="Sampling-Paulus2022,Toward-Zhang2023,Improving-Zhang2024"/>  BSRNN <d-cite key="Music-Luo2023,yuEfficientMonauralSpeech2023,High-Yu2023"/> as the discriminative baseline. The model is available at [here](https://github.com/urgent-challenge/urgent2026_challenge_track1). The details of the baseline training can be found in our [recent ASRU paper](https://arxiv.org/abs/2506.23859) <d-cite key="liLessMoreData2025"/>.
-
-**Generative Baseline.** We follow a recent work named FlowSE<d-cite key="leeFlowSEFlowMatchingbased2025"/> to build generative SE models. It extends the flow matching method<d-cite key="lipmanFlowMatchingGenerative2023"/> to a conditional flow matching model that generates clean speech conditioned by the noisy speech. We reimplement an [improved BSRNN](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/baseline_code/models/bsrnn_flowse.py) to estimate the conditional vector field. The model is available at [here](https://github.com/urgent-challenge/urgent2026_challenge_track1), and the training details of the generative baseline model can be found in the [paper](https://arxiv.org/abs/2506.23859) <d-cite key="liLessMoreData2025"/>.
-
-<br>
 
 
 ## Datasets
@@ -63,7 +52,7 @@ Non-blind/bind test set will be released later, check the [timeline](/urgent2026
 
 Based on the [dataset of the 2nd URGENT challenge](https://urgent-challenge.github.io/urgent2025/data/), we conducted a data selection using the data filtering method proposed in a recent paper <d-cite key="liLessMoreData2025"/>.
 
-**It is noted that we encourage you to explore better ways of data selection and utilization in this challenge.** In addition to the data and filtering methods provided by our baseline, you can make use of larger-scale datasets, such as the [track2 data](https://urgent-challenge.github.io/urgent2025/data/) from the 2nd URGENT challenge, or other allowed data (please check it in the [rules](/urgent2026/rules/) section).
+**It is noted that we encourage you to explore better ways of data selection and utilization in this challenge.** In addition to the data and filtering methods provided by our baseline, you can make use of larger-scale datasets, such as the [track1/track2 data](https://urgent-challenge.github.io/urgent2025/data/) from the [2nd URGENT challenge](https://urgent-challenge.github.io/urgent2025/data/), or other allowed data (please check it in the [rules](#rules) section).
 
 The training and validation data are both simulated based on the following source data.
 <style>
@@ -329,8 +318,7 @@ For the noise source and RIRs, we follow the same configuration as in the [2nd U
 </tbody>
 </table>
 
-Note that, except for the data listed above and those we allow in the [rules](#rules), they cannot be used for the purpose of this challenge. 
-However, we allow participants to simulate their own RIRs using existing tools for generating the training data. The participants can also propose publicly available, real recorded RIRs to be included in the above data list during the grace period. See [rules](#rules) section for more details.
+Participants can also simulate their own RIRs using existing tools for generating the training data. Participants can also propose publicly available, real recorded RIRs to be included in the above data list during the grace period. See [rules](#rules) section for more details.
 
 
 **Data selection and Simulation.** We apply the data selection to the track1 data of the [2nd URGENT](https://urgent-challenge.github.io/urgent2025/) using the data filtering method proposed in the recent paper <d-cite key="liLessMoreData2025"/>. The selected data list is available at [here](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/meta/train_selected_700h). The speech source from NNCES, SeniorTalk, VocalSet, and ESD is not filtered.
@@ -340,9 +328,9 @@ Note that the data filtering of paper <d-cite key="liLessMoreData2025"/> is obvi
 
 The simulation data can be generated as follows:
 
-1. In the first step, a manifest `meta.tsv` is first generated by [`simulation/generate_data_param.py`](https://github.com/urgent-challenge/urgent2025_challenge/blob/main/simulation/generate_data_param.py) from the given list of speech, noise, and room impulse response (RIR) samples. It specifies how each sample will be simulated, including the type of distortion to be applied, the speech/noise/RIR sample to be used, the signal-to-noise ratio (SNR), the random seed, and so on.
+1. In the first step, a manifest `meta.tsv` is first generated by [`simulation/generate_data_param.py`](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/simulation/generate_data_param.py) from the given list of speech, noise, and room impulse response (RIR) samples. It specifies how each sample will be simulated, including the type of distortion to be applied, the speech/noise/RIR sample to be used, the signal-to-noise ratio (SNR), the random seed, and so on.
 
-2. In the second step, the simulation can be done in parallel via [`simulation/simulate_data_from_param.py`](https://github.com/urgent-challenge/urgent2025_challenge/blob/main/simulation/simulate_data_from_param.py) for different samples according to the manifest while ensuring reproducibility. This procedure can be used to generate training and validation datasets.
+2. In the second step, the simulation can be done in parallel via [`simulation/simulate_data_from_param.py`](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/simulation/simulate_data_from_param.py) for different samples according to the manifest while ensuring reproducibility. This procedure can be used to generate training and validation datasets.
 
 3. By default, we applied a [high-pass filter](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/simulation/simulate_data_from_param.py) to the speech signals since we have noticed that there is high-energy noise in the infrasound frequency band in some speech sources. You can turn it off by setting `highpass=False` in your simulation.
 
@@ -376,11 +364,26 @@ We provide an example simulation script as [`simulation/simulate_data_from_param
 
 <br>
 
+## Baseline
+
+
+Please refer to the official [GitHub repository](https://github.com/urgent-challenge/urgent2026_challenge_track1) for more details.
+
+
+
+
+
+
+**Discriminative Baseline.** We provide an adaptive STFT-based SFI<d-cite key="Sampling-Paulus2022,Toward-Zhang2023,Improving-Zhang2024"/>  BSRNN <d-cite key="Music-Luo2023,yuEfficientMonauralSpeech2023,High-Yu2023"/> as the discriminative baseline. The model is available at [here](https://github.com/urgent-challenge/urgent2026_challenge_track1). The details of the baseline training can be found in our [recent ASRU paper](https://arxiv.org/abs/2506.23859) <d-cite key="liLessMoreData2025"/>.
+
+**Generative Baseline.** We follow a recent work named FlowSE<d-cite key="leeFlowSEFlowMatchingbased2025"/> to build generative SE models. It extends the flow matching method<d-cite key="lipmanFlowMatchingGenerative2023"/> to a conditional flow matching model that generates clean speech conditioned by the noisy speech. We reimplement an [improved BSRNN](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/baseline_code/models/bsrnn_flowse.py) to estimate the conditional vector field. The model is available at [here](https://github.com/urgent-challenge/urgent2026_challenge_track1), and the training details of the generative baseline model can be found in the [paper](https://arxiv.org/abs/2506.23859) <d-cite key="liLessMoreData2025"/>.
+
+<br>
+
 ## Rules 
 
 1. When generating the training and validation datasets, **ONLY the speech, noise, and room impulse response (RIR) corpora listed in the [Datasets](#datasets) section shall be used to ensure a fair comparison** and proper understanding of various SE approaches.
     
-
     * The first month of the challenge will be a grace period when participants can propose additional public datasets to be included in the list. We (organizers) will reply to the requests and may update the list. Updates will be recorded in the [`Notice`](/urgent2026/notice) tab. 
     
     * **It is NOT allowed to use pre-trained speech enhancement models trained on other than official Challenge data**.
@@ -406,8 +409,66 @@ We provide an example simulation script as [`simulation/simulate_data_from_param
 5. There is no constraint on the latency or causality of the developed system in this challenge. Any type of model can be used as long as it conforms to the other rules as listed on this page.
 
 
-6. Registration is required to submit results to the challenge (Check the [`Leaderboard`](/urgent2025/leaderboard) tab for more information). Note that the team information (including affiliation, team name, and team members) should be provided when submitting the results. For detailed submission requirements, please check the [`Submission`](/urgent2025/submission) tab.
+6. Registration is required to submit results to the challenge (Check the [`Leaderboard`](/urgent2026/leaderboard) tab for more information). Note that the team information (including affiliation, team name, and team members) should be provided when submitting the results. For detailed submission requirements, please check the [`Submission`](/urgent2026/submission) tab.
     * Only the team name will be shown in the leaderboard, while the affiliation and team members will be kept confidential.<br/><br/>
+
+
+
+
+## Submission
+
+* Each submission should be **a zip file** containing two parts:
+    1. enhanced audios corresponding to the subset to be tested;
+    2. a YAML (README.yaml) file containing the basic information about the submission (as listed below). The template can be found [here](/urgent2026/template_track1).
+        * team information (team name, affiliation, team mambers)
+        * description of the training & validation data used for the submission
+        * description of pre-trained models used for the submission (if applicable)
+
+<!-- * The zip file should be named as `{your_teamname}.zip`. Here, `{your_teamname}` should be replaced with your team name. -->
+* The zip file should only contain a single YAML (README.yaml) file and a folder named `enhanced` that contains all the enhanced audio files. That is, the directory structure after executing `unzip {your_teamname}.zip` should be as follows:
+
+```bash
+./
+├── README.yaml
+└── enhanced/
+    ├── fileid_1.flac
+    ├── fileid_2.flac
+    ├── ...
+    └── fileid_N.flac
+```
+* **Note that the submission without README.yaml is rejected by the leaderboard system.**
+* Please encode all audio files in the 16-bit [**FLAC**](https://xiph.org/flac/) format to reduce the file size (< 300 MB).
+    * The audio files should be encoded in mono-channel with its original sampling frequency.
+    * All audio files should have the same **name** and **length** as the original audio files in the provided subset to be tested.
+* Be careful not to include hidden directories in the zip file such as `__MACOSX/` which may cause evaluation failure.
+* The submission should be done via our [official leaderboard website](https://urgent-challenge.com/):
+  * A registration (please sign up at [https://urgent-challenge.com](https://urgent-challenge.com/)) is required to participate in our challenge.
+  * Each team shall only register **once**. Multiple registrations from different members in one team are not allowed.
+* Each team can submit up to **2 submissions per day** during the challenge.
+  * The third and later submissions will be ignored. The quota will be reset at 00:00 (UTC timezone) every day.
+  * Failed submissions are not taken into account when counting the submissions per day.
+  * No submission will be accepted after the deadline (January 15th, 2025).
+* For each team, only the submission with the best leaderboard performance will be used for the final evaluation.
+
+
+> Submissions that fail to conform to the above requirements may be rejected.
+>
+> Should you encounter any problem during the submission, please feel free to [contact the organizers](mailto:urgent.challenge@gmail.com).
+
+
+By submitting the results, the participants agree to the following conditions:
+
+```
+As a condition of submission, entrants grant the organizers, a perpetual,
+irrevocable, worldwide, royalty-free, and non-exclusive license to use,
+reproduce, adapt, modify, publish, distribute, publicly perform, create a
+derivative work from, and publicly display the submitted audio signals and
+CSV files (containing the performance scores).
+
+The main motivation for this condition is to donate the submitted audio
+signals and corresponding performance scores to the community as a
+voice quality dataset.
+```
 
 
 ## Ranking
