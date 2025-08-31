@@ -16,7 +16,14 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/urgent2026/timeline/";
           },
-        },{id: "dropdown-data",
+        },{id: "dropdown-overview",
+              title: "Overview",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/urgent2026/track1";
+              },
+            },{id: "dropdown-data",
               title: "Data",
               description: "",
               section: "Dropdown",
@@ -51,6 +58,13 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/urgent2026/track1#ranking";
               },
+            },{id: "dropdown-overview",
+              title: "Overview",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/urgent2026/track2";
+              },
             },{id: "dropdown-data",
               title: "Data",
               description: "",
@@ -65,19 +79,26 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/urgent2026/track2#rules";
               },
-            },{id: "dropdown-ranking",
-              title: "Ranking",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/urgent2026/track2#ranking";
-              },
             },{id: "dropdown-baseline",
               title: "Baseline",
               description: "",
               section: "Dropdown",
               handler: () => {
                 window.location.href = "/urgent2026/track2#baseline";
+              },
+            },{id: "dropdown-submission",
+              title: "Submission",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/urgent2026/track2#submission";
+              },
+            },{id: "dropdown-ranking",
+              title: "Ranking",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/urgent2026/track2#ranking";
               },
             },{id: "nav-leaderboard",
           title: "Leaderboard",
