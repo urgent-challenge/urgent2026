@@ -16,19 +16,19 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/urgent2026/timeline/";
           },
-        },{id: "dropdown-baseline",
-              title: "Baseline",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/urgent2026/track1#baseline";
-              },
-            },{id: "dropdown-data",
+        },{id: "dropdown-data",
               title: "Data",
               description: "",
               section: "Dropdown",
               handler: () => {
                 window.location.href = "/urgent2026/track1#datasets";
+              },
+            },{id: "dropdown-baseline",
+              title: "Baseline",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/urgent2026/track1#baseline";
               },
             },{id: "dropdown-rules",
               title: "Rules",
@@ -36,6 +36,13 @@ ninja.data = [{
               section: "Dropdown",
               handler: () => {
                 window.location.href = "/urgent2026/track1#rules";
+              },
+            },{id: "dropdown-submission",
+              title: "Submission",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/urgent2026/track1#submission";
               },
             },{id: "dropdown-ranking",
               title: "Ranking",
@@ -50,13 +57,6 @@ ninja.data = [{
           section: "Navigation",
           handler: () => {
             window.location.href = "/urgent2026/track2/";
-          },
-        },{id: "nav-submission",
-          title: "Submission",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/urgent2026/submission/";
           },
         },{id: "nav-leaderboard",
           title: "Leaderboard",
