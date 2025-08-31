@@ -51,14 +51,35 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/urgent2026/track1#ranking";
               },
-            },{id: "nav-track2-speech-quality-assessment",
-          title: "Track2: Speech Quality Assessment",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/urgent2026/track2/";
-          },
-        },{id: "nav-leaderboard",
+            },{id: "dropdown-data",
+              title: "Data",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/urgent2026/track2#data";
+              },
+            },{id: "dropdown-rules",
+              title: "Rules",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/urgent2026/track2#rules";
+              },
+            },{id: "dropdown-ranking",
+              title: "Ranking",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/urgent2026/track2#ranking";
+              },
+            },{id: "dropdown-baseline",
+              title: "Baseline",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/urgent2026/track2#baseline";
+              },
+            },{id: "nav-leaderboard",
           title: "Leaderboard",
           description: "",
           section: "Navigation",
