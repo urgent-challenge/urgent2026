@@ -208,24 +208,24 @@ tr {
     <td>MIT</td>
   </tr>
   <tr>
-    <td>URGENT24-SQA<d-cite key="UniVERSAExt"/><d-cite key="P808-Sach2025"/><d-cite key="URGENT-Zhang2024"/></td>
+    <td>urgent2024-sqa<d-cite key="UniVERSAExt"/><d-cite key="P808-Sach2025"/><d-cite key="URGENT-Zhang2024"/></td>
     <td>238</td>
     <td>238000</td>
     <td>429.34</td>
     <td>
       <a href="https://huggingface.co/datasets/urgent-challenge/urgent2024-sqa">[Huggingface]</a>
     </td>
-    <td>CC BY-SA 4.0</td>
+    <td>CC BY-NC-SA 4.0</td>
   </tr>
   <tr>
-    <td>URGENT25-SQA<d-cite key="UniVERSAExt"/><d-cite key="P808-Sach2025"/><d-cite key="Interspeech2025-Saijo2025"/></td>
+    <td>urgent2025-sqa<d-cite key="UniVERSAExt"/><d-cite key="P808-Sach2025"/><d-cite key="Interspeech2025-Saijo2025"/></td>
     <td>100000</td>
     <td>100</td>
     <td>261.31</td>
     <td>
       <a href="https://huggingface.co/datasets/urgent-challenge/urgent2025-sqa">[Huggingface]</a>
     </td>
-    <td>CC BY-SA 4.0</td>
+    <td>CC BY-NC-SA 4.0</td>
   </tr>
   <tr>
     <td rowspan="2">Development</td>
