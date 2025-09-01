@@ -213,7 +213,7 @@ tr {
     <td>238000</td>
     <td>429.34</td>
     <td>
-      <a href="https://huggingface.co/datasets/urgent-challenge/urgent26_track2_sqa/resolve/main/CHiME-7-UDASE-evaluation-data.zip">[Huggingface]</a>
+      <a href="https://huggingface.co/datasets/urgent-challenge/urgent2024-sqa">[Huggingface]</a>
     </td>
     <td>CC BY-SA 4.0</td>
   </tr>
@@ -223,7 +223,7 @@ tr {
     <td>100</td>
     <td>261.31</td>
     <td>
-      <a href="https://huggingface.co/datasets/urgent-challenge/urgent26_track2_sqa/resolve/main/CHiME-7-UDASE-evaluation-data.zip">[Huggingface]</a>
+      <a href="https://huggingface.co/datasets/urgent-challenge/urgent2025-sqa">[Huggingface]</a>
     </td>
     <td>CC BY-SA 4.0</td>
   </tr>
