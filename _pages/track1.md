@@ -335,7 +335,7 @@ The simulation data can be generated as follows:
 
 3. By default, we applied a [high-pass filter](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/simulation/simulate_data_from_param.py) to the speech signals since we have noticed that there is high-energy noise in the infrasound frequency band in some speech sources. You can turn it off by setting `highpass=False` in your simulation.
 
-A pre-simulated training and validation dataset <d-footnote>The simulated speech derived from the ESD dataset is not included due to the license issue. You may apply for the license and run the simulation script by yourself to generate the complete dataset.</d-footnote> is available online at [HugginFace](https://huggingface.co/datasets/lichenda/urgent26_track2_universal_se). Participants can download and use it directly without running the simulation scripts to get started quickly.
+A pre-simulated training and validation dataset <d-footnote>The simulated speech derived from the ESD dataset is not included due to the license issue. You may apply for the license and run the simulation script by yourself to generate the complete dataset.</d-footnote> is available online at [HugginFace](https://huggingface.co/datasets/lichenda/urgent26_track1_universal_se). Participants can download and use it directly without running the simulation scripts to get started quickly.
 For your final submitted system, **we recommend dynamically generating degraded speech samples during training** to increase the data diversity.
 
 
