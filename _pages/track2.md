@@ -35,6 +35,7 @@ This track focuses on predicting the Mean Opinion Score (MOS) of speech processe
   - [Blind Test Data](#non-blind-test-data)
 - [Rules](#rules)
 - [Baseline](#baseline)
+  - [Suggested MOS Predictors](#suggested-mos-predictors)
 - [Submission](#submission)
 - [Ranking](#ranking)
   - [Overall ranking method](#overall-ranking-method)
@@ -208,7 +209,7 @@ tr {
     <td>MIT</td>
   </tr>
   <tr>
-    <td>urgent2024-sqa<d-cite key="UniVERSAExt"/><d-cite key="P808-Sach2025"/><d-cite key="URGENT-Zhang2024"/></td>
+    <td>urgent2024-sqa<d-cite key="UniVERSAExt-Wang2025"/><d-cite key="P808-Sach2025"/><d-cite key="URGENT-Zhang2024"/></td>
     <td>238</td>
     <td>238000</td>
     <td>429.34</td>
@@ -218,7 +219,7 @@ tr {
     <td>CC BY-NC-SA 4.0</td>
   </tr>
   <tr>
-    <td>urgent2025-sqa<d-cite key="UniVERSAExt"/><d-cite key="P808-Sach2025"/><d-cite key="Interspeech2025-Saijo2025"/></td>
+    <td>urgent2025-sqa<d-cite key="UniVERSAExt-Wang2025"/><d-cite key="P808-Sach2025"/><d-cite key="Interspeech2025-Saijo2025"/></td>
     <td>100000</td>
     <td>100</td>
     <td>261.31</td>
@@ -261,16 +262,26 @@ The blind test data will be availabel after the non-blind test phase opens, plea
 
 ## Baseline
 
-Please refer to the official [GitHub repository](https://github.com/urgent-challenge/urgent2026_challenge_track1) for more details, which is a implmentation of [Uni-VERSA-Ext](https://arxiv.org/abs/2506.12260)<d-cite key="UniVERSAExt"/>.
+Please refer to the official [GitHub repository](https://github.com/urgent-challenge/urgent2026_challenge_track2) for more details, which is a implmentation of [Uni-VERSA-Ext](https://arxiv.org/abs/2506.12260)<d-cite key="UniVERSAExt-Wang2025"/>.
 
 You can also try the pretrained models on [Colab](https://colab.research.google.com/drive/1Y2OkPE0hGSG4XRj_b7RsmWMVSg4KkhM7)
 
-- Other Suggested MOS Predictors
-  - [UTMOS2 (domain dependent)](https://github.com/sarulab-speech/UTMOSv2)
-  - [SSL-MOS](https://github.com/nii-yamagishilab/mos-finetune-ssl)
-  - [NISQA](https://github.com/gabrielmittag/NISQA)
-  - [LDNet (listener dependent)](https://github.com/unilight/LDNet)
-  - [Uni-VERSA](https://huggingface.co/collections/espnet/universa-6834e7c0a28225bffb6e2526)
+<!-- #### Suggested MOS Predictors
+
+| Repository | Year | Paper |
+|------------|------|-----------------------|
+| [Uni-VERSA-Ext](https://github.com/urgent-challenge/urgent2026_challenge_track2) | 2025 | [Improving Speech Enhancement with Multi-Metric Supervision from Learned Quality Assessment](https://arxiv.org/pdf/2506.12260) |
+| [Uni-VERSA](https://huggingface.co/collections/espnet/universa-6834e7c0a28225bffb6e2526) | 2025 | [Uni-VERSA: Versatile Speech Assessment with a Unified Network](https://arxiv.org/abs/2505.20741) |
+| [Distill-MOS](https://github.com/microsoft/Distill-MOS) | 2025 | [Distillation and Pruning for Scalable Self-Supervised Representation-Based Speech Quality Assessment](https://arxiv.org/abs/2502.05356v1) |
+| [SCOREQ](https://github.com/alessandroragano/scoreq) | 2024 | [Speech Quality Assessment with Contrastive Regression](https://arxiv.org/abs/2410.06675) |
+| [DNSMOSPro](https://github.com/fcumlin/DNSMOSPro) | 2024 | [DNSMOS Pro: A Reduced-Size DNN for Probabilistic MOS of Speech](https://www.isca-archive.org/interspeech_2024/cumlin24_interspeech.html) |
+| [UTMOSv2](https://github.com/sarulab-speech/UTMOSv2) | 2024 | [The T05 System for The VoiceMOS Challenge 2024: Transfer Learning from Deep Image Classifier to Naturalness MOS Prediction of High-Quality Synthetic Speech](https://arxiv.org/abs/2409.09305) |
+| [UTMOS](https://github.com/sarulab-speech/UTMOS22) | 2022 | [SaruLab System for VoiceMOS Challenge 2022](https://arxiv.org/abs/2204.02152) |
+| [SSL-MOS](https://github.com/nii-yamagishilab/mos-finetune-ssl) | 2022 | [Generalization Ability of MOS Prediction Networks](https://arxiv.org/abs/2110.02635) |
+| [NISQA](https://github.com/gabrielmittag/NISQA) | 2021 | [NISQA: A Deep CNN-Self-Attention Model for Multidimensional Speech Quality Prediction with Crowdsourced Datasets](https://arxiv.org/abs/2104.09494) |
+| [LDNet](https://github.com/unilight/LDNet) | 2021 | [LDNet: Unified Listener Dependent Modeling in MOS Prediction for Synthetic Speech](https://arxiv.org/abs/2110.09103) |
+| [DNSMOS](https://github.com/microsoft/DNS-Challenge) | 2020 | [DNSMOS: A Non-Intrusive Perceptual Objective Speech Quality metric to evaluate Noise Suppressors](https://arxiv.org/abs/2010.15258) |
+ -->
 
 
 ---
