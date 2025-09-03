@@ -245,7 +245,7 @@ tr {
 
 #### Validation Data
 
-The validation data is available on Hugging Face, and the data preparation script can be found in the official [GitHub repository](https://github.com/urgent-challenge/urgent2026_challenge_track1).
+The validation data is available on Hugging Face, and the data preparation script can be found in the official [GitHub repository](https://github.com/urgent-challenge/urgent2026_challenge_track2).
 
 <!-- Although MOS labels for the validation set are provided for offline evaluation, we **strongly recommend** submitting your results to the leaderboard. This allows you to verify your system’s relative performance under our ranking protocol and ensures there are no misunderstandings regarding the evaluation procedure. -->
 
