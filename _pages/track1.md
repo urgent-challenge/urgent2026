@@ -26,6 +26,7 @@ children:
 
 - [Contents:](#contents)
 - [Datasets](#datasets)
+  - [🆕 \[New Update\] Official Validation Set for Leaderboard Testing](#-new-update-official-validation-set-for-leaderboard-testing)
   - [Brief data description:](#brief-data-description)
   - [Detailed data description:](#detailed-data-description)
 - [Baseline](#baseline)
@@ -40,6 +41,19 @@ children:
 
 
 ## Datasets
+
+
+### 🆕 [New Update] Official Validation Set for Leaderboard Testing
+
+To help participants get familiar with the [leaderboard submission](https://urgent-challenge.com/competitions/15#participate) process, we provide an official validation set:
+
+- Download it here: [urgent26_track1_leaderboard_validation](https://huggingface.co/datasets/lichenda/urgent26_track1_leaderboard_validation)
+- For dry-run submissions before non-blind/blind test sets
+- Ranked using the same objective metrics as final evaluation (stage 1).
+- Check the [submission guide](#submission) first, and the leaderboard for validation will open after Sept. 21.
+
+This set is not for training. Use it to verify your submission format and preview leaderboard ranking.
+
 ### Brief data description:
 
 The training and validation data are both simulated by using several public speech/noise/rir corpora (see the table below for more details).
