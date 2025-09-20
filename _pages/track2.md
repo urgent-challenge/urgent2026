@@ -315,6 +315,8 @@ You can also try the pretrained models on [Colab](https://colab.research.google.
         * description of the training & validation data used for the submission
         * description of pre-trained models used for the submission (if applicable)
 
+* You can download an example submission for validation phase [here](/urgent2026/assets/submissions/track2_example_submission.zip).
+
 > Submissions that fail to conform to the above requirements may be rejected.
 >
 > Should you encounter any problem during the submission, please feel free to [contact the organizers](mailto:urgent.challenge@gmail.com).
