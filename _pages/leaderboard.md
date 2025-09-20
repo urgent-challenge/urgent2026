@@ -8,7 +8,7 @@ nav_order: 7
 ---
 
 
-Leaderboard opens after September 20.
+Leaderboard opens after September 21.
 
 
 <!--
