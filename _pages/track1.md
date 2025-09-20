@@ -10,6 +10,8 @@ nav_order: 3
 bibliography: track1.bib
 dropdown: true
 children:
+    - title: Overview
+      permalink: /track1
     - title: Data
       permalink: /track1#datasets 
     - title: Baseline
@@ -24,7 +26,6 @@ children:
 
 ## Contents:
 
-- [Contents:](#contents)
 - [Datasets](#datasets)
   - [🆕 \[New Update\] Official Validation Set for Leaderboard Testing](#-new-update-official-validation-set-for-leaderboard-testing)
   - [Brief data description:](#brief-data-description)
@@ -348,7 +349,7 @@ The simulation data can be generated as follows:
 
 3. By default, we applied a [high-pass filter](https://github.com/urgent-challenge/urgent2026_challenge_track1/blob/main/simulation/simulate_data_from_param.py) to the speech signals since we have noticed that there is high-energy noise in the infrasound frequency band in some speech sources. You can turn it off by setting `highpass=False` in your simulation.
 
-A pre-simulated training and validation dataset <d-footnote>The simulated speech derived from the ESD dataset is not included due to the license issue. You may apply for the license and run the simulation script by yourself to generate the complete dataset.</d-footnote> is available online at [HugginFace](https://huggingface.co/datasets/lichenda/urgent26_track2_universal_se). Participants can download and use it directly without running the simulation scripts to get started quickly.
+A pre-simulated training and validation dataset <d-footnote>The simulated speech derived from the ESD dataset is not included due to the license issue. You may apply for the license and run the simulation script by yourself to generate the complete dataset.</d-footnote> is available online at [HugginFace](https://huggingface.co/datasets/lichenda/urgent26_track1_universal_se). Participants can download and use it directly without running the simulation scripts to get started quickly.
 For your final submitted system, **we recommend dynamically generating degraded speech samples during training** to increase the data diversity.
 
 
@@ -376,15 +377,10 @@ We provide an example simulation script as [`simulation/simulate_data_from_param
 
 
 
-<br>
-
 ## Baseline
 
 
 Please refer to the official [GitHub repository](https://github.com/urgent-challenge/urgent2026_challenge_track1) for more details.
-
-
-
 
 
 
@@ -423,9 +419,8 @@ Please refer to the official [GitHub repository](https://github.com/urgent-chall
 5. There is no constraint on the latency or causality of the developed system in this challenge. Any type of model can be used as long as it conforms to the other rules as listed on this page.
 
 
-6. Registration is required to submit results to the challenge (Check the [`Leaderboard`](/urgent2026/leaderboard) tab for more information). Note that the team information (including affiliation, team name, and team members) should be provided when submitting the results. For detailed submission requirements, please check the [`Submission`](/urgent2026/submission) tab.
+6. Registration is required to submit results to the challenge (Check [`How to Participate`](/urgent2026/#how-to-participate) for more information). Note that the team information (including affiliation, team name, and team members) should be provided when submitting the results. For detailed submission requirements, please check the [`Submission`](#submission) part.
     * Only the team name will be shown in the leaderboard, while the affiliation and team members will be kept confidential.<br/><br/>
-
 
 
 

@@ -7,6 +7,10 @@ nav: true
 nav_order: 7
 ---
 
+
+Leaderboard opens after September 20.
+
+
 <!--
 The blind test leaderboard has been closed since the challenge has completed. The final results can be found at https://urgent-challenge.com/competitions/5#final_results.
 
