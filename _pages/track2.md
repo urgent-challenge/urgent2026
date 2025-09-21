@@ -51,7 +51,7 @@ To help participants get familiar with the [leaderboard submission](https://urge
 
 - Download it here: [urgent26_track2_leaderboard_validation](https://huggingface.co/datasets/urgent-challenge/urgent2026_leaderboard/resolve/main/track2/validation.zip)
 - For dry-run submissions before non-blind/blind test sets
-- Ranked using the same objective metrics as final evaluation (stage 1).
+- Ranked using the same objective metrics as final evaluation.
 - Check the [submission guide](#submission) first, and the leaderboard for validation will open after Sept. 21.
 
 This set is not for training. Use it to verify your submission format and preview leaderboard ranking.
