@@ -9,6 +9,7 @@ nav_order: 9
 ---
 
 
+* **[2025-09-21]** We have opened the leaderboard for [track 1](https://urgent-challenge.com/competitions/15#participate) and [track 2](https://urgent-challenge.com/competitions/17#participate). The validation sets are released on [huggingface](https://huggingface.co/datasets/urgent-challenge/urgent2026_leaderboard/tree/main).
 
 * **[2025-09-01]** The ICASSP 2026 URGENT challenge start from **2025-09-01**! Please check the [Leaderboard](/urgent2026/leaderboard/) page to learn how to participate in the challenge.
 
