@@ -58,6 +58,13 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/urgent2026/track1#ranking";
               },
+            },{id: "dropdown-leaderboard",
+              title: "Leaderboard",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "https://urgent-challenge.com/competitions/15#participate-submit_results";
+              },
             },{id: "dropdown-overview",
               title: "Overview",
               description: "",
@@ -100,14 +107,14 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/urgent2026/track2#ranking";
               },
-            },{id: "nav-leaderboard",
-          title: "Leaderboard",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/urgent2026/leaderboard/";
-          },
-        },{id: "nav-faq",
+            },{id: "dropdown-leaderboard",
+              title: "Leaderboard",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "https://urgent-challenge.com/competitions/17#participate-submit_results";
+              },
+            },{id: "nav-faq",
           title: "FAQ",
           description: "",
           section: "Navigation",
