@@ -45,6 +45,17 @@ This track focuses on predicting the Mean Opinion Score (MOS) of speech processe
 
 ## Data
 
+#### 🆕 [New Update] Official Validation Set for Leaderboard Testing
+
+To help participants get familiar with the [leaderboard submission](https://urgent-challenge.com/competitions/17#participate) process, we provide an official validation set:
+
+- Download it here: [urgent26_track1_leaderboard_validation](https://huggingface.co/datasets/urgent-challenge/urgent2026_leaderboard/resolve/main/track2/validation.zip)
+- For dry-run submissions before non-blind/blind test sets
+- Ranked using the same objective metrics as final evaluation (stage 1).
+- Check the [submission guide](#submission) first, and the leaderboard for validation will open after Sept. 21.
+
+This set is not for training. Use it to verify your submission format and preview leaderboard ranking.
+
 #### Training / Development Data
 
 We provide scripts to prepare and train on the following datasets in our [official baseline repo](https://github.com/urgent-challenge/urgent2026_challenge_track2). For ease of access, datasets with redistributable licenses are mirrored on Hugging Face. As most existing MOS datasets are designed for TTS or VC, participants are encouraged to use additional public datasets and apply SE-specific data curation.
