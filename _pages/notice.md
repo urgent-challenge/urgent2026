@@ -8,10 +8,9 @@ nav: true
 nav_order: 9
 ---
 
+* **[2025-09-21]** The Leaderboard has been open for offical validation! Please check **Dataset** and **Submission** section in the [Track 1](/urgent2026/track1/)  and [track 2](/urgent2026/track2/) page for more details.
 
-* **[2025-09-21]** We have opened the leaderboard for [track 1](https://urgent-challenge.com/competitions/15#participate) and [track 2](https://urgent-challenge.com/competitions/17#participate). The validation sets are released on [huggingface](https://huggingface.co/datasets/urgent-challenge/urgent2026_leaderboard/tree/main).
-
-* **[2025-09-01]** The ICASSP 2026 URGENT challenge start from **2025-09-01**! Please check the [Leaderboard](/urgent2026/leaderboard/) page to learn how to participate in the challenge.
+* **[2025-09-01]** The ICASSP 2026 URGENT challenge start from **2025-09-01**! Please check the [About](/urgent2026/) page to learn how to participate in the challenge.
 
 <!-- * **[2024-1-21]** The blind testing phase is extended by one day, ending on Jan. 22 23:59:59 (AoE). 
 

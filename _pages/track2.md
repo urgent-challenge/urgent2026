@@ -22,20 +22,22 @@ children:
       permalink: /track2#submission
     - title: Ranking
       permalink: /track2#ranking
+    - title: Leaderboard
+      permalink: https://urgent-challenge.com/competitions/17#participate-submit_results
 ---
 
 This track focuses on predicting the Mean Opinion Score (MOS) of speech processed by **speech enhancement systems**<d-footnote>This contrasts with existing challenges, which primarily targeted MOS prediction for text-to-speech (TTS) and voice conversion (VC) systems.</d-footnote>.
 
 ## Contents:
 
+- [Contents:](#contents)
 - [Data](#data)
-  - [Training and Development Data](#training--development-data)
-  - [Validation Data](#validation-data)
-  - [Non-Blind Test Data](#blind-test-data)
-  - [Blind Test Data](#non-blind-test-data)
-- [Rules](#rules)
+    - [Training / Development Data](#training--development-data)
+    - [Validation Data](#validation-data)
+    - [Non-Blind Test Data](#non-blind-test-data)
+    - [Blind Test Data](#blind-test-data)
 - [Baseline](#baseline)
-  - [Suggested MOS Predictors](#suggested-mos-predictors)
+- [Rules](#rules)
 - [Submission](#submission)
 - [Ranking](#ranking)
   - [Overall ranking method](#overall-ranking-method)
@@ -304,6 +306,7 @@ You can also try the pretrained models on [Colab](https://colab.research.google.
 
 ## Submission
 
+* Please **read the following guidelines first**, and then submit your results [here](https://urgent-challenge.com/competitions/17#participate-submit_results).
 * Each submission should be **a zip file** containing two parts:
     1. a mos.scp file containing the mapping from audio name (without extension) to predicted mos score
     ```

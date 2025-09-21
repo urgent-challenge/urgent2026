@@ -22,10 +22,14 @@ children:
       permalink: /track1#submission
     - title: Ranking
       permalink: /track1#ranking
+    - title: Leaderboard
+      permalink: https://urgent-challenge.com/competitions/15#participate-submit_results
+    
 ---
 
 ## Contents:
 
+- [Contents:](#contents)
 - [Datasets](#datasets)
   - [🆕 \[New Update\] Official Validation Set for Leaderboard Testing](#-new-update-official-validation-set-for-leaderboard-testing)
   - [Brief data description:](#brief-data-description)
@@ -425,7 +429,7 @@ Please refer to the official [GitHub repository](https://github.com/urgent-chall
 
 
 ## Submission
-
+* Please **read the following guidelines first**, and then submit your results [here](https://urgent-challenge.com/competitions/15#participate-submit_results).
 * Each submission should be **a zip file** containing two parts:
     1. enhanced audios corresponding to the subset to be tested;
     2. a YAML (README.yaml) file containing the basic information about the submission (as listed below). The template can be found [here](/urgent2026/template_track1).
