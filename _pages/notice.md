@@ -8,7 +8,7 @@ nav: true
 nav_order: 9
 ---
 
-* **[2025-09-21]** The Leaderboard has been open for the official validation dataset! Please check **Dataset** and **Submission** section in the [Track 1](/urgent2026/track1/)  and [track 2](/urgent2026/track2/) page for more details.
+* **[2025-09-21]** The Leaderboard has been open for the official validation dataset! Please check **Dataset** and **Submission** section in the [Track 1](/urgent2026/track1/)  and [Track 2](/urgent2026/track2/) page for more details.
 
 * **[2025-09-01]** The ICASSP 2026 URGENT challenge start from **2025-09-01**! Please check the [About](/urgent2026/) page to learn how to participate in the challenge.
 
