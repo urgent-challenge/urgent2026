@@ -32,6 +32,8 @@ This track focuses on predicting the Mean Opinion Score (MOS) of speech processe
 
 - [Contents:](#contents)
 - [Data](#data)
+  - [🆕 \[New Update\] Non-Blind Test for Leaderboard Now Available](#-new-update-non-blind-test-for-leaderboard-now-available)
+  - [Official Validation Set for Leaderboard Testing](#official-validation-set-for-leaderboard-testing)
     - [Training / Development Data](#training--development-data)
     - [Validation Data](#validation-data)
     - [Non-Blind Test Data](#non-blind-test-data)
@@ -45,7 +47,14 @@ This track focuses on predicting the Mean Opinion Score (MOS) of speech processe
 
 ## Data
 
-#### 🆕 [New Update] Official Validation Set for Leaderboard Testing
+### 🆕 [New Update] Non-Blind Test for Leaderboard Now Available
+
+The non-blind test is now available at [urgent26_track2_nonblind_test](https://huggingface.co/datasets/urgent-challenge/urgent2026_leaderboard/resolve/main/track2/nonblind_test.zip)
+
+Check the [submission guide](#submission), and submit predicted mos scores to the [leaderboard](https://urgent-challenge.com/competitions/17#participate) for the non-blind test (opens after Oct. 14).
+
+
+### Official Validation Set for Leaderboard Testing
 
 To help participants get familiar with the [leaderboard submission](https://urgent-challenge.com/competitions/17#participate) process, we provide an official validation set:
 
