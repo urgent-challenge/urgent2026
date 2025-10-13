@@ -31,7 +31,8 @@ children:
 
 - [Contents:](#contents)
 - [Datasets](#datasets)
-  - [🆕 \[New Update\] Official Validation Set for Leaderboard Testing](#-new-update-official-validation-set-for-leaderboard-testing)
+  - [🆕 \[New Update\] Non-Blind Test for Leaderboard Now Available](#-new-update-non-blind-test-for-leaderboard-now-available)
+  - [Official Validation Set for Leaderboard Testing](#official-validation-set-for-leaderboard-testing)
   - [Brief data description:](#brief-data-description)
   - [Detailed data description:](#detailed-data-description)
 - [Baseline](#baseline)
@@ -48,7 +49,19 @@ children:
 ## Datasets
 
 
-### 🆕 [New Update] Official Validation Set for Leaderboard Testing
+> Notice: A simulation-related issue has been corrected in the baseline code. It is recommended that you pull the latest code from the [baseline repository](https://github.com/urgent-challenge/urgent2026_challenge_track1) to ensure proper dynamic simulation behavior..
+
+### 🆕 [New Update] Non-Blind Test for Leaderboard Now Available
+
+The non-blind test is now available at [urgent26_track1_nonblind_test](https://huggingface.co/datasets/urgent-challenge/urgent2026_leaderboard/resolve/main/track1/nonblind_test_noisy.zip)
+
+- Check the [submission guide](#submission), and submit the enhanced speech to the [leaderboard](https://urgent-challenge.com/competitions/15#participate) for the non-blind test (opens after Oct. 14).
+- The non-blind test was simulated in the same way as the official validation set, but it includes a richer variety of speeches.
+
+After the non-blind test phase ends, clean speech and metadata will be available.
+
+
+### Official Validation Set for Leaderboard Testing
 
 To help participants get familiar with the [leaderboard submission](https://urgent-challenge.com/competitions/15#participate) process, we provide an official validation set:
 
