@@ -63,6 +63,8 @@ After the non-blind test phase ends, clean speech and metadata will be available
 
 ### Official Validation Set for Leaderboard Testing
 
+🆕 [Oct.20 updated] The official validation set with reference audio and labels is now available [here](https://drive.google.com/file/d/1dPezrikPASvS2XfvceBF9VStflx3iVNj/view?usp=sharing). 
+
 To help participants get familiar with the [leaderboard submission](https://urgent-challenge.com/competitions/15#participate) process, we provide an official validation set:
 
 - Download it here: [urgent26_track1_leaderboard_validation](https://huggingface.co/datasets/urgent-challenge/urgent2026_leaderboard/resolve/main/track1/validation_noisy.zip)
