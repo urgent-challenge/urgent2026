@@ -49,7 +49,7 @@ children:
 ## Datasets
 
 
-> Notice: A simulation-related issue has been corrected in the baseline code. It is recommended that you pull the latest code from the [baseline repository](https://github.com/urgent-challenge/urgent2026_challenge_track1) to ensure proper dynamic simulation behavior..
+> Notice: ⚠️ A [simulation-related Issue](https://github.com/urgent-challenge/urgent2026_challenge_track1?tab=readme-ov-file#updates) has been corrected in the baseline code. It is recommended that you pull the latest code from the [baseline repository](https://github.com/urgent-challenge/urgent2026_challenge_track1) to ensure proper dynamic simulation behavior. Some noisy files contain complete silence due to this bug in the earlier simulation version. However, the **official validation** set that we release remains unchanged to preserve leaderboard consistency. The **official validation** is for dry-run use only and does not affect final ranking.
 
 ### 🆕 [New Update] Non-Blind Test for Leaderboard Now Available
 
