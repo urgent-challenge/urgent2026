@@ -9,6 +9,8 @@ nav_order: 9
 ---
 
 
+* **[2025-11-03]** The Leaderboard has been open for the blind test set! Please check **Dataset** and **Submission** section in the [Track 1](/urgent2026/track1/)  and [Track 2](/urgent2026/track2/) page for more details.
+
 
 * **[2025-10-13]** The Leaderboard has been open for the non-blind test set! Please check **Dataset** and **Submission** section in the [Track 1](/urgent2026/track1/)  and [Track 2](/urgent2026/track2/) page for more details.
 

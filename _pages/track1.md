@@ -31,7 +31,8 @@ children:
 
 - [Contents:](#contents)
 - [Datasets](#datasets)
-  - [🆕 \[New Update\] Non-Blind Test for Leaderboard Now Available](#-new-update-non-blind-test-for-leaderboard-now-available)
+  - [🆕 \[Nov. 3 Update\] Blind Test for Leaderboard Now Available](#-nov-3-update-blind-test-for-leaderboard-now-available)
+  - [Non-Blind Test for Leaderboard](#non-blind-test-for-leaderboard)
   - [Official Validation Set for Leaderboard Testing](#official-validation-set-for-leaderboard-testing)
   - [Brief data description:](#brief-data-description)
   - [Detailed data description:](#detailed-data-description)
@@ -49,11 +50,26 @@ children:
 ## Datasets
 
 
+
+
+### 🆕 [Nov. 3 Update] Blind Test for Leaderboard Now Available
+The blind test set is now available at [urgent26_track1_blind_test](https://huggingface.co/datasets/urgent-challenge/urgent2026_leaderboard/resolve/main/track1/blind_noisy.zip).
+
+- Please refer to the [submission guide](#submission) and upload your enhanced speech results to the leaderboard for blind test evaluation (opens after Nov. 4).
+
+- The blind test set contains **360 simulated samples** and **480 real-world samples** collected from public sources.
+
+- It includes **four previously unseen** languages beyond those used in the training data.
+
+> ⚠️ Note: The [blind test ranking](#ranking) follows a **two-stage evaluation**. The top-6 systems from `stage 1` (objective metrics) will advance to `stage 2` for subjective testing. POLQA scores are **not computed in real time** and are therefore excluded from regular leaderboard updates. However, POLQA **will be incorporated** into the final `stage 1` ranking for the top-6 systems. As a result, the **final leaderboard** (should be published separately after `stage 1`) may differ from the real-time leaderboard shown during submission. 
+
+
+
+### Non-Blind Test for Leaderboard 
+
 > Notice: ⚠️ A [simulation-related Issue](https://github.com/urgent-challenge/urgent2026_challenge_track1?tab=readme-ov-file#updates) has been corrected in the baseline code. It is recommended that you pull the latest code from the [baseline repository](https://github.com/urgent-challenge/urgent2026_challenge_track1) to ensure proper dynamic simulation behavior. Some noisy files contain complete silence due to this bug in the earlier simulation version. However, the **official validation** set that we release remains unchanged to preserve leaderboard consistency. The **official validation** is for dry-run use only and does not affect final ranking.
 
-### 🆕 [New Update] Non-Blind Test for Leaderboard Now Available
-
-The non-blind test is now available at [urgent26_track1_nonblind_test](https://huggingface.co/datasets/urgent-challenge/urgent2026_leaderboard/resolve/main/track1/nonblind_test_noisy.zip)
+The non-blind test is available at [urgent26_track1_nonblind_test](https://huggingface.co/datasets/urgent-challenge/urgent2026_leaderboard/resolve/main/track1/nonblind_test_noisy.zip)
 
 - Check the [submission guide](#submission), and submit the enhanced speech to the [leaderboard](https://urgent-challenge.com/competitions/15#participate) for the non-blind test (opens after Oct. 14).
 - The non-blind test was simulated in the same way as the official validation set, but it includes a richer variety of speeches.
@@ -63,7 +79,7 @@ After the non-blind test phase ends, clean speech and metadata will be available
 
 ### Official Validation Set for Leaderboard Testing
 
-🆕 [Oct.20 updated] The official validation set with reference audio and labels is now available [here](https://drive.google.com/file/d/1dPezrikPASvS2XfvceBF9VStflx3iVNj/view?usp=sharing). 
+The official validation set with reference audio and labels is available [here](https://drive.google.com/file/d/1dPezrikPASvS2XfvceBF9VStflx3iVNj/view?usp=sharing). 
 
 To help participants get familiar with the [leaderboard submission](https://urgent-challenge.com/competitions/15#participate) process, we provide an official validation set:
 
