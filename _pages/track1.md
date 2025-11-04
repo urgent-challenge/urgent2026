@@ -61,7 +61,7 @@ The blind test set is now available at [urgent26_track1_blind_test](https://hugg
 
 - It includes **four previously unseen** languages beyond those used in the training data.
 
-> ⚠️ Note: The [blind test ranking](#ranking) follows a **two-stage evaluation**. The top-6 systems from `stage 1` (objective metrics) will advance to `stage 2` for subjective testing. POLQA scores are **not computed in real time** and are therefore excluded from regular leaderboard updates. However, POLQA **will be incorporated** into the final `stage 1` ranking for the top-6 systems. As a result, the **final leaderboard** (should be published separately after `stage 1`) may differ from the real-time leaderboard shown during submission. 
+> ⚠️ Note: The [blind test ranking](#ranking) follows a **two-stage evaluation**. The top-6 systems from `stage 1` (objective metrics) will advance to `stage 2` for subjective testing. POLQA scores are **not computed in real time** and are therefore excluded from regular leaderboard updates. However, POLQA **will be incorporated** into the final `stage 1` ranking for the top-6 systems. As a result, the **final leaderboard** (should be published separately after the evaluation) may differ from the real-time leaderboard shown during submission. 
 
 
 
