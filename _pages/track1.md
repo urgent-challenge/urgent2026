@@ -67,6 +67,9 @@ The blind test set is now available at [urgent26_track1_blind_test](https://hugg
 
 ### Non-Blind Test for Leaderboard 
 
+🆕 The non-blind test set with reference audio and labels is available [here](https://drive.google.com/file/d/1lDgJmJkxBsxEV8sF58D9Fyk4aRY7dloV/view?usp=sharing). 
+
+
 > Notice: ⚠️ A [simulation-related Issue](https://github.com/urgent-challenge/urgent2026_challenge_track1?tab=readme-ov-file#updates) has been corrected in the baseline code. It is recommended that you pull the latest code from the [baseline repository](https://github.com/urgent-challenge/urgent2026_challenge_track1) to ensure proper dynamic simulation behavior. Some noisy files contain complete silence due to this bug in the earlier simulation version. However, the **official validation** set that we release remains unchanged to preserve leaderboard consistency. The **official validation** is for dry-run use only and does not affect final ranking.
 
 The non-blind test is available at [urgent26_track1_nonblind_test](https://huggingface.co/datasets/urgent-challenge/urgent2026_leaderboard/resolve/main/track1/nonblind_test_noisy.zip)
