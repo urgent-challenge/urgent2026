@@ -14,8 +14,7 @@ nav_order: 2
 | September 21, 2025            | Leaderboard opens for official validation dataset. |
 | October 13, 2025            | Release of non-blind test data. Leaderboard switched to non-blind test data. |
 | November 3, 2025 | Release of blind test data. Leaderboard switched to blind-test data for final ranking. |
-| November 7, 2025 <br> (23:59:59 AOE) | **End of the submission**   |
-| November 7-28, 2025             | Subjective tests for the submissions |
+| November 7-28, 2025             | Subjective tests for the blind-test submissions |
 | November 28, 2025             | Notification of final results |
 | December 7, 2025             | **2-page papers submission deadline** (by invitation only) |
 | May 4-8 (TBD), 2026     | ICASSP 2026 SPGC Sessions for the URGENT challenge |
@@ -24,6 +23,7 @@ nav_order: 2
 {: .table-striped}
 
 <!-- 
+| November 7, 2025 <br> (23:59:59 AOE) | **End of the submission**   |
 |   **Date ( Anywhere on Earth )**  |         **Event**          |
 |:---------------------------------:|:---------------------------|
 |     November 15, 2024             | **Start of the challenge** |
