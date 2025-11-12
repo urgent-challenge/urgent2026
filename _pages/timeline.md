@@ -19,6 +19,7 @@ nav_order: 2
 | November 28, 2025             | Notification of final results |
 | December 7, 2025             | 2-page papers submission deadline (by invitation only) |
 | May 4-8 (TBD), 2026     | ICASSP 2026 SPGC Sessions for the URGENT challenge |
+| May 8, 2026     | End of the challenge |
 {: .table}
 {: .table-striped}
 
