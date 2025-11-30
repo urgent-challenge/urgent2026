@@ -15,7 +15,7 @@ nav_order: 2
 | October 13, 2025            | Release of non-blind test data. Leaderboard switched to non-blind test data. |
 | November 3, 2025 | Release of blind test data. Leaderboard switched to blind-test data for final ranking. |
 | November 7-28, 2025             | Subjective tests for the blind-test submissions |
-| November 28, 2025             | Notification of final results |
+| ~~November 28, 2025~~ <br>   December 1, 2025          | Notification of final results |
 | December 7, 2025             | **2-page papers submission deadline** (by invitation only) |
 | May 4-8 (TBD), 2026     | ICASSP 2026 SPGC Sessions for the URGENT challenge |
 | May 8, 2026     | **End of the challenge** |
