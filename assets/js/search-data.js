@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/urgent2026/timeline/";
           },
+        },{id: "nav-the-final-ranking-of-the-challenge",
+          title: "The final ranking of the challenge",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/urgent2026/ranking/";
+          },
         },{id: "dropdown-overview",
               title: "Overview",
               description: "",
@@ -545,6 +552,13 @@ ninja.data = [{
           section: "Projects",handler: () => {
               window.location.href = "/urgent2026/projects/9_project/";
             },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/urgent2026/assets/pdf/example_pdf.pdf", "_blank");
+        },
+      },{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
