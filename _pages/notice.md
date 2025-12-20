@@ -8,6 +8,8 @@ nav: true
 nav_order: 9
 ---
 
+* **[2026-12-19]** The final result of the challengege has been announced! Please check the [page](/urgent2026/ranking/) to obtain the final results.
+
 
 * **[2025-11-03]** The Leaderboard has been open for the blind test set! Please check **Dataset** and **Submission** section in the [Track 1](/urgent2026/track1/)  and [Track 2](/urgent2026/track2/) page for more details.
 
