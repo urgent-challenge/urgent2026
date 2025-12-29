@@ -26,7 +26,7 @@ The final results of Track 1 (Universal Speech Enhancement) have now been releas
 
 The ranking of `stage 1` objective evaluation is available in the [Leaderboard](https://urgent-challenge.com/competitions/15#results).
 
-The `top-6` submissions in `stage 1` were then evaluated by <a href="https://www.itu.int/rec/T-REC-P.808-202106-I">ITU-T P.808</a> Absolute Category Rating (ACR) and Comparison Category Rating (CCR). The final raking of `stage 2` can be found [here](/urgent2026/assets/files/FinalRankingDetails_URGENT2026.pdf).
+The `top-6` submissions in `stage 1` were then evaluated by <a href="https://www.itu.int/rec/T-REC-P.808-202106-I">ITU-T P.808</a> Absolute Category Rating (ACR) and Comparison Category Rating (CCR). The final ranking of `stage 2` can be found [here](/urgent2026/assets/files/FinalRankingDetails_URGENT2026.pdf).
 
 
 
